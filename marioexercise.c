@@ -1,3 +1,4 @@
+#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -6,15 +7,13 @@ int getUserInput()
     int height;
     do
     {
-        printf("Enter height: ");
-        scanf("%i", &height);
-
-    } while (height < 0 || height > 8);
+        height = get_int("Enter height: ");
+    } while (height <= 0 || height > 8);
 
     return height;
 }
 
-char generateLine(int numOfSpaces, int numOfSymbol)
+void generateLine(int numOfSpaces, int numOfSymbol)
 {
     char line[18] = {};
     char hash[18] = {};
