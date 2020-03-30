@@ -1,5 +1,6 @@
-#include <stdio.h>
+#include <cs50.h>
 #include <math.h>
+#include <stdio.h>
 
 struct Change
 {
@@ -49,10 +50,7 @@ struct Change computeChange(float total)
 
 int main()
 {
-    float total;
-       
-    printf("\nPlease enter an amount of money: \n"); 
-    scanf("%f", &total); 
+    float total = get_float("\nPlease enter an amount of money: \n"); 
     
     struct Change change = computeChange(total);
 
