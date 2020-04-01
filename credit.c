@@ -2,10 +2,6 @@
 #include <cs50.h>
 #include <string.h>
 
-#include <stdio.h>
-#include <cs50.h>
-#include <string.h>
-
 struct CreditValidator
 {
     long creditCardNumber;
@@ -38,13 +34,16 @@ void initializeValidator(struct CreditValidator *validator, long cardNumber)
     validator->numOfDigits = index;
 }
 
+
+
 void calculatingOddNumbers(struct CreditValidator *validator)
 {
     for (int i = 1; i < validator->numOfDigits; i += 2)
     {   
         // get every other number starting from second last digit
+        int num;
+        num = validator->arrayNumber[i] * 2;
         // multiplay by two, if the result is a two digit number, split them an sum all of the digits together
-        int num = validator->arrayNumber[i] * 2;
 
         if (num >= 10)
         {
@@ -93,22 +92,25 @@ void checkFlag(struct CreditValidator *validator)
         printf("%li", validator->creditCardNumber);
         printf(" VISA\n");
     }
+    else
+    {
+        printf("INVALID\n");
+    }
+    
 }
 
 void checkIfValid(long cardNumber)
 {
+
     struct CreditValidator validator;
+    initializeValidator(&validator, cardNumber);
     
-    if (validator.numOfDigits != 13 || validator.numOfDigits != 15 || validator.numOfDigits != 16)
+    switch (validator.numOfDigits)
     {
-        printf("INVALID\n");
-    }
-    else
-    {
-        initializeValidator(&validator, cardNumber);
-
+    case 13:
+    case 15:
+    case 16:
         calculatingOddNumbers(&validator);
-
         calculatingEvenNumbers(&validator);
 
         int sum = validator.sumEven + validator.sumOdds;
@@ -122,8 +124,13 @@ void checkIfValid(long cardNumber)
         {
             printf("INVALID\n");
         }
-    }
 
+        break;
+    
+    default:
+        printf("INVALID\n");
+        break;
+    }
 }
 
 int main(void)
