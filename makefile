@@ -5,5 +5,8 @@ LDLIBS=-lcrypt -lcs50 -lm
 all: marioexercise.c
 	$(CC) $(CFLAGS) $(LDLIBS) $(target).c -o $(target)
 
+run: $(target)
+	./$(target)
+
 clean:
 	rm $(target)

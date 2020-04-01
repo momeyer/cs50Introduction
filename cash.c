@@ -20,7 +20,7 @@ struct Change computeChange(float total)
     change.nickels = 0;
     change.pennies = 0;
 
-    int remainingChange = total * 100;
+    int remainingChange = round(total * 100);
    
     if( remainingChange >= 25)
     {
@@ -50,15 +50,24 @@ struct Change computeChange(float total)
 
 int main()
 {
-    float total = get_float("\nPlease enter an amount of money: \n"); 
-    
+    float total;
+    do
+    {
+        total = get_float("\nPlease enter an amount of money: \n"); 
+    }
+    while (total < 0);
+        
     struct Change change = computeChange(total);
 
-    printf("TOTAL VALUE ENTERED: %6.2f",total); 
+    printf("TOTAL VALUE ENTERED: %6.2f",total);
     printf("\n%i quarters (0.25)\n",change.quarters); 
     printf("\n%i dimes (0.10)\n",change.dimes); 
     printf("\n%i nickles (0.05)\n",change.nickels);
     printf("\n%i pennies (0.01)\n",change.pennies);
+
+
+    printf("Change owed: %.2f\n",total); 
+    printf("%i\n",change.quarters + change.dimes + change.nickels + change.pennies); 
 
    return 0;
 }

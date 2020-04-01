@@ -32,7 +32,7 @@ void generateLine(int numOfSpaces, int numOfSymbol)
     strcat(line, "  ");
 
     strcat(line, hash);
-    printf("%s \n", line);
+    printf("%s\n", line);
 }
 
 void buildBlocks()
