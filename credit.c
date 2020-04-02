@@ -110,6 +110,7 @@ void checkIfValid(long cardNumber)
     case 13:
     case 15:
     case 16:
+        
         calculatingOddNumbers(&validator);
         calculatingEvenNumbers(&validator);
 
