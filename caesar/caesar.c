@@ -51,7 +51,7 @@ void parse_user_input(struct Secret *secret)
     secret->plainText = get_string("plaintext: ");
 }
 
-void convert(struct Secret *secret, int i)
+void make_conversion(struct Secret *secret, int i)
 {
     if (!isalpha(secret->plainText[i]))
     {
@@ -73,7 +73,7 @@ void generate_secret(struct Secret *secret)
 {
     for (int i = 0; i < strlen(secret->plainText); i++)
     {
-        convert(secret, i);
+        make_conversion(secret, i);
     }
     printf("\n");
 }

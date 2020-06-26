@@ -24,6 +24,7 @@ struct Change computeChange(float total)
    
     if( remainingChange >= 25)
     {
+        
         change.quarters = remainingChange/25;
         remainingChange -= (change.quarters * 25);
     }
