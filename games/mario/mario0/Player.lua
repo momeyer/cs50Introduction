@@ -4,8 +4,8 @@
 
 Player = Class{}
 
-local WALKING_SPEED = 140
-local JUMP_VELOCITY = 350
+local WALKING_SPEED = 110
+local JUMP_VELOCITY = 250
 
 function Player:init(map)
     
@@ -49,8 +49,7 @@ function Player:init(map)
 
     -- position on top of map tiles
     self.y = map.tileHeight * ((map.mapHeight - 2) / 2) - self.height
-    self.x = map.tileWidth * 10
-
+    self.x = map.tileWidth
     -- initialize all player animations
     self.animations = {
         ['idle'] = Animation({
@@ -103,10 +102,6 @@ function Player:init(map)
                 self.state = 'walking'
                 self.animations['walking']:restart()
                 self.animation = self.animations['walking']
-            elseif love.keyboard.isDown('r') then
-                love.timer.sleep(0.1)
-                map.music:stop()
-                map:init()
             else
                 self.dx = 0
             end
@@ -142,8 +137,8 @@ function Player:init(map)
                 -- if so, reset velocity and position and change state
                 self.state = 'jumping'
                 self.animation = self.animations['jumping']
-                self.sounds['death']:play()
             end
+         
         end,
         ['jumping'] = function(dt)
             -- break if we go below the surface
@@ -188,6 +183,10 @@ function Player:update(dt)
     self:calculateJumps()
     -- apply velocity
     self.y = self.y + self.dy * dt
+    if self.dy >= 450 then
+        self.sounds['death']:play()
+        reset()
+    end
 end
 
 -- jumping and block hitting logic
@@ -230,10 +229,9 @@ end
 
 function Player:checkEndOfMap()
     if self.x >= map.mapWidthPixels - 48 then
+        LEVEL = LEVEL + 1
         self.sounds['end']:play()
-        love.timer.sleep(1)
-        map.music:stop()
-        map:init()
+        reset()
     end
 end
 

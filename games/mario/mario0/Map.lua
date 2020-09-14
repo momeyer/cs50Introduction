@@ -44,12 +44,11 @@ function Map:init()
 
     self.tileWidth = 16
     self.tileHeight = 16
-    self.mapWidth = 28
-    self.mapHeight = 28
+    self.mapWidth = 28 + LEVEL
+    self.mapHeight = 28 
     self.endMap = self.mapWidth - 3
     self.middleMap = self.mapHeight / 2
     self.tiles = {}
-
     self.state = 'wind'
     -- applies positive Y influence on anything affected
     self.gravity = 15
@@ -92,19 +91,7 @@ function Map:init()
         end
 
         -- 5% chance to generate a mushroom
-        if math.random(20) == 1 then
-            -- left side of pipe
-            self:setTile(x, self.middleMap - 2, MUSHROOM_TOP)
-            self:setTile(x, self.middleMap - 1, MUSHROOM_BOTTOM)
-
-            -- creates column of tiles going to bottom of map
-            for y = self.middleMap, self.mapHeight do
-                self:setTile(x, y, TILE_BRICK)
-            end
-
-            -- next vertical scan line
-            x = x + 1
-        end
+        
         if x >= self.mapWidth - 10 then
             
             height = 4
@@ -129,6 +116,19 @@ function Map:init()
                 self:setTile(x, y, TILE_BRICK)
             end
             
+            x = x + 1
+
+        elseif math.random(20) == 1 then
+            -- left side of pipe
+            self:setTile(x, self.middleMap - 2, MUSHROOM_TOP)
+            self:setTile(x, self.middleMap - 1, MUSHROOM_BOTTOM)
+
+            -- creates column of tiles going to bottom of map
+            for y = self.middleMap, self.mapHeight do
+                self:setTile(x, y, TILE_BRICK)
+            end
+
+            -- next vertical scan line
             x = x + 1
         
         elseif math.random(10) == 1 and x < self.mapWidth - 3 then
@@ -215,8 +215,7 @@ function Map:update(dt)
     self.behavior[self.state](dt)
     -- keep camera's X coordinate following the player, preventing camera from
     -- scrolling past 0 to the left and the map's width
-    self.camX = math.max(0, math.min(self.player.x - VIRTUAL_WIDTH / 2,
-        math.min(self.mapWidthPixels - VIRTUAL_WIDTH, self.player.x)))
+    self.camX = math.max(0, math.min(self.player.x - VIRTUAL_WIDTH / 2, math.min(self.mapWidthPixels - VIRTUAL_WIDTH, self.player.x)))
     
     self.animation:update(dt)
 end
@@ -252,5 +251,4 @@ function Map:render()
             end
         end
     end
-    self.player:render()
 end
