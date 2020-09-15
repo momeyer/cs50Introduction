@@ -4,33 +4,9 @@
 ]]
 
 require 'Util'
+require 'Tiles'
 
 Map = Class{}
-
-TILE_BRICK = 1
-TILE_EMPTY = -1
-
--- cloud tiles
-CLOUD_LEFT = 6
-CLOUD_RIGHT = 7
-
--- bush tiles
-BUSH_LEFT = 2
-BUSH_RIGHT = 3
-
--- mushroom tiles
-MUSHROOM_TOP = 10
-MUSHROOM_BOTTOM = 11
-
-POLE_TOP = 8
-POLE_MIDDLE = 12
-POLE_BOTTOM = 16
-
-FLAG = 13
--- jump block
-JUMP_BLOCK = 5
-JUMP_BLOCK_HIT = 9
-
 
 -- a speed to multiply delta time to scroll map; smooth value
 local SCROLL_SPEED = 62
@@ -38,14 +14,16 @@ local SCROLL_SPEED = 62
 -- constructor for our map object
 function Map:init()
 
+    self.tileSet = Tiles()
+    self.tileSet:init()
     self.spritesheet = love.graphics.newImage('graphics/spritesheet2.png')
     self.sprites = generateQuads(self.spritesheet, 16, 16)
     self.music = love.audio.newSource('sounds/music.wav', 'static')
 
     self.tileWidth = 16
     self.tileHeight = 16
-    self.mapWidth = 28 + LEVEL
-    self.mapHeight = 28 
+    self.mapWidth = 28 + (LEVEL * 2) 
+    self.mapHeight = 28
     self.endMap = self.mapWidth - 3
     self.middleMap = self.mapHeight / 2
     self.tiles = {}
@@ -67,9 +45,8 @@ function Map:init()
     -- first, fill map with empty tiles
     for y = 1, self.mapHeight do
         for x = 1, self.mapWidth do
-            
             -- support for multiple sheets per tile; storing tiles as tables 
-            self:setTile(x, y, TILE_EMPTY)
+            self:setTile(x, y, self.tileSet.empty)
         end
     end
 
@@ -77,93 +54,34 @@ function Map:init()
     local x = 1
     while x < self.mapWidth do
         
-        -- 2% chance to generate a cloud
-        -- make sure we're 2 tiles from edge at least
-        if x < self.mapWidth - 2 then
-            if math.random(20) == 1 then
-                
-                -- choose a random vertical spot above where blocks/pipes generate
-                local cloudStart = math.random(self.middleMap - 6)
-
-                self:setTile(x, cloudStart, CLOUD_LEFT)
-                self:setTile(x + 1, cloudStart, CLOUD_RIGHT)
-            end
-        end
-
-        -- 5% chance to generate a mushroom
-        
+        self:drawClouds(x)
+ 
         if x >= self.mapWidth - 10 then
-            
-            height = 4
-            numTiles =  1
-
-            for x = self.mapWidth - 10, self.mapWidth - 7 do
-                for i = 0, numTiles do
-                    self:setTile(x, self.middleMap - i, TILE_BRICK)
-                end
-                numTiles = numTiles + 1
-            end
-            
-            -- creates column of tiles going to bottom of map
-            -- next vertical scan line
-            if x == self.endMap then
-                pole = {POLE_BOTTOM, POLE_MIDDLE, POLE_MIDDLE, POLE_MIDDLE, POLE_TOP}
-                for i = 1, 5 do
-                    self:setTile(x, self.middleMap - i, pole[i])
-                end
-            end
-            for y = self.middleMap, self.mapHeight do
-                self:setTile(x, y, TILE_BRICK)
-            end
-            
+            self:drawStairs(x, y)
+            self:drawFlag(x, y)
             x = x + 1
 
         elseif math.random(20) == 1 then
             -- left side of pipe
-            self:setTile(x, self.middleMap - 2, MUSHROOM_TOP)
-            self:setTile(x, self.middleMap - 1, MUSHROOM_BOTTOM)
-
-            -- creates column of tiles going to bottom of map
-            for y = self.middleMap, self.mapHeight do
-                self:setTile(x, y, TILE_BRICK)
-            end
-
-            -- next vertical scan line
+            self:drawColumn(x, y)
             x = x + 1
         
-        elseif math.random(10) == 1 and x < self.mapWidth - 3 then
-            local bushLevel = self.middleMap - 1
-
-            -- place bush component and then column of bricks
-            self:setTile(x, bushLevel, BUSH_LEFT)
-            for y = self.middleMap, self.mapHeight do
-                self:setTile(x, y, TILE_BRICK)
-            end
-            x = x + 1
-
-            self:setTile(x, bushLevel, BUSH_RIGHT)
-            for y = self.middleMap, self.mapHeight do
-                self:setTile(x, y, TILE_BRICK)
-            end
-            x = x + 1
-
+        elseif math.random(10) == 1 then
+            self:drawBush(x, y)
+            x = x + 2
         -- 10% chance to not generate anything, creating a gap
         elseif math.random(10) ~= 1 then
             -- creates column of tiles going to bottom of map
-            for y = self.middleMap, self.mapHeight do
-                self:setTile(x, y, TILE_BRICK)
-            end
-
-            -- chance to create a block for Mario to hit
-            if math.random(15) == 1 then
-                self:setTile(x, self.middleMap - 4, JUMP_BLOCK)
-            end
-
+            self:drawGround(x, y)
+            self:drawJumpBlock(x)
             -- next vertical scan line
             x = x + 1
         else
             -- increment X so we skip two scanlines, creating a 2-tile gap
-            x = x + 2
+            --unless it is the tile where the Player starts.
+            if x > 2 then
+                x = x + 2
+            end
         end
     end
 
@@ -181,9 +99,6 @@ function Map:init()
 
     self.behavior = {
         ['wind'] = function(dt)
-                if 1 == 1 then
-                    
-                end
         end
     }
     -- start the background music
@@ -191,12 +106,80 @@ function Map:init()
     self.music:play()
 end
 
+function Map:drawClouds(x)
+    if x < self.mapWidth - 2 then
+        if math.random(10) == 1 then
+            -- choose a random vertical spot above where blocks/pipes generate
+            local cloudStart = math.random(self.middleMap - 6)
+            self:setTile(x, cloudStart, self.tileSet.cloudLeft)
+            self:setTile(x + 1, cloudStart, self.tileSet.cloudRight)
+            x = x + 1
+        end
+    end
+    
+end
+
+function Map:drawColumn(x, y)
+    self:setTile(x, self.middleMap - 2, self.tileSet.columnTop)
+    self:setTile(x, self.middleMap - 1, self.tileSet.columnBottom)
+    -- creates column of tiles going to bottom of map
+    self:drawGround(x, y)
+    -- next vertical scan line
+end
+
+function Map:drawBush(x, y)
+    local bushLevel = self.middleMap - 1
+    -- place bush component and then column of bricks
+    self:setTile(x, bushLevel, self.tileSet.bushLeft)
+    self:drawGround(x, y)
+    x = x + 1
+    self:setTile(x, bushLevel, self.tileSet.bushRight)
+    self:drawGround(x, y)
+end
+
+function Map:drawStairs(x, y)
+    height = 4
+    numTiles =  1
+    
+    for x = self.mapWidth - 10, self.mapWidth - 7 do
+        for i = 0, numTiles do
+            self:setTile(x, self.middleMap - i, self.tileSet.brick)
+            self:drawGround(x, y)
+        end
+        numTiles = numTiles + 1
+    end    
+    
+    -- creates column of tiles going to bottom of map
+    -- next vertical scan line
+end
+
+function Map:drawFlag(x, y)
+    if x == self.endMap then
+        pole = {self.tileSet.poleBottom, self.tileSet.poleMiddle, self.tileSet.poleMiddle, self.tileSet.poleMiddle, self.tileSet.poleTop}
+        for i = 1, 5 do
+            self:setTile(x, self.middleMap - i, pole[i])
+        end
+    end
+    self:drawGround(x, y)
+end
+
+function Map:drawJumpBlock(x)
+    if math.random(15) == 1 then
+        self:setTile(x, self.middleMap - 4, self.tileSet.jumpBlock)
+    end
+end
+
+function Map:drawGround(x, y)
+    for y = self.middleMap, self.mapHeight do
+        self:setTile(x, y, self.tileSet.brick)
+    end
+end
 -- return whether a given tile is collidable
 function Map:collides(tile)
     -- define our collidable tiles
     local collidables = {
-        TILE_BRICK, JUMP_BLOCK, JUMP_BLOCK_HIT,
-        MUSHROOM_TOP, MUSHROOM_BOTTOM
+        self.tileSet.brick, self.tileSet.jumpBlock, self.tileSet.jumpBlockHit,
+        self.tileSet.columnBottom, self.tileSet.columnTop
     }
 
     -- iterate and return true if our tile type matches
@@ -244,9 +227,8 @@ function Map:render()
     for y = 1, self.mapHeight do
         for x = 1, self.mapWidth do
             local tile = self:getTile(x, y)
-            if tile ~= TILE_EMPTY then
-                love.graphics.draw(self.spritesheet, self.sprites[tile],
-                    (x - 1) * self.tileWidth, (y - 1) * self.tileHeight)
+            if tile ~= self.tileSet.empty then
+                love.graphics.draw(self.spritesheet, self.sprites[tile], (x - 1) * self.tileWidth, (y - 1) * self.tileHeight)
                 love.graphics.draw(self.spritesheet, self.animation:getCurrentFrame(), self.mapWidthPixels - 48, (self.mapHeightPixels / 2) - 94)
             end
         end

@@ -47,9 +47,11 @@ function Player:init(map)
     self.dx = 0
     self.dy = 0
 
+    self.startX = map.tileWidth
+    self.startY = map.tileHeight * ((map.mapHeight - 2) / 2) - self.height
     -- position on top of map tiles
-    self.y = map.tileHeight * ((map.mapHeight - 2) / 2) - self.height
-    self.x = map.tileWidth
+    self.y = self.startY
+    self.x = self.startX
     -- initialize all player animations
     self.animations = {
         ['idle'] = Animation({
@@ -143,6 +145,10 @@ function Player:init(map)
         ['jumping'] = function(dt)
             -- break if we go below the surface
             if self.y > 300 then
+                self.sounds['death']:play()
+                love.timer.sleep(0.5)
+                self.y = self.startY
+                self.x = self.startX
                 return
             end
 
@@ -183,10 +189,6 @@ function Player:update(dt)
     self:calculateJumps()
     -- apply velocity
     self.y = self.y + self.dy * dt
-    if self.dy >= 450 then
-        self.sounds['death']:play()
-        reset()
-    end
 end
 
 -- jumping and block hitting logic
@@ -195,24 +197,24 @@ function Player:calculateJumps()
     -- if we have negative y velocity (jumping), check if we collide
     -- with any blocks above us
     if self.dy < 0 then
-        if self.map:tileAt(self.x, self.y).id ~= TILE_EMPTY or
-            self.map:tileAt(self.x + self.width - 1, self.y).id ~= TILE_EMPTY then
+        if self.map:tileAt(self.x, self.y).id ~= map.tileSet.empty or
+            self.map:tileAt(self.x + self.width - 1, self.y).id ~= map.tileSet.empty then
             -- reset y velocity
             self.dy = 0
 
             -- change block to different block
             local playCoin = false
             local playHit = false
-            if self.map:tileAt(self.x, self.y).id == JUMP_BLOCK then
+            if self.map:tileAt(self.x, self.y).id == map.tileSet.jumpBlock then
                 self.map:setTile(math.floor(self.x / self.map.tileWidth) + 1,
-                    math.floor(self.y / self.map.tileHeight) + 1, JUMP_BLOCK_HIT)
+                    math.floor(self.y / self.map.tileHeight) + 1, map.tileSet.jumpBlockHit)
                 playCoin = true
             else
                 playHit = true
             end
-            if self.map:tileAt(self.x + self.width - 1, self.y).id == JUMP_BLOCK then
+            if self.map:tileAt(self.x + self.width - 1, self.y).id == map.tileSet.jumpBlock then
                 self.map:setTile(math.floor((self.x + self.width - 1) / self.map.tileWidth) + 1,
-                    math.floor(self.y / self.map.tileHeight) + 1, JUMP_BLOCK_HIT)
+                    math.floor(self.y / self.map.tileHeight) + 1, map.tileSet.jumpBlockHit)
                 playCoin = true
             else
                 playHit = true
