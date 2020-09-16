@@ -16,28 +16,25 @@ function Map:init()
 
     self.tileSet = Tiles()
     self.tileSet:init()
-    self.spritesheet = love.graphics.newImage('graphics/spritesheet2.png')
+    self.spritesheet = love.graphics.newImage('graphics/spritesheet.png')
     self.sprites = generateQuads(self.spritesheet, 16, 16)
     self.music = love.audio.newSource('sounds/music.wav', 'static')
 
     self.tileWidth = 16
     self.tileHeight = 16
-    self.mapWidth = 28 + (LEVEL * 2) 
+    self.mapWidth = 28 + (LEVEL * 10) --makes map width bigger depending on level
     self.mapHeight = 28
     self.endMap = self.mapWidth - 3
     self.middleMap = self.mapHeight / 2
     self.tiles = {}
-    self.state = 'wind'
     -- applies positive Y influence on anything affected
     self.gravity = 15
-
-    -- associate player with map
-    self.player = Player(self)
-
+    self.flagCurrentFrame = 1
     -- camera offsets
     self.camX = 0
     self.camY = -3
-
+    self.player = Player(self)
+    
     -- cache width and height of map in pixels
     self.mapWidthPixels = self.mapWidth * self.tileWidth
     self.mapHeightPixels = self.mapHeight * self.tileHeight
@@ -55,7 +52,7 @@ function Map:init()
     while x < self.mapWidth do
         
         self:drawClouds(x)
- 
+        
         if x >= self.mapWidth - 10 then
             self:drawStairs(x, y)
             self:drawFlag(x, y)
@@ -85,22 +82,8 @@ function Map:init()
         end
     end
 
-    self.animations = {
-        ['wind'] = Animation {
-            texture = self.spritesheet,
-            frames =  {
-                self.sprites[13], self.sprites[14], self.sprites[15]
-            },
-            interval = 0.30
-        }
-    }
+    flagFrames =  { self.sprites[13], self.sprites[14], self.sprites[15] }
 
-    self.animation = self.animations['wind']
-
-    self.behavior = {
-        ['wind'] = function(dt)
-        end
-    }
     -- start the background music
     self.music:setLooping(true)
     self.music:play()
@@ -148,9 +131,6 @@ function Map:drawStairs(x, y)
         end
         numTiles = numTiles + 1
     end    
-    
-    -- creates column of tiles going to bottom of map
-    -- next vertical scan line
 end
 
 function Map:drawFlag(x, y)
@@ -181,7 +161,6 @@ function Map:collides(tile)
         self.tileSet.brick, self.tileSet.jumpBlock, self.tileSet.jumpBlockHit,
         self.tileSet.columnBottom, self.tileSet.columnTop
     }
-
     -- iterate and return true if our tile type matches
     for _, v in ipairs(collidables) do
         if tile.id == v then
@@ -195,12 +174,14 @@ end
 -- function to update camera offset with delta time
 function Map:update(dt)
     self.player:update(dt)
-    self.behavior[self.state](dt)
+
+    self.flagCurrentFrame = self.flagCurrentFrame + dt
+    if self.flagCurrentFrame >= 3 then
+        self.flagCurrentFrame = 1
+    end
     -- keep camera's X coordinate following the player, preventing camera from
     -- scrolling past 0 to the left and the map's width
     self.camX = math.max(0, math.min(self.player.x - VIRTUAL_WIDTH / 2, math.min(self.mapWidthPixels - VIRTUAL_WIDTH, self.player.x)))
-    
-    self.animation:update(dt)
 end
 
 -- gets the tile type at a given pixel coordinate
@@ -221,7 +202,6 @@ end
 function Map:setTile(x, y, id)
     self.tiles[(y - 1) * self.mapWidth + x] = id
 end
-
 -- renders our map to the screen, to be called by main's render
 function Map:render()
     for y = 1, self.mapHeight do
@@ -229,8 +209,10 @@ function Map:render()
             local tile = self:getTile(x, y)
             if tile ~= self.tileSet.empty then
                 love.graphics.draw(self.spritesheet, self.sprites[tile], (x - 1) * self.tileWidth, (y - 1) * self.tileHeight)
-                love.graphics.draw(self.spritesheet, self.animation:getCurrentFrame(), self.mapWidthPixels - 48, (self.mapHeightPixels / 2) - 94)
+                love.graphics.draw(self.spritesheet, flagFrames[math.floor(self.flagCurrentFrame)], self.mapWidthPixels - 48, 132)
             end
         end
     end
+    love.graphics.printf(' level : '.. LEVEL, self.camX + self.tileWidth, 10, VIRTUAL_WIDTH)
+    self.player:gameOver(self.camX)
 end

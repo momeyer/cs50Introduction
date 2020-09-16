@@ -2,6 +2,27 @@
     Stores utility functions used by our game engine.
 ]]
 
+
+JUMPING = 'jumping'
+WALKING = 'walking'
+IDLE = 'idle'
+
+-- close resolution to NES but 16:9
+VIRTUAL_WIDTH = 432
+VIRTUAL_HEIGHT = 243
+
+-- actual window resolution
+WINDOW_WIDTH = 1280
+WINDOW_HEIGHT = 720
+
+LEVEL = 1
+STARTED = false
+LIFE = 5
+
+menuImage = love.graphics.newImage("graphics/alien_world_pixel.png")
+menuFont = love.graphics.newFont('fonts/font.ttf', 8)
+
+
 -- takes a texture, width, and height of tiles and splits it into quads
 -- that can be individually drawn
 function generateQuads(atlas, tilewidth, tileheight)

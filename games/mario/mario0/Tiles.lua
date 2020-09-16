@@ -24,4 +24,7 @@ function Tiles:init()
     -- jump block
     self.jumpBlock = 5
     self.jumpBlockHit = 9
+    self.coin = 17
+
+    self.life = love.graphics.newImage("graphics/life.png")
 end
