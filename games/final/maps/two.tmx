@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="9" nextobjectid="1">
+ <editorsettings>
+  <export target="two.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="tilemap_packed" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../tileset/Tilemap/tilemap_packed.png" width="432" height="288"/>
+ </tileset>
+ <tileset firstgid="487" name="tilemap" tilewidth="16" tileheight="16" tilecount="532" columns="28">
+  <image source="../tileset/Tilemap/tilemap.png" width="458" height="305"/>
+ </tileset>
+ <layer id="1" name="grass" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJyTZWBgkB3Fo3gUj+JRPIpH8SimIwYAexo9oQ==
+  </data>
+ </layer>
+ <layer id="6" name="trees" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJx7w8DA8GYAMTvjyMZKA4xHwSgYBaNgFIyCgQAASMAj4Q==
+  </data>
+ </layer>
+ <layer id="2" name="house" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJztzc0NQGAQhOHdFtEGOkCc0IAgdORfQUayF5ztOnyTPJnjS/T/eeCLwKAfQiRig34BpagM+gnkIoVMud9AL1rolPsz7DAw0YJfP2xNV4M/DDxW892h3B/5bVPsu7m52e0Ez/EZEw==
+  </data>
+ </layer>
+ <layer id="7" name="parking" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIxlsY2RgmI4Hb2ekrf3nGLHjXUg0re3fRQC/hKqVg7rlJU7TaAPkGfHzR8EoGAWjYCgCABAYFY8=
+  </data>
+ </layer>
+ <layer id="3" name="house_details" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBhaIBiIQwbQ/jwgzh9A+zuBuIuO9rkyQug9jAhMK7ASi1g11L7rjAhMK3CECDUraGc9XuAKxYcH0O6BAKN2j9o9EuweqQAA6qQPQQ==
+  </data>
+ </layer>
+ <layer id="8" name="cars" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFIx1MZGRg6GdEsEHgKCP97F8DtGsVI4INAg/oZH8K0J5UKE5jxC4+CkbBKBgFo4D6AABkWQgq
+  </data>
+ </layer>
+</map>

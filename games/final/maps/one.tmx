@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="30" height="15" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
+ <editorsettings>
+  <export target="one.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="tilemap" tilewidth="16" tileheight="16" tilecount="532" columns="28">
+  <image source="../tileset/Tilemap/tilemap.png" width="458" height="305"/>
+ </tileset>
+ <tileset firstgid="533" name="tilemap_packed" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../tileset/Tilemap/tilemap_packed.png" width="432" height="288"/>
+ </tileset>
+ <layer id="1" name="grass" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJwzZGJgMBzFo3gUj+JRPIpHKAYA9N1Zpw==
+  </data>
+ </layer>
+ <layer id="2" name="path" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYGZgYBgALD3CsNkA4cEGIplG7R21d9TeoWrvcAUAyzcQ6Q==
+  </data>
+ </layer>
+ <layer id="3" name="house" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgcII+JgSEfCRcw0cdeVaA9S5GwKp3sdQDao46EHehkbxnQngokXEYne0fBKBgFo2CwAgBgowfW
+  </data>
+ </layer>
+ <layer id="4" name="house_details" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFAwHSmRkY6pkhbBCdzkwfe+cC7ZkFxIZQei6d7B0Fo2AUjILBCgDL5gSH
+  </data>
+ </layer>
+ <layer id="5" name="path_details" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBh8IIl5oF0wvIElMyo9CkbBKBgFIxkAAPJ/AN4=
+  </data>
+ </layer>
+</map>
