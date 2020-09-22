@@ -8,7 +8,7 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 9,
+  nextlayerid = 10,
   nextobjectid = 1,
   properties = {},
   tilesets = {
@@ -81,7 +81,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJyTZWBgkB3Fo3gUj+JRPIpH8SimIwYAexo9oQ=="
+      data = "eJyTZWBgkB3Fo3gUj+JRPIpHKHYdBG4YiRgAtdo9yQ=="
     },
     {
       type = "tilelayer",
@@ -115,7 +115,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztzc0NQGAQhOHdFtEGOkCc0IAgdORfQUayF5ztOnyTPJnjS/T/eeCLwKAfQiRig34BpagM+gnkIoVMud9AL1rolPsz7DAw0YJfP2xNV4M/DDxW892h3B/5bVPsu7m52e0Ez/EZEw=="
+      data = "eJzl0j0OglAQReF5a5CVoR1UBEp0B0CogA4agkZ3JP8L4pJMg9TMkHiTL1OeZojOPxuu7KbQD+HOHgr9DHJWKPQjSFkMiXC/gTd7wku438EEH0PU4w4Httq1YQ4M/Kw2W7Nw/2v2RsG+9hxwFfslVIr9C1iKfR8C8P7o5860BdQlHEA="
     },
     {
       type = "tilelayer",
@@ -149,7 +149,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBhaIBiIQwbQ/jwgzh9A+zuBuIuO9rkyQug9jAhMK7ASi1g11L7rjAhMK3CECDUraGc9XuAKxYcH0O6BAKN2j9o9EuweqQAA6qQPQQ=="
+      data = "eJxjYBhaIBiIQwbQ/jwgzh9A+zuBuIuO9rkyQug9jAhMK7ASi1g11L7rjAhMK3CECDUraGc9XuAKxYcH0O6BAMPd7u9AfHeA7MYF6Gl3NiMED4TdINDGCMEDYfcoYGAAAKTnEvs="
     },
     {
       type = "tilelayer",
@@ -166,7 +166,24 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFIx1MZGRg6GdEsEHgKCP97F8DtGsVI4INAg/oZH8K0J5UKE5jxC4+CkbBKBgFo4D6AABkWQgq"
+      data = "eJxjYBgFIx1MZGRg6GdEsEHgKCP97F8DtGsVI4INAg/oZH8K0J5UKE5jxC4+CkbBKBie4A0Uvx0g+9kZIZhjgMoZJUYIVh4g+wHM4wty"
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 32,
+      height = 17,
+      id = 9,
+      name = "details",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMApGwSigLwAACIAAAQ=="
     }
   }
 }

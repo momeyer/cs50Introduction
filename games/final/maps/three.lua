@@ -37,6 +37,32 @@ return {
       terrains = {},
       tilecount = 486,
       tiles = {}
+    },
+    {
+      name = "new",
+      firstgid = 487,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 4,
+      image = "../tileset/new.png",
+      imagewidth = 64,
+      imageheight = 32,
+      objectalignment = "unspecified",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 8,
+      tiles = {}
     }
   },
   layers = {
@@ -72,7 +98,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJw7zsDAcHwUUxVvgNIbB8jux1D2sQG0m972o9u9GojPjNpNNLZmJM/+E1TydxgV7H/IQF6eA/mdXPtPA/FaCt1Art3UdAOleDC6gd7lH7obBsJ+EAblCdchYj8AaD+itg=="
+      data = "eJw7zsDAcHwUUxVvgNIbB4FbRvEoJgZbMw6s/WEDaD/I7wNp/0DaPYpH8UBiANRVpF0="
     },
     {
       type = "tilelayer",
@@ -89,7 +115,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRMApGwSigLwAACIAAAQ=="
+      data = "eJxjYBgFQxnsYkTggbJ3MNg/ajf97R8IMJjsH+jwH8nhMBjcMFD2RwFxNBIuQ+ODcAwN7S+F2okPlxNpFgBmWSqb"
     },
     {
       type = "tilelayer",
@@ -101,7 +127,7 @@ return {
       name = "path",
       visible = true,
       opacity = 1,
-      offsetx = 0,
+      offsetx = -80,
       offsety = 0,
       properties = {},
       encoding = "base64",
@@ -118,7 +144,7 @@ return {
       name = "different_path",
       visible = true,
       opacity = 1,
-      offsetx = 0,
+      offsetx = -80,
       offsety = 0,
       properties = {},
       encoding = "base64",
@@ -157,7 +183,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJyLYGRgiIBiOyCGAQckdh4NcQSS/ZFQO4sZMe0lFRCrB91+kN3I9koyEjCAivaD7E6G2u9Bpr2kgmJGBKYkvCkF9PY3DEiOUH/DwED5exSMglEwCgAlVhxg"
+      data = "eJyLYGRgiIBiOyCGAQckdh4NcQSS/ZFQO4sZMe3FBwjJ4wPo9oPsRrZXkpGAATjstyDDfpDdyVD7PYiwdwMQP4ayjxFpHzooZkRgYsMb3W5K7IcBcv0NAquB+AyZ9kpS6G9K7AaBgfI3DBDrbxA4QWW7SQXI9j8E4o10tv80EK8ddcOgdAOl5Q+lbhgI+4cDAAD5cDyb"
     },
     {
       type = "tilelayer",
@@ -191,7 +217,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYCAdzCdDDzngKp3sGQUQsI5xoF0wCugNpAfaAaNgFIyCEQsApCMCPw=="
+      data = "eJxjYCAdzCdDDzngKp3sGQUQsI5xoF0wCugNpAfaAaNgFAwDsILO9vWjldWHgfgoVGwiHcrxVVjseAAVW0OC/QDWigfL"
     }
   }
 }

@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="2" nextobjectid="1">
- <layer id="1" name="Tile Layer 1" width="32" height="17">
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="1">
+ <editorsettings>
+  <export target="three.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="tilemap_packed" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../tileset/Tilemap/tilemap_packed.png" width="432" height="288"/>
+ </tileset>
+ <tileset firstgid="487" name="new" tilewidth="16" tileheight="16" tilecount="8" columns="4">
+  <image source="../tileset/new.png" width="64" height="32"/>
+ </tileset>
+ <layer id="5" name="background" width="32" height="17">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMApGwSigLwAACIAAAQ==
+   eJxjYBgFtAB5UDxQdg8UQPY3vd2Rh4ZHkt3IbhgpdiPbj86mp/0DHQbIdg9UGkR2Azp7IN0wEGAg0wGyG4YCAADi1BGf
+  </data>
+ </layer>
+ <layer id="1" name="water" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJw7zsDAcHwUUxVvgNIbB4FbRvEoJgZbMw6s/WEDaD/I7wNp/0DaPYpH8UBiANRVpF0=
+  </data>
+ </layer>
+ <layer id="2" name="land" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFQxnsYkTggbJ3MNg/ajf97R8IMJjsH+jwH8nhMBjcMFD2RwFxNBIuQ+ODcAwN7S+F2okPlxNpFgBmWSqb
+  </data>
+ </layer>
+ <layer id="3" name="path" width="32" height="17" offsetx="-80" offsety="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwxG4DrDdA2X/qN0DZ/9AgsFg/6gbRt2A7IZRQBgAAEN7BWU=
+  </data>
+ </layer>
+ <layer id="4" name="different_path" width="32" height="17" offsetx="-80" offsety="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALyQd4It38UjIJRQB4AAHU9AN0=
+  </data>
+ </layer>
+ <layer id="7" name="park" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJztzT0KACAMg9FM3qL30PtfTBdBxJ8KtnEw8G2BJwDkpy6UoiI5+J3YCXfHtLW+la3xLe2db22vfA975nvZI9/T7n1vu/UZdvVZNsg2yPYLy1NjF1c=
+  </data>
+ </layer>
+ <layer id="8" name="park_details" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJyLYGRgiIBiOyCGAQckdh4NcQSS/ZFQO4sZMe3FBwjJ4wPo9oPsRrZXkpGAATjstyDDfpDdyVD7PYiwdwMQP4ayjxFpHzooZkRgYsMb3W5K7IcBcv0NAquB+AyZ9kpS6G9K7AaBgfI3DBDrbxA4QWW7SQXI9j8E4o10tv80EK8ddcOgdAOl5Q+lbhgI+4cDAAD5cDyb
+  </data>
+ </layer>
+ <layer id="9" name="trees" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYECACEYEtmNkoDuA2Q0CJQNkfyQOe63p4B6Q3bj8HUYj+8OR/IzNblr7uwiPn0GAVv7GB+gR1/jAQPh5sICBCHtkOwci7Efje+DASA77wQAAJjEJdQ==
+  </data>
+ </layer>
+ <layer id="10" name="people" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAdzCdDDzngKp3sGQUQsI5xoF0wCugNpAfaAaNgFAwDsILO9vWjldWHgfgoVGwiHcrxVVjseAAVW0OC/QDWigfL
   </data>
  </layer>
 </map>
