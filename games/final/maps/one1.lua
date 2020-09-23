@@ -36,7 +36,66 @@ return {
       properties = {},
       terrains = {},
       tilecount = 486,
-      tiles = {}
+      tiles = {
+        {
+          id = 27,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "rectangle",
+                x = 9.96294,
+                y = 7.59081,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                properties = {}
+              }
+            }
+          }
+        },
+        {
+          id = 29,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "rectangle",
+                x = 6.10823,
+                y = 7.11638,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                properties = {}
+              }
+            }
+          }
+        }
+      }
     },
     {
       name = "new",
@@ -81,7 +140,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJyTZWBgkB3Fo3gUj+JRPIpH8SimIwYAexo9oQ=="
+      data = "eJyTZWBgkB3Fo3gQYTkoLTNq/6j9o/aPOPtH8cjBAHtaPaE="
     },
     {
       type = "tilelayer",

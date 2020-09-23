@@ -6,6 +6,8 @@ require 'Animation'
 require 'Util'
 require 'Player'
 require 'Level1'
+require 'Level2'
+require 'Level3'
 require 'Controllers'
 
 WINDOW_WIDTH = 900
@@ -18,11 +20,11 @@ love.graphics.setDefaultFilter('nearest', 'nearest')
 
 function love.load()
     -- Load map file
-    title = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
-    small = love.graphics.newFont('fonts/font.ttf', 8)
     
     controller = Controllers()
-    level = Level1(controller, title, small)
+    level = Level1(controller)
+    --level = Level2(controller)
+    --level = Level3(controller)
 
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,

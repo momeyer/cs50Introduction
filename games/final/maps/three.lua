@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 11,
-  nextobjectid = 1,
+  nextlayerid = 12,
+  nextobjectid = 2,
   properties = {},
   tilesets = {
     {
@@ -218,6 +218,32 @@ return {
       encoding = "base64",
       compression = "zlib",
       data = "eJxjYCAdzCdDDzngKp3sGQUQsI5xoF0wCugNpAfaAaNgFAwDsILO9vWjldWHgfgoVGwiHcrxVVjseAAVW0OC/QDWigfL"
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 11,
+      name = "player",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "Player",
+          type = "",
+          shape = "rectangle",
+          x = 279.667,
+          y = 232,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }
