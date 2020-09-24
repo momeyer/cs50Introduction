@@ -22,9 +22,9 @@ function love.load()
     -- Load map file
     
     controller = Controllers()
-    level = Level1(controller)
+    --level = Level1(controller)
     --level = Level2(controller)
-    --level = Level3(controller)
+    level = Level3(controller)
 
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
@@ -39,6 +39,7 @@ function love.update(dt)
 end
 
 function love.draw()
+
     love.graphics.clear(56/255,203/255,171/255, 255/255)
     push:apply('start')
     -- Draw world

@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 8,
-  nextobjectid = 3,
+  nextlayerid = 11,
+  nextobjectid = 7,
   properties = {},
   tilesets = {
     {
@@ -36,7 +36,96 @@ return {
       properties = {},
       terrains = {},
       tilecount = 486,
-      tiles = {}
+      tiles = {
+        {
+          id = 27,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "rectangle",
+                x = 9.96294,
+                y = 7.59081,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                properties = {}
+              }
+            }
+          }
+        },
+        {
+          id = 29,
+          objectGroup = {
+            type = "objectgroup",
+            draworder = "index",
+            id = 2,
+            name = "",
+            visible = true,
+            opacity = 1,
+            offsetx = 0,
+            offsety = 0,
+            properties = {},
+            objects = {
+              {
+                id = 1,
+                name = "",
+                type = "",
+                shape = "rectangle",
+                x = 6.10823,
+                y = 7.11638,
+                width = 0,
+                height = 0,
+                rotation = 0,
+                visible = true,
+                properties = {}
+              }
+            }
+          }
+        },
+        {
+          id = 52,
+          animation = {
+            {
+              tileid = 52,
+              duration = 300
+            },
+            {
+              tileid = 79,
+              duration = 300
+            }
+          }
+        },
+        {
+          id = 53,
+          animation = {
+            {
+              tileid = 53,
+              duration = 200
+            },
+            {
+              tileid = 26,
+              duration = 285
+            },
+            {
+              tileid = 80,
+              duration = 190
+            }
+          }
+        }
+      }
     },
     {
       name = "new",
@@ -154,21 +243,21 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 7,
+      id = 10,
       name = "player",
       visible = true,
-      opacity = 0.9,
+      opacity = 1,
       offsetx = 0,
       offsety = 0,
       properties = {},
       objects = {
         {
-          id = 2,
+          id = 6,
           name = "Player",
           type = "",
           shape = "rectangle",
-          x = 103.636,
-          y = 199.818,
+          x = 103.667,
+          y = 199.667,
           width = 0,
           height = 0,
           rotation = 0,

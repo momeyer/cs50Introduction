@@ -14,7 +14,9 @@ function Controllers:init()
         ['musicOFF'] = love.graphics.newImage('graphics/OFF.png'),
         ['reset'] = love.graphics.newImage('graphics/x.png'),
         ['run'] = love.graphics.newImage('graphics/run.png'),
-        ['empty'] = love.graphics.newImage('graphics/empty.png')
+        ['empty'] = love.graphics.newImage('graphics/empty.png'),
+        ['grey'] = love.graphics.newImage('graphics/grey.png'),
+        ['beige'] = love.graphics.newImage('graphics/beige.png'),
     }
 end
 
@@ -27,6 +29,8 @@ function Controllers:render(text, answerSize)
     love.graphics.draw(self.buttons['down'], 350, 125)
     love.graphics.draw(self.buttons['right'], 370, 125)
     love.graphics.draw(self.buttons['f0'], 390, 125)
+    love.graphics.draw(self.buttons['grey'], 410, 125)
+    love.graphics.draw(self.buttons['beige'], 430, 125)
     
     love.graphics.draw(self.buttons['musicON'], 450, 240)
     
