@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="13" nextobjectid="1">
+ <tileset firstgid="1" name="tilemap_packed" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../tileset/Tilemap/tilemap_packed.png" width="432" height="288"/>
+ </tileset>
+ <tileset firstgid="487" name="test" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../tileset/Tilemap/test.png" width="432" height="288"/>
+ </tileset>
+ <layer id="1" name="grass" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJyTZWBgkCURy6HxZcgwgxI83OyXI9GcUfupbz/DIPC/ORBboGFi7KcUw8zDBujpf0YgZkLD9E5/bFjiAB1b0tB+YuKWlul/MNmPLT2AMDOV7VeEmquEZj8uc2lZ/wy0/aS6kVL7Adv8PMo=
+  </data>
+ </layer>
+ <layer id="2" name="street" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAPnGNkYDgPxBcYyTSAQjBq/6j9I9n+zUB7twDx1hHq/+Fs/zagmdMJ4Cs0tB/ktx1AfBYP3klj+wmZS8vwH+n2byaiXKGW/QA3vDv8
+  </data>
+ </layer>
+ <layer id="4" name="path" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgwHkDbD9rqP2j2j7ZaFuQMf0AgPt/1H7BxYMdPk3CgYGAAD6oQR7
+  </data>
+ </layer>
+ <layer id="9" name="house" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJzbysDAsAOIt0LpnQz0BXOAeC4Snkdn+y8B8WUkfIXO9o8CwkAIiIWhWGQA7NcFYj0o1qez3a6MDAweQNoTir3obH/CANtfDbQ/GUinQHEqne0faHAY6P8jjANn/z2g3feh9h8D0scH0C2jYPgBAJXnFZo=
+  </data>
+ </layer>
+ <layer id="10" name="house_details" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJzLZWRgyAViEMhFYo8UEMAIwTKMCPYoGAWjYBSMglEwCmgLAOSXAxo=
+  </data>
+ </layer>
+ <layer id="5" name="trees" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAE7Iy4MQcjFg1UBkqMuLEyHewfBUMHzBqg9DCbkaEBRB8YGOtB9jYMkNWjYBTQDQx0HaAAtKsOiI2gtAKdy5tkNPs8hln9BwATnwgF
+  </data>
+ </layer>
+ <layer id="11" name="extra" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCANcDKSqIFC8A6KQfbCMD0BKyMEs0Axve1HBywDbP8oGAWjYBTQAygyQjAyeDUwThkFNAIAHW0DWA==
+  </data>
+ </layer>
+ <layer id="6" name="fruits" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgwGcYR5oF4yCkQxOYUl/o2ly5ADXAbZ/NK2NTAAADrEDgA==
+  </data>
+ </layer>
+ <layer id="12" name="benches" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAdaKPxBcgwgxKAbj86f7jZHwXE0VAcMwD2TwDiiVA8aQDsz2ZExfS2v40RFdPb/gBGVExv+3WBWA+K9bHYRw//zwXieXTwPw8QOxPAGjS0nxyzaGX/ayB+gwW/pZP9L4H4FRY1L+lkPycjhF4HpWMZUcVpbT8LI3Y16OK0DH9sgJrhDwDVGB9B
+  </data>
+ </layer>
+ <layer id="3" name="cars" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAP3GWE0P2MZBpAJbBqgOzvGWB/Lx9g+ycMsP2rB9j+UQABRwc4Hh7Qyf4uoD3dA+jXpUC7l42mebqAoVS2TRxgt66h0H4A388LEw==
+  </data>
+ </layer>
+ <layer id="8" name="player" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwSigLwAACIAAAQ==
+  </data>
+ </layer>
+</map>

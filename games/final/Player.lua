@@ -9,18 +9,19 @@ function Player:init(map, side, playerLayer)
     self.xOffset = 8
     self.yOffset = 8
     self.side = side
-    self.speed = 0.6
-    self.direction = 'up'
+    self.speed = 16
+
+    self.direction = {
+        [FACE_UP] = love.graphics.newImage("graphics/player_up.png"),
+        [FACE_DOWN] = love.graphics.newImage("graphics/player_down.png"),
+        [FACE_RIGHT] = love.graphics.newImage("graphics/player_right.png"),
+        [FACE_LEFT] = love.graphics.newImage("graphics/player_left.png"),
+    }
+
     -- reference to map for checking tiles
     self.map = map
     self.layer = self.map:addCustomLayer("Sprites", playerLayer)
-    
-    self.sprites = {
-        ['up'] = love.graphics.newImage("graphics/player_up.png"),
-        ['down'] = love.graphics.newImage("graphics/player_down.png"),
-        ['right'] = love.graphics.newImage("graphics/player_right.png"),
-        ['left'] = love.graphics.newImage("graphics/player_left.png"),
-    }
+   
     self.player = nil
     for k, object in pairs(self.map.objects) do
         if object.name == "Player" then
@@ -30,10 +31,9 @@ function Player:init(map, side, playerLayer)
     end
 
     -- Create player object
-    self.sprite = self.sprites[self.side]
+    self.sprite = self.direction[self.side]
     
     self.layer.player = {
-        sprite = sprite,
         x      = self.player.x,
         y      = self.player.y,
         ox     = self.sprite:getWidth(), 
@@ -43,52 +43,42 @@ function Player:init(map, side, playerLayer)
     
     -- Remove unneeded object layer
     self.map:removeLayer("player")
-end
 
-
-function Player:flipSprite(newInstruction)
-    --newInstruction will be the arrow inserted by the user in the instructions table (strait, left, right, down)
-    
-    -- if curDirection == UP and newInstruction == LEFT means thatsprite will face LEFT (so curDirection = LEFT) (but sprite wont move)
-    -- if curDirection == UP and newInstruction == RIGHT means that sprite will face RIGHT (so curDirection = RIGHT) (but sprite wont move)
-    -- if curDirection == UP and newInstruction == STRAIT means that the player will walk one step up (-y)
-        --player.moveUp()
-        
-    -- if curDirection == DOWN and newInstruction == LEFT means thatsprite will face RIGHT (so curDirection = RIGHT) (but sprite wont move)
-    -- if curDirection == DOWN and newInstruction == RIGHT means thatsprite will face LEFT (so curDirection = LEFT) (but sprite wont move)
-    -- if curDirection == DOWN and newInstruction == STRAIT means that the player will walk one step DOWN (+y)
-        --player.moveDown()
-    -- if curDirection == RIGHT and newInstruction == LEFT means thatsprite will face UP (so curDirection = UP) (but sprite wont move)
-    -- if curDirection == RIGHT and newInstruction == RIGHT means thatsprite will face DOWN (so curDirection = DOWN) (but sprite wont move)
-    -- if curDirection == RIGHT and newInstruction == STRAIT means that the player will walk one step to the RIGHT (+x)
-        --player.moveRight()
-    -- if curDirection == LEFT and newInstruction == LEFT means thatsprite will face DOWN (so curDirection = DOWN) (but sprite wont move)
-    -- if curDirection == LEFT and newInstruction == RIGHT means thatsprite will face UP (so curDirection = UP) (but sprite wont move)
-    -- if curDirection == LEFT and newInstruction == STRAIT means that the player will walk one step to the LEFT (-x)
-        --player.move()
-end
-
-
-
-function Player:moveLeft()
-    self.player.x = self.player.x - self.speed
-end
-
-function Player:moveRight()
-    self.player.x = self.player.x + self.speed
-end
-
-function Player:moveUp()
-    self.player.y = self.player.y - self.speed
-end
-
-function Player:moveDown()
-    self.player.y = self.player.y + self.speed
-end
-
-function Player:stop()
-    self.player.y = self.player.y + 0
-    self.player.x = self.player.x + 0
+    self.move = {
+        [FACE_LEFT] = function()
+            if self.side == FACE_UP then
+                self.side = FACE_LEFT
+            elseif self.side == FACE_DOWN then
+                self.side = FACE_RIGHT
+            elseif self.side == FACE_LEFT then
+                self.side = FACE_DOWN
+            elseif self.side == FACE_RIGHT then
+                self.side = FACE_UP
+            end
+        end,
+        [FACE_RIGHT] = function()
+            if self.side == FACE_UP then
+                self.side = FACE_RIGHT
+            elseif self.side == FACE_DOWN then
+                self.side = FACE_LEFT
+            elseif self.side == FACE_LEFT then
+                self.side = FACE_UP
+            elseif self.side == FACE_RIGHT then
+                self.side = FACE_DOWN
+            end
+        end,
+        [WALK] = function()
+            if self.side == FACE_RIGHT then
+                self.player.x = self.player.x + self.speed
+            elseif self.side == FACE_UP then
+                self.player.y = self.player.y - self.speed
+            elseif self.side == FACE_DOWN then
+                self.player.y = self.player.y + self.speed
+            elseif self.side == FACE_LEFT then
+                self.player.x = self.player.x - self.speed
+            end
+        end
+    }
 end
 
 function Player:checkEndOfMap()
@@ -96,5 +86,5 @@ function Player:checkEndOfMap()
 end
 
 function Player:draw()
-    love.graphics.draw(self.sprite, self.player.x - self.xOffset, self.player.y - self.yOffset, 0, 1, 1, self.player.ox, self.player.oy)
+    love.graphics.draw(self.direction[self.side], self.player.x - self.xOffset, self.player.y - self.yOffset, 0, 1, 1, self.player.ox, self.player.oy)
 end

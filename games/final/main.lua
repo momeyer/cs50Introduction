@@ -2,19 +2,7 @@ Class = require 'class'
 push = require 'push'
 sti = require "sti"
 
-require 'Animation'
-require 'Util'
-require 'Player'
-require 'Level1'
-require 'Level2'
-require 'Level3'
-require 'Controllers'
-
-WINDOW_WIDTH = 900
-WINDOW_HEIGHT = 500
-
-VIRTUAL_WIDTH = 490
-VIRTUAL_HEIGHT = 270
+require 'Definitions'
 
 love.graphics.setDefaultFilter('nearest', 'nearest')
 
@@ -31,18 +19,24 @@ function love.load()
         resizable = false,
         vsync = true
     })
+    print('hello')
+    
+    
 end
-
 
 function love.update(dt)
     level:update(dt)
+    if love.keyboard.isDown("a") then
+        level:run(dt)
+    end
+    if love.keyboard.isDown("escape") then
+        love.event.quit()
+    end
+
 end
 
 function love.draw()
-
-    love.graphics.clear(56/255,203/255,171/255, 255/255)
     push:apply('start')
-    -- Draw world
     level:render()
     push:apply('end')
 end

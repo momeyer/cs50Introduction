@@ -28,7 +28,7 @@ end
 
 function Level3:drawCommands()
     self.control:render(self.text, self.answerSize)
-    self:drawSelectedButtons('up', 'grey', 'left', 'grey', 'up', 'right', 'f0') --answer
+    --self:drawSelectedButtons('up', 'grey', 'left', 'grey', 'up', 'right', 'f0') --answer
 end
 
 function Level3:render()
