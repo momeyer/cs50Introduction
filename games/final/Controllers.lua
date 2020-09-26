@@ -14,8 +14,6 @@ function Controllers:init()
         ['red'] = love.graphics.newImage('graphics/red.png'),
         ['yellow'] = love.graphics.newImage('graphics/yellow.png'),
         
-
-       
         ['reset'] = love.graphics.newImage('graphics/x.png'),
         ['run'] = love.graphics.newImage('graphics/run.png'),
         ['empty'] = love.graphics.newImage('graphics/empty.png')
@@ -25,10 +23,10 @@ end
 function Controllers:render(text, answerSize)
     love.graphics.setFont(self.title)
     love.graphics.printf(text, self.titleX, self.titleY, VIRTUAL_WIDTH, 'center')
-    
+
     love.graphics.draw(self.buttons['button'], 310, 112, 0, 0.4)
     love.graphics.draw(self.buttons['turn_left'], 311.5, 113)
-    
+
     love.graphics.draw(self.buttons['button'], 330, 112, 0, 0.4)
     love.graphics.draw(self.buttons['walk'], 331.5, 113)
     
@@ -44,22 +42,17 @@ function Controllers:render(text, answerSize)
     
     love.graphics.draw(self.buttons['red'], 351, 133, 0, 1.15)
     
-    
-    --love.graphics.draw(self.buttons['walk'], 330, 125)
-    --love.graphics.draw(self.buttons['right'], 370, 125)
-    --love.graphics.draw(self.buttons['f0'], 390, 125)
-    --love.graphics.draw(self.buttons['grey'], 410, 125)
-    --love.graphics.draw(self.buttons['beige'], 430, 125)
-    
-    --love.graphics.draw(self.buttons['musicON'], 450, 240)
-    
     answerStart =  310
     squareOfSet = 20
-    for x = answerSize, 1, -1 do
-        love.graphics.draw(self.buttons['empty'], answerStart, 180, 0, 0.4)
-        answerStart = answerStart + squareOfSet
+    for x = 0, answerSize do
+        if x == 0 then
+            love.graphics.draw(self.buttons['button'], answerStart, 180, 0, 0.4)
+            love.graphics.draw(self.buttons['f0'], answerStart + 1, 181)
+        else
+            love.graphics.draw(self.buttons['empty'], answerStart, 180, 0, 0.4)
+            answerStart = answerStart + squareOfSet
+        end
     end
 
-    --love.graphics.draw(self.buttons['reset'], answerStart, 160 )
-    --love.graphics.draw(self.buttons['run'], answerStart + 10, 160)
+    love.graphics.draw(self.buttons['reset'], answerStart, 180)
 end

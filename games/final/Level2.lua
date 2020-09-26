@@ -5,11 +5,10 @@ function Level2:init(controler)
 
     self.player = Player(self.map, FACE_RIGHT, 9)
     self.control = controler
-    self.commandsY = 125
     self.text = 'Help Tonny get to school..'
     self.answerSize = 6
 
-    self.f0 = {WALK, 'left', WALK, 'right', 'f0'}
+    self.f0 = {}
     self.f0NextInstruction = 1
 end
 
@@ -26,23 +25,25 @@ function Level2:drawSelectedButtons(second, third, fourth, fith, sixth)
     love.graphics.draw(self.control.buttons[sixth], 385, 160) --answer
 end
 
-function Level2:run(dt)
+function Level2:run()
     if self.f0[self.f0NextInstruction] == WALK then
         self.player.move[WALK]()
-    elseif self.f0[self.f0NextInstruction] == 'f0' then
+    elseif self.f0[self.f0NextInstruction] == F0 then
+        print(self.f0[self.f0NextInstruction])
         self.f0NextInstruction = 0
-    else
+    elseif self.f0[self.f0NextInstruction] == FACE_LEFT or self.f0[self.f0NextInstruction] == FACE_RIGHT then
         self.player.move[self.f0[self.f0NextInstruction]]()
     end
     love.timer.sleep(0.05)
-    self.f0NextInstruction = self.f0NextInstruction + 1
     print(self.f0NextInstruction)
+    if self.f0NextInstruction < self.answerSize then
+        self.f0NextInstruction = self.f0NextInstruction + 1
+    end
 end
-
 
 function Level2:drawCommands()
     self.control:render(self.text, self.answerSize)
-    self:drawSelectedButtons(WALK, 'left', WALK, 'right', 'f0')
+    --self:drawSelectedButtons(WALK, 'left', WALK, 'right', 'f0')
 end
 
 function Level2:render()

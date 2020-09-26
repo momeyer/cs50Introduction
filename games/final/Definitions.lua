@@ -17,4 +17,5 @@ FACE_DOWN = 'down'
 FACE_RIGHT = 'right'
 FACE_UP = 'up'
 
+F0 = 'f0'
 WALK = 'walk'

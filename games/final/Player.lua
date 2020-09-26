@@ -10,6 +10,7 @@ function Player:init(map, side, playerLayer)
     self.yOffset = 8
     self.side = side
     self.speed = 16
+    self.initialSide = side
 
     self.direction = {
         [FACE_UP] = love.graphics.newImage("graphics/player_up.png"),
@@ -44,7 +45,12 @@ function Player:init(map, side, playerLayer)
     -- Remove unneeded object layer
     self.map:removeLayer("player")
 
-    self.move = {
+
+    self.startX = self.player.x
+    self.startY = self.player.y
+
+
+    self.moves = {
         [FACE_LEFT] = function()
             if self.side == FACE_UP then
                 self.side = FACE_LEFT
@@ -80,6 +86,18 @@ function Player:init(map, side, playerLayer)
         end
     }
 end
+
+function Player:move(movement)
+    self.moves[movement]()
+    print('player -- ' .. movement)
+end
+
+function Player:resetPosition()
+    self.player.x = self.startX
+    self.player.y = self.startY
+    self.side = self.initialSide
+end
+
 
 function Player:checkEndOfMap()
 
