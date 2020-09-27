@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 11,
-  nextobjectid = 7,
+  nextlayerid = 10,
+  nextobjectid = 6,
   properties = {},
   tilesets = {
     {
@@ -94,36 +94,6 @@ return {
               }
             }
           }
-        },
-        {
-          id = 52,
-          animation = {
-            {
-              tileid = 52,
-              duration = 300
-            },
-            {
-              tileid = 79,
-              duration = 300
-            }
-          }
-        },
-        {
-          id = 53,
-          animation = {
-            {
-              tileid = 53,
-              duration = 200
-            },
-            {
-              tileid = 26,
-              duration = 285
-            },
-            {
-              tileid = 80,
-              duration = 190
-            }
-          }
         }
       }
     },
@@ -167,10 +137,12 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {},
+      properties = {
+        ["collides"] = true
+      },
       encoding = "base64",
       compression = "zlib",
-      data = "eJyTZWBgkB3Fo3gUj+JRPIpH8SimIwYAexo9oQ=="
+      data = "eJyTZWBgkB3Fo3gQYTkoLTNq/6j9o/aPOPtH8cjBAHtaPaE="
     },
     {
       type = "tilelayer",
@@ -221,7 +193,24 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFgwkEMzIwZDNC2CA6mJG+9ncC7WsDYlko3Uln+0fBKBgFo2AUjAwAAM/fA8E="
+      data = "eJxjYBgFgwkEMzIwZDNC2CA6mJG+9ncC7WuD2gmiO+ls/ygYBaNgFIyCkQEAD7ADow=="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 32,
+      height = 17,
+      id = 8,
+      name = "door",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFowATyDAOtAtGwSgYBaNgFAxnAADCRwAe"
     },
     {
       type = "tilelayer",
@@ -243,8 +232,8 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 10,
-      name = "player",
+      id = 9,
+      name = "end",
       visible = true,
       opacity = 1,
       offsetx = 0,
@@ -252,12 +241,38 @@ return {
       properties = {},
       objects = {
         {
-          id = 6,
-          name = "Player",
+          id = 4,
+          name = "end",
+          type = "",
+          shape = "point",
+          x = 104,
+          y = 78,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 7,
+      name = "player",
+      visible = true,
+      opacity = 0.9,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 2,
+          name = "player",
           type = "",
           shape = "rectangle",
-          x = 103.667,
-          y = 199.667,
+          x = 103.636,
+          y = 199.818,
           width = 0,
           height = 0,
           rotation = 0,

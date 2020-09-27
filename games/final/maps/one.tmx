@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="8" nextobjectid="3">
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="10" nextobjectid="6">
  <editorsettings>
   <export target="one.lua" format="lua"/>
  </editorsettings>
@@ -20,6 +20,9 @@
   <image source="../tileset/new.png" width="64" height="32"/>
  </tileset>
  <layer id="1" name="grass" width="32" height="17">
+  <properties>
+   <property name="collides" type="bool" value="true"/>
+  </properties>
   <data encoding="base64" compression="zlib">
    eJyTZWBgkB3Fo3gQYTkoLTNq/6j9o/aPOPtH8cjBAHtaPaE=
   </data>
@@ -36,7 +39,12 @@
  </layer>
  <layer id="4" name="house_details" width="32" height="17">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFgwkEMzIwZDNC2CA6mJG+9ncC7WsDYlko3Uln+0fBKBgFo2AUjAwAAM/fA8E=
+   eJxjYBgFgwkEMzIwZDNC2CA6mJG+9ncC7WuD2gmiO+ls/ygYBaNgFIyCkQEAD7ADow==
+  </data>
+ </layer>
+ <layer id="8" name="door" width="32" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowATyDAOtAtGwSgYBaNgFAxnAADCRwAe
   </data>
  </layer>
  <layer id="5" name="path_details" width="32" height="17">
@@ -44,7 +52,12 @@
    eJxjYBi8wI9xoF0wMoEqIyo9CkbBKBgFo2AUUBsAAF71AJw=
   </data>
  </layer>
+ <objectgroup id="9" name="end">
+  <object id="4" name="end" x="104" y="78">
+   <point/>
+  </object>
+ </objectgroup>
  <objectgroup id="7" name="player" opacity="0.9">
-  <object id="2" name="Player" x="103.636" y="199.818"/>
+  <object id="2" name="player" x="103.636" y="199.818"/>
  </objectgroup>
 </map>

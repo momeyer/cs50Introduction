@@ -19,3 +19,11 @@ function generateQuads(atlas, tilewidth, tileheight)
 
     return quads
 end
+
+function getMapObject(map, objectName)
+    for k, object in pairs(map.objects) do
+        if object.name == objectName then
+            return object
+        end
+    end
+end

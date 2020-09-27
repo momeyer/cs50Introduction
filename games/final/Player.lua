@@ -1,5 +1,7 @@
 Player = Class{}
 
+require "Util"
+
 local WALKING_SPEED = 110
 
 function Player:init(map, side, playerLayer)
@@ -21,31 +23,12 @@ function Player:init(map, side, playerLayer)
 
     -- reference to map for checking tiles
     self.map = map
-    self.layer = self.map:addCustomLayer("Sprites", playerLayer)
-   
-    self.player = nil
-    for k, object in pairs(self.map.objects) do
-        if object.name == "Player" then
-            self.player = object
-            break
-        end
-    end
+    
+    self.player = getMapObject(self.map, 'player')
 
     -- Create player object
     self.sprite = self.direction[self.side]
     
-    self.layer.player = {
-        x      = self.player.x,
-        y      = self.player.y,
-        ox     = self.sprite:getWidth(), 
-        oy     = self.sprite:getHeight()
-    }
-    -- Add controls to player
-    
-    -- Remove unneeded object layer
-    self.map:removeLayer("player")
-
-
     self.startX = self.player.x
     self.startY = self.player.y
 
@@ -89,7 +72,6 @@ end
 
 function Player:move(movement)
     self.moves[movement]()
-    print('player -- ' .. movement)
 end
 
 function Player:resetPosition()
