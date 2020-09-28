@@ -53,6 +53,4 @@ function Controllers:render(text, answerSize)
             answerStart = answerStart + squareOfSet
         end
     end
-
-    love.graphics.draw(self.buttons['reset'], answerStart, 180)
 end

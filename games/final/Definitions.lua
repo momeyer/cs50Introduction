@@ -1,5 +1,4 @@
 
-require 'Animation'
 require 'Player'
 require 'Level1'
 require 'Level2'

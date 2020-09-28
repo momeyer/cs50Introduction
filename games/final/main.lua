@@ -26,7 +26,7 @@ function love.load()
         ['d'] = FACE_RIGHT,
         ['f'] = F0,
     }
-
+    
 end
 
 function love.keypressed(key, scancode, isrepeat)

@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 10,
-  nextobjectid = 6,
+  nextlayerid = 17,
+  nextobjectid = 27,
   properties = {},
   tilesets = {
     {
@@ -138,11 +138,11 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
-        ["collides"] = true
+        ["collidable"] = true
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJyTZWBgkB3Fo3gQYTkoLTNq/6j9o/aPOPtH8cjBAHtaPaE="
+      data = "eJyTZWBgkB3Fo3gQYTkGCJAZtX/U/lH7R5z9o3jkYAC23jy5"
     },
     {
       type = "tilelayer",
@@ -232,35 +232,9 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 9,
-      name = "end",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      properties = {},
-      objects = {
-        {
-          id = 4,
-          name = "end",
-          type = "",
-          shape = "point",
-          x = 104,
-          y = 78,
-          width = 0,
-          height = 0,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
       id = 7,
       name = "player",
-      visible = true,
+      visible = false,
       opacity = 0.9,
       offsetx = 0,
       offsety = 0,
@@ -275,6 +249,71 @@ return {
           y = 199.818,
           width = 0,
           height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "grass",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 18,
+          name = "grass",
+          type = "",
+          shape = "rectangle",
+          x = 112,
+          y = 79,
+          width = 30,
+          height = 150,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 23,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 60.75,
+          y = 80.25,
+          width = 36,
+          height = 150,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 16,
+      name = "end",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 26,
+          name = "end",
+          type = "",
+          shape = "rectangle",
+          x = 95.5,
+          y = 63.75,
+          width = 16.75,
+          height = 16.25,
           rotation = 0,
           visible = true,
           properties = {}
