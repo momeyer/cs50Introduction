@@ -12,7 +12,7 @@ function Player:init(map, direction, playerLayer, world)
     self.height = 16
     self.xOffset = 8
     self.yOffset = 8
-    self.speed = 16
+    self.speed = 8
     self.direction = direction
     self.initialDirection = direction
     self.texture = love.graphics.newImage('graphics/playerAnim8.png')
@@ -102,12 +102,6 @@ function Player:update(dt)
         self.anim:update(dt)
         self.world:update(dt)
     end
-
-    if self.collider:enter('Door') or self.collider:stay('Door') then
-        self.speed = 0
-        self.isMoving = false
-        print("Inside")
-    end
 end
 
 function Player:resetPosition()
@@ -119,5 +113,4 @@ end
 function Player:draw()
     -- love.graphics.draw(self.direction[self.direction], self.x - self.xOffset, self.y - self.yOffset, 0, 1, 1)
     self.anim:draw(self.texture, self.collider:getX() - self.xOffset,self.collider:getY() - self.yOffset)
-    love.graphics.setColor(0, 0, 0, 0.7)
 end

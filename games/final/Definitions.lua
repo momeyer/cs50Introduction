@@ -4,6 +4,7 @@ require 'Level1'
 require 'Level2'
 require 'Level3'
 require 'Controllers'
+require 'Door'
 
 WINDOW_WIDTH = 900
 WINDOW_HEIGHT = 500
