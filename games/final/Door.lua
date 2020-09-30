@@ -6,7 +6,7 @@ function Door:init(map, world)
     self.map = map
     self.world = world
     local mapObject = getMapObject(self.map, "end")
-    self.x = mapObject.x + 1
+    self.x = mapObject.x
     self.y = mapObject.y
     self.height = 16
     self. width = 16
@@ -14,7 +14,7 @@ function Door:init(map, world)
                     [1] = love.graphics.newImage('graphics/door1.png'),
                     [2] = love.graphics.newImage('graphics/door2.png')
                 }
-    self.collider = self.world:newRectangleCollider(self.x, self.y, self.width, self.height)
+    self.collider = self.world:newRectangleCollider(self.x, self.y, self.width, self.height + 2)
     self.collider:setCollisionClass('Door')
     self.collider:setType('static')
     

@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 12,
-  nextobjectid = 2,
+  nextlayerid = 18,
+  nextobjectid = 25,
   properties = {},
   tilesets = {
     {
@@ -39,8 +39,34 @@ return {
       tiles = {}
     },
     {
-      name = "test",
+      name = "new",
       firstgid = 487,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 4,
+      image = "../tileset/new.png",
+      imagewidth = 64,
+      imageheight = 32,
+      objectalignment = "unspecified",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 8,
+      tiles = {}
+    },
+    {
+      name = "test",
+      firstgid = 495,
       tilewidth = 16,
       tileheight = 16,
       spacing = 0,
@@ -98,7 +124,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJw7zsDAcHwUUxVvgNIbB4FbRvEoJgZbMw6s/WEDaD/I7wNp/0DaPYpH8UBiANRVpF0="
+      data = "eJw7zsDAcHwUUxVvgNIbaWT+sQH022ogPjNq97Cz25pxYP0dhsV+etkN8ju6/fSM74G0e6DCfNTuUbtBGADR0aMx"
     },
     {
       type = "tilelayer",
@@ -149,7 +175,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjALywSnmkW3/KBgFo4A8AABqbAGb"
+      data = "eJxjYBgFo2AUjALywSXmkW3/KBgFo4A8AACqLAGr"
     },
     {
       type = "tilelayer",
@@ -166,7 +192,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztzT0KACAMg9FM3qL30PtfTBdBxJ8KtnEw8G2BJwDkpy6UoiI5+J3YCXfHtLW+la3xLe2db22vfA975nvZI9/T7n1vu/UZdvVZNsg2yPYLy1NjF1c="
+      data = "eJyTZWBgkB3FJGELNEysGDZMjv3UBANpN6n20wIMpN3E2k9LMJB2E7KfHmAg7cZlPz3BQNqNbv9AgIG0G2b/SAYAJ5gW+w=="
     },
     {
       type = "tilelayer",
@@ -183,7 +209,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJyLYGRgiIBiOyCGAQckdh4NcQSS/ZFQO4sZMe3FBwjJ4wPo9oPsRrZXkpGAATjstyDDfpDdyVD7PYiwdwMQP4ayjxFpHzooZkRgYsMb3W5K7IcBcv0NAquB+AyZ9kpS6G9K7AaBgfI3DBDrbxA4QWW7SQXI9j8E4o10tv80EK8ddcOgdAOl5Q+lbhgI+4cDAAD5cDyb"
+      data = "eJyLYGRgiIBiOyCGAQckNi1BBJL9kVA7i+lkNzb70e2WJNMtFmTYT6q/NwDxYyj7GGla4aCYEYHJtZsS+8kB6HavBuIzo3bTHJwYQLvR7X8IxBvpbP9pIF476oZB6QZ6lj/Y3DAQ9g8HAABhWShu"
     },
     {
       type = "tilelayer",
@@ -200,7 +226,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYECACEYEtmNkoDuA2Q0CJQNkfyQOe63p4B6Q3bj8HUYj+8OR/IzNblr7uwiPn0GAVv7GB+gR1/jAQPh5sICBCHtkOwci7Efje+DASA77wQAAJjEJdQ=="
+      data = "eJxjYECACEYEtmNkoDuA2R0JxCU47LemobuIsdseiFOAOBUJp6PxScHIgBi7w6js/3Con0GA3naDQBEeP9PabkJg1O5Ru0ftHr52g8BA2g0CA2n3YAAAsc4ZHA=="
     },
     {
       type = "tilelayer",
@@ -222,9 +248,9 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
-      id = 11,
-      name = "player",
-      visible = true,
+      id = 14,
+      name = "water",
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -232,13 +258,299 @@ return {
       objects = {
         {
           id = 1,
-          name = "Player",
+          name = "1",
           type = "",
           shape = "rectangle",
-          x = 279,
-          y = 232.5,
-          width = 0,
-          height = 0,
+          x = 288,
+          y = 48,
+          width = 80,
+          height = 192,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 2,
+          name = "2",
+          type = "",
+          shape = "rectangle",
+          x = 272,
+          y = 80,
+          width = 16,
+          height = 128,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 3,
+          name = "3",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 96,
+          width = 16,
+          height = 96,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 7,
+          name = "4",
+          type = "",
+          shape = "rectangle",
+          x = 240,
+          y = 112,
+          width = 16,
+          height = 64,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 8,
+          name = "5",
+          type = "",
+          shape = "rectangle",
+          x = 224,
+          y = 128,
+          width = 16,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 9,
+          name = "6",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 48,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 10,
+          name = "7",
+          type = "",
+          shape = "rectangle",
+          x = 240,
+          y = 48,
+          width = 16,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 11,
+          name = "8",
+          type = "",
+          shape = "rectangle",
+          x = 224,
+          y = 48,
+          width = 16,
+          height = 48,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 12,
+          name = "9",
+          type = "",
+          shape = "rectangle",
+          x = 208,
+          y = 48,
+          width = 16,
+          height = 64,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 13,
+          name = "10",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 64,
+          width = 16,
+          height = 64,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 14,
+          name = "11",
+          type = "",
+          shape = "rectangle",
+          x = 176,
+          y = 80,
+          width = 16,
+          height = 144,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 15,
+          name = "12",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 160,
+          width = 16,
+          height = 80,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 16,
+          name = "13",
+          type = "",
+          shape = "rectangle",
+          x = 208,
+          y = 176,
+          width = 16,
+          height = 64,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 17,
+          name = "14",
+          type = "",
+          shape = "rectangle",
+          x = 224,
+          y = 192,
+          width = 16,
+          height = 48,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 18,
+          name = "15",
+          type = "",
+          shape = "rectangle",
+          x = 240,
+          y = 208,
+          width = 16,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 19,
+          name = "16",
+          type = "",
+          shape = "rectangle",
+          x = 256,
+          y = 224,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 20,
+          name = "17",
+          type = "",
+          shape = "rectangle",
+          x = 208,
+          y = 240,
+          width = 160,
+          height = 32,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 15,
+      name = "end",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 21,
+          name = "end",
+          type = "",
+          shape = "rectangle",
+          x = 272,
+          y = 32,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 16,
+      name = "player",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 22,
+          name = "player",
+          type = "",
+          shape = "rectangle",
+          x = 272,
+          y = 224,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "yellow",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 24,
+          name = "yellow",
+          type = "",
+          shape = "rectangle",
+          x = 192,
+          y = 128,
+          width = 16,
+          height = 32,
           rotation = 0,
           visible = true,
           properties = {}

@@ -5,6 +5,8 @@ require 'Level2'
 require 'Level3'
 require 'Controllers'
 require 'Door'
+require 'Grass'
+require 'YellowTile'
 
 WINDOW_WIDTH = 900
 WINDOW_HEIGHT = 500

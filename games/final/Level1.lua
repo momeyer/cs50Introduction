@@ -11,9 +11,9 @@ function Level1:init(controler)
     self.world = windfield.newWorld()
     self.world:setQueryDebugDrawing(true)
     self.world:addCollisionClass('Door')
+    self.world:addCollisionClass('Solid')
     
-    self.layer = 6
-    self.player = Player(self.map, FACE_UP, self.layer, self.world)
+    self.player = Player(self.map, FACE_UP, self.world)
     self.control = controler
     self.text = 'Help Tony to get home'
     self.numberOfCommands = 6
@@ -27,12 +27,14 @@ function Level1:init(controler)
     self.start = false
 
     self.door = Door(self.map, self.world)
+    self.grass = Grass(self.map, self.world, 3)
 end
 
 function Level1:update(dt)
     self.map:update(dt)
     self.player:update(dt)
     self:executeInstruction(dt)
+    self.door:update(dt, self.endGame)
 
     if self.player.collider:enter('Door') then
         self.endGame = true
@@ -40,7 +42,11 @@ function Level1:update(dt)
         self.functions[F0] = {}
     end
 
-    self.door:update(dt, self.endGame)
+    if self.player.collider:enter('Solid') then
+        self.player.speed = 0
+        self.player.isMoving = false
+    end
+
 end
 
 function Level1:executeInstruction(dt)
@@ -65,7 +71,6 @@ end
 
 function Level1:drawCommands()
     self.control:render(self.text, self.numberOfCommands)
-    --self:drawSelectedButtons('walk', F0)
 end
 
 function Level1:insert(command)
@@ -89,10 +94,9 @@ function Level1:render()
     self.map:draw()
     self:drawCommands()
 
+        self.door:draw()
     if self.endGame == false then
         self.player:draw()
-        self.door:draw()
     end
-
-    -- self.world:draw()
+    self.world:draw()
 end

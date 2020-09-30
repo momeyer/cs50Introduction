@@ -6,7 +6,7 @@ local anim8 = require 'anim8'
 
 local WALKING_SPEED = 110
 
-function Player:init(map, direction, playerLayer, world)
+function Player:init(map, direction, world)
 
     self.width = 16
     self.height = 16
@@ -22,20 +22,28 @@ function Player:init(map, direction, playerLayer, world)
 
     self.playerObject = getMapObject(self.map, 'player')
     
-    self.world:addCollisionClass('Player')
-    self.collider = self.world:newCircleCollider(self.playerObject.x, self.playerObject.y, 4)
+    self.world:addCollisionClass('Player', {enter = {'Solid'}})
+    self.collider = self.world:newRectangleCollider(self.playerObject.x + 1, self.playerObject.y + 1, 14, 14)
     self.collider:setCollisionClass('Player')
 
     self.grids = {}
     self.grids.walk = anim8.newGrid(self.width, self.height, self.texture:getWidth(), self.texture:getHeight())
 
     self.animations = {}
-    self.animations.walkDown = anim8.newAnimation(self.grids.walk('1-3', 2), 0.2)
-    self.animations.walkRight = anim8.newAnimation(self.grids.walk('1-3', 1), 0.2)
-    self.animations.walkLeft = anim8.newAnimation(self.grids.walk('1-3', 3), 0.2)
+    self.animations.walkDown = anim8.newAnimation(self.grids.walk('1-3', 2), 0.3)
+    self.animations.walkRight = anim8.newAnimation(self.grids.walk('1-3', 1), 0.3)
+    self.animations.walkLeft = anim8.newAnimation(self.grids.walk('1-3', 3), 0.3)
     self.animations.walkUp = anim8.newAnimation(self.grids.walk('1-3', 4), 0.1)
 
-    self.anim = self.animations.walkUp
+    self.startX = self.collider:getX()
+    self.startY = self.collider:getY()
+
+    self.directions = {
+        [FACE_UP] = self.animations.walkUp,
+        [FACE_RIGHT] = self.animations.walkRight,  
+    }
+
+    self.anim = self.directions[self.direction]
 end
 
 function Player:turnLeft()
@@ -92,6 +100,9 @@ function Player:move(movement)
         self.isMoving = false
     elseif movement == WALK then
         self:walk()
+        love.timer.sleep(0.1)
+        self:walk()
+        love.timer.sleep(0.1)
         self.isMoving = true
     end
 
@@ -106,11 +117,10 @@ end
 
 function Player:resetPosition()
     self.isMoving = false
-    self.anim = self.animations.walkUp
+    self.anim = self.directions[self.initialDirection]
     self.direction = self.initialDirection
 end
 
 function Player:draw()
-    -- love.graphics.draw(self.direction[self.direction], self.x - self.xOffset, self.y - self.yOffset, 0, 1, 1)
-    self.anim:draw(self.texture, self.collider:getX() - self.xOffset,self.collider:getY() - self.yOffset)
+    self.anim:draw(self.texture, self.collider:getX() - 8, self.collider:getY() - 16)
 end
