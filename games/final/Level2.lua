@@ -10,9 +10,10 @@ function Level2:init(controler)
     
     self.world = windfield.newWorld()
     self.world:setQueryDebugDrawing(true)
-    self.world:addCollisionClass('Door')
     self.world:addCollisionClass('Solid')
-    
+    self.door = Door(self.map, self.world, SCHOOL)
+    self.grass = Grass(self.map, self.world, 18)
+ 
     self.player = Player(self.map, FACE_RIGHT, self.world)
     self.control = controler
     self.text = 'Help Tony to get home'
@@ -25,9 +26,6 @@ function Level2:init(controler)
     
     self.f0NextInstruction = 1
     self.start = false
-
-    self.door = Door(self.map, self.world)
-    self.grass = Grass(self.map, self.world, 18)
 end
 
 function Level2:update(dt)
@@ -99,7 +97,7 @@ function Level2:render()
     if self.endGame == false then
         self.player:draw()
     end
-    -- self.world:draw()
+    self.world:draw()
 end
 
 

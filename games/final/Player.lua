@@ -22,8 +22,8 @@ function Player:init(map, direction, world)
 
     self.playerObject = getMapObject(self.map, 'player')
     
-    self.world:addCollisionClass('Player', {enter = {'Solid'}})
-    self.collider = self.world:newRectangleCollider(self.playerObject.x + 1, self.playerObject.y + 1, 14, 14)
+    self.world:addCollisionClass('Player', {ignores = {'YellowTile'}})
+    self.collider = self.world:newCircleCollider(self.playerObject.x + 8, self.playerObject.y + 8, 5)
     self.collider:setCollisionClass('Player')
 
     self.grids = {}

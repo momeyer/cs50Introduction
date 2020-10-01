@@ -26,8 +26,8 @@ function love.load()
         ['s'] = WALK,
         ['d'] = FACE_RIGHT,
         ['f'] = F0,
+        ['c'] = CONDITIONAL_GREY
     }
-    
 end
 
 function love.keypressed(key, scancode, isrepeat)
@@ -38,6 +38,7 @@ function love.keypressed(key, scancode, isrepeat)
     end
 
     if key == "return" then
+        print("############# START #############")
         level:run()
     end
 

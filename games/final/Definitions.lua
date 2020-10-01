@@ -7,6 +7,7 @@ require 'Controllers'
 require 'Door'
 require 'Grass'
 require 'YellowTile'
+require 'Movement'
 
 WINDOW_WIDTH = 900
 WINDOW_HEIGHT = 500
@@ -21,3 +22,8 @@ FACE_UP = 'up'
 
 F0 = 'f0'
 WALK = 'walk'
+CONDITIONAL_GREY = 'conditional_grey'
+
+HOUSE = 'house'
+SCHOOL = 'school'
+PARK = 'park'

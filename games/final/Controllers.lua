@@ -10,7 +10,7 @@ function Controllers:init()
         ['turn_left'] = love.graphics.newImage('graphics/turn_left.png'),
         ['walk'] = love.graphics.newImage('graphics/walk.png'),
         ['f0'] = love.graphics.newImage('graphics/F0.png'),
-        ['blue'] = love.graphics.newImage('graphics/blue.png'),
+        ['grey'] = love.graphics.newImage('graphics/greyTile.png'),
         ['red'] = love.graphics.newImage('graphics/red.png'),
         ['yellow'] = love.graphics.newImage('graphics/yellow.png'),
         
@@ -36,7 +36,7 @@ function Controllers:render(text, answerSize)
     love.graphics.draw(self.buttons['button'], 370, 112, 0, 0.4)
     love.graphics.draw(self.buttons['f0'], 371.5, 113)
     
-    love.graphics.draw(self.buttons['blue'], 311, 133, 0, 1.15)
+    love.graphics.draw(self.buttons['grey'], 311, 133, 0, 1.15)
 
     love.graphics.draw(self.buttons['yellow'], 331, 133, 0, 1.15)
     

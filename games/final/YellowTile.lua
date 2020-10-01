@@ -1,24 +1,25 @@
-Yellow = Class{}
+YellowTile = Class{}
 
 require "Util"
 
-function Yellow:init(map, world)
+function YellowTile:init(map, world)
     self.map = map
     self.world = world
-
-    self:getCollisionObjects()
+    self.world:addCollisionClass('YellowTile')
+    
+    self:addCollisionObjects()
 end
 
-function Yellow:getCollisionObjects()
+function YellowTile:addCollisionObjects()
     local object = getMapObject(self.map, 'yellow')
     collider = self.world:newRectangleCollider(object.x, object.y, object.width, object.height)
-    collider:setCollisionClass('Solid')
-    collider:setType('static')
+    collider:setCollisionClass('YellowTile')
+    collider:setType('kinematic')
 end
 
-function Yellow:update(dt, endGame)
+function YellowTile:update(dt, endGame)
 
 end
 
-function Yellow:draw()
+function YellowTile:draw()
 end
