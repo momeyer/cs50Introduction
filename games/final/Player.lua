@@ -22,7 +22,7 @@ function Player:init(map, direction, world)
 
     self.playerObject = getMapObject(self.map, 'player')
     
-    self.world:addCollisionClass('Player', {ignores = {'YellowTile', 'GreyTile'}})
+    self.world:addCollisionClass('Player', {ignores = {'YellowTile', 'GreyTile', 'BlueTile'}})
     self.collider = self.world:newCircleCollider(self.playerObject.x + 8, self.playerObject.y + 8, 5)
     self.collider:setCollisionClass('Player')
 
@@ -40,7 +40,9 @@ function Player:init(map, direction, world)
 
     self.directions = {
         [FACE_UP] = self.animations.walkUp,
-        [FACE_RIGHT] = self.animations.walkRight,  
+        [FACE_RIGHT] = self.animations.walkRight,
+        [FACE_LEFT] = self.animations.walkLeft,
+        [FACE_DOWN] = self.animations.walkDown,    
     }
 
     self.anim = self.directions[self.direction]
@@ -109,9 +111,19 @@ end
 
 function Player:findColliders(tileColor)
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 16, 16, 16, {tileColor})
+    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {tileColor})
     if #colliders > 0 then
-        return true
+        return colliders[1]
+    else
+        return false
+    end
+end
+
+function Player:findCollidersExceptFor(tileColor)
+    local px, py = self.collider:getPosition()
+    local colliders = self.world:queryRectangleArea(px - 8, py - 16, 16, 16,{'All', except = {tileColor}})
+    if #colliders > 0 then
+        return colliders[1]
     else
         return false
     end

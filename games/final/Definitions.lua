@@ -3,11 +3,13 @@ require 'Player'
 require 'Level1'
 require 'Level2'
 require 'Level3'
+require 'Level4'
 require 'Controllers'
 require 'Door'
 require 'Grass'
 require 'YellowTile'
 require 'GreyTile'
+require 'BlueTile'
 require 'Movement'
 
 WINDOW_WIDTH = 900

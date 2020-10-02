@@ -1,7 +1,6 @@
 Class = require 'class'
 push = require 'push'
 sti = require "sti"
-
 require 'Definitions'
 
 love.graphics.setDefaultFilter('nearest', 'nearest')
@@ -13,7 +12,8 @@ function love.load()
     controller = Controllers()
     --level = Level1(controller)
     --level = Level2(controller)
-    level = Level3(controller)
+    -- level = Level3(controller)
+    level = Level4(controller)
 
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
@@ -26,7 +26,11 @@ function love.load()
         ['s'] = WALK,
         ['d'] = FACE_RIGHT,
         ['f'] = F0,
-        ['c'] = CONDITIONAL_GREY
+        ['g'] = CONDITIONAL_GREY,
+        ['y'] = CONDITIONAL_YELLOW,
+        ['b'] = CONDITIONAL_BLUE,
+        ['r'] = CONDITIONAL_RED,
+        ['p'] = PAINT_GREY,
     }
 end
 

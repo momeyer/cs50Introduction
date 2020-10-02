@@ -11,6 +11,7 @@ CONDITIONAL_GREY = 'GreyTile'
 CONDITIONAL_BLUE = 'BlueTile'
 CONDITIONAL_RED = 'RedTile'
 CONDITIONAL_YELLOW = 'YellowTile'
+PAINT_GREY = 'paint grey'
 
 function Movement:init()
     self.movement = nil
@@ -18,4 +19,5 @@ function Movement:init()
 
     self.movements = {FACE_LEFT, FACE_RIGHT, WALK, F0}
     self.conditions =  {CONDITIONAL_GREY, CONDITIONAL_BLUE, CONDITIONAL_RED, CONDITIONAL_YELLOW}
+    self.paints = {PAINT_GREY}
 end
