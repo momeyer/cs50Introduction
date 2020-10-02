@@ -22,7 +22,7 @@ function Player:init(map, direction, world)
 
     self.playerObject = getMapObject(self.map, 'player')
     
-    self.world:addCollisionClass('Player', {ignores = {'YellowTile'}})
+    self.world:addCollisionClass('Player', {ignores = {'YellowTile', 'GreyTile'}})
     self.collider = self.world:newCircleCollider(self.playerObject.x + 8, self.playerObject.y + 8, 5)
     self.collider:setCollisionClass('Player')
 
@@ -105,7 +105,16 @@ function Player:move(movement)
         love.timer.sleep(0.1)
         self.isMoving = true
     end
+end
 
+function Player:findColliders(tileColor)
+    local px, py = self.collider:getPosition()
+    local colliders = self.world:queryRectangleArea(px - 8, py - 16, 16, 16, {tileColor})
+    if #colliders > 0 then
+        return true
+    else
+        return false
+    end
 end
 
 function Player:update(dt)
@@ -122,5 +131,5 @@ function Player:resetPosition()
 end
 
 function Player:draw()
-    self.anim:draw(self.texture, self.collider:getX() - 8, self.collider:getY() - 16)
+    self.anim:draw(self.texture, self.collider:getX() - 8, self.collider:getY() - 14)
 end

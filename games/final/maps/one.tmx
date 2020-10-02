@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="18" nextobjectid="32">
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="32" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="19" nextobjectid="90">
  <editorsettings>
-  <export target="one.lua" format="lua"/>
+  <export target="test.lua" format="lua"/>
  </editorsettings>
  <tileset firstgid="1" name="tilemap_packed" tilewidth="16" tileheight="16" tilecount="486" columns="27">
   <image source="../tileset/Tilemap/tilemap_packed.png" width="432" height="288"/>
@@ -45,12 +45,12 @@
  <objectgroup id="7" name="player" visible="0" opacity="0.9">
   <object id="2" name="player" x="96" y="192" width="16" height="15.9091"/>
  </objectgroup>
- <objectgroup id="17" name="grass" visible="0">
-  <object id="28" name="1" x="112" y="64" width="112" height="208"/>
-  <object id="30" name="2" x="-32" y="64" width="128" height="208"/>
-  <object id="31" name="3" x="96" y="208" width="16" height="64"/>
- </objectgroup>
  <objectgroup id="16" name="end" visible="0">
   <object id="24" name="end" x="96" y="64.0435" width="16" height="16"/>
+ </objectgroup>
+ <objectgroup id="17" name="grass" visible="0">
+  <object id="87" name="grass" x="-1" y="80" width="97" height="191"/>
+  <object id="88" name="grass" x="112" y="80" width="111.5" height="189"/>
+  <object id="89" name="grass" x="96" y="208" width="16" height="64"/>
  </objectgroup>
 </map>

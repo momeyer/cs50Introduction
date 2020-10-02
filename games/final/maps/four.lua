@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 13,
-  nextobjectid = 1,
+  nextlayerid = 17,
+  nextobjectid = 12,
   properties = {},
   tilesets = {
     {
@@ -252,6 +252,188 @@ return {
       encoding = "base64",
       compression = "zlib",
       data = "eJxjYBgFo2AUjIJRMApGwSigLwAACIAAAQ=="
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 13,
+      name = "end",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 1,
+          name = "end",
+          type = "",
+          shape = "rectangle",
+          x = 32,
+          y = 32,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 15,
+      name = "yellowTile",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 6,
+          name = "yellow1",
+          type = "",
+          shape = "rectangle",
+          x = 32,
+          y = 128,
+          width = 4.8125,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 16,
+      name = "blueTile",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 7,
+          name = "blue3",
+          type = "",
+          shape = "rectangle",
+          x = 32,
+          y = 48,
+          width = 7.73913,
+          height = 7.73913,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 8,
+          name = "blue1",
+          type = "",
+          shape = "rectangle",
+          x = 112,
+          y = 128,
+          width = 5.61364,
+          height = 4.98864,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 9,
+          name = "blue2",
+          type = "",
+          shape = "rectangle",
+          x = 32,
+          y = 214.813,
+          width = 9.1875,
+          height = 9.1875,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "grass",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 2,
+          name = "1",
+          type = "",
+          shape = "rectangle",
+          x = 0.5,
+          y = 3,
+          width = 26.5,
+          height = 266.5,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 3,
+          name = "2",
+          type = "",
+          shape = "rectangle",
+          x = 53,
+          y = -0.5,
+          width = 234.5,
+          height = 122.5,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 4,
+          name = "3",
+          type = "",
+          shape = "rectangle",
+          x = 52,
+          y = 149,
+          width = 235,
+          height = 122,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 5,
+          name = "",
+          type = "",
+          shape = "rectangle",
+          x = 0.5,
+          y = 227.5,
+          width = 254,
+          height = 43.5,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 10,
+          name = "4",
+          type = "",
+          shape = "rectangle",
+          x = 128,
+          y = 0,
+          width = 160,
+          height = 256,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
     }
   }
 }

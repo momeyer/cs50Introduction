@@ -14,7 +14,8 @@ function Level3:init(controler)
 
     self.door = Door(self.map, self.world, PARK)
     self.grass = Grass(self.map, self.world, 18)
-    self.yellowTile = YellowTile(self.map, self.world)
+    self.yellowTile = YellowTile(self.map, self.world, 2)
+    self.greyTile = GreyTile(self.map, self.world, 21)
 
     self.player = Player(self.map, FACE_UP, self.world)
     self.control = controler
@@ -56,7 +57,6 @@ function Level3:update(dt)
 
     if self.player.collider:enter('YellowTile') then
         self.yellow = true
-        print('-------------------------------yellow now')
     else
         self.yellow = false
     end
@@ -70,26 +70,15 @@ end
 
 function Level3:executeInstruction(dt)
     if self.start and #self.functions[F0] > 0 then
-        -- for i = 1, self.numberOfCommands do
-        --     print("index : ".. i)
-        --     print(self.functions[F0][i].movement)
-        --     print(self.functions[F0][i].condition)
-        --     print("-------------------------------------------------")
-        -- end
         local nextMovement = self.functions[F0][self.f0NextInstruction]
         if nextMovement.movement == F0 then
-            print(self.f0NextInstruction .. " == f0")
             self.f0NextInstruction = 1
         elseif nextMovement.condition == CONDITIONAL_GREY then
-            if not self.yellow then
-                print(self.f0NextInstruction .. " == conditional grey and its not yellow move " .. nextMovement.movement)
+            if self.player:findColliders(CONDITIONAL_GREY) then
                 self.player:move(nextMovement.movement, dt)
-            else
-                print('in at the yellow tile now')
             end
             self.f0NextInstruction = self.f0NextInstruction + 1
         else
-            print(self.f0NextInstruction .. " move " .. nextMovement.movement)
             self.player:move(nextMovement.movement, dt)
             self.f0NextInstruction = self.f0NextInstruction + 1
         end
@@ -155,5 +144,5 @@ function Level3:render()
     self:drawCommands()
     self.door:draw()
     self.player:draw()
-    -- self.world:draw()
+    self.world:draw()
 end

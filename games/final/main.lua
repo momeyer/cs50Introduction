@@ -38,7 +38,6 @@ function love.keypressed(key, scancode, isrepeat)
     end
 
     if key == "return" then
-        print("############# START #############")
         level:run()
     end
 
