@@ -92,8 +92,7 @@ end
 function Level2:render()
     self.map:draw()
     self:drawCommands()
-
-        self.door:draw()
+    self.door:draw()
     if self.endGame == false then
         self.player:draw()
     end

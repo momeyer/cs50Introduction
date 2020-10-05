@@ -17,7 +17,6 @@ function Movement:init()
     self.movement = nil
     self.condition = nil
 
-    self.movements = {FACE_LEFT, FACE_RIGHT, WALK, F0}
+    self.movements = {FACE_LEFT, FACE_RIGHT, WALK, F0, PAINT_GREY}
     self.conditions =  {CONDITIONAL_GREY, CONDITIONAL_BLUE, CONDITIONAL_RED, CONDITIONAL_YELLOW}
-    self.paints = {PAINT_GREY}
 end

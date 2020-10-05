@@ -11,6 +11,7 @@ require 'YellowTile'
 require 'GreyTile'
 require 'BlueTile'
 require 'Movement'
+require 'Collectables'
 
 WINDOW_WIDTH = 900
 WINDOW_HEIGHT = 500

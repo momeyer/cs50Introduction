@@ -15,6 +15,7 @@ function YellowTile:getCollisionObjects(numOfObjects)
         local object = getMapObject(self.map, 'yellow' .. tostring(i))
         collider = self.world:newRectangleCollider(object.x, object.y, object.width, object.height)
         collider:setCollisionClass('YellowTile')
+        collider.name = 'yellow'
         collider:setType('kinematic')
     end
 end

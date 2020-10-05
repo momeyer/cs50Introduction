@@ -106,6 +106,16 @@ function Player:move(movement)
         self:walk()
         love.timer.sleep(0.1)
         self.isMoving = true
+    else
+        colliders = self:findCollidersExceptFor(movement)
+        if colliders then
+            for i = 1, #colliders do
+                if colliders[i].name == 'fruit' then
+                    colliders[i].collected = true
+                end
+                colliders[i]:destroy()
+            end
+        end
     end
 end
 
@@ -121,9 +131,9 @@ end
 
 function Player:findCollidersExceptFor(tileColor)
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 16, 16, 16,{'All', except = {tileColor}})
+    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'All', except = {tileColor, 'Player', 'Door'}})
     if #colliders > 0 then
-        return colliders[1]
+        return colliders
     else
         return false
     end

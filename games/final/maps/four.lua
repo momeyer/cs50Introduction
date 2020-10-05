@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 19,
-  nextobjectid = 20,
+  nextlayerid = 20,
+  nextobjectid = 22,
   properties = {},
   tilesets = {
     {
@@ -289,7 +289,46 @@ return {
           x = 32,
           y = 32,
           width = 16,
-          height = 16,
+          height = 20.0114,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 19,
+      name = "fruit",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 20,
+          name = "fruit1",
+          type = "",
+          shape = "point",
+          x = 39.6818,
+          y = 219.83,
+          width = 0,
+          height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 21,
+          name = "fruit2",
+          type = "",
+          shape = "point",
+          x = 40.0341,
+          y = 64.0682,
+          width = 0,
+          height = 0,
           rotation = 0,
           visible = true,
           properties = {}
@@ -327,7 +366,7 @@ return {
       draworder = "topdown",
       id = 16,
       name = "blueTile",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -364,8 +403,8 @@ return {
           name = "blue3",
           type = "",
           shape = "point",
-          x = 39.8182,
-          y = 53.2727,
+          x = 40.125,
+          y = 53.3523,
           width = 0,
           height = 0,
           rotation = 0,

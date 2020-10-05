@@ -9,8 +9,8 @@ function Door:init(map, world, doorType)
     local mapObject = getMapObject(self.map, "end")
     self.x = mapObject.x
     self.y = mapObject.y
-    self.height = 16
-    self. width = 16
+    self.height = mapObject.height
+    self. width = mapObject.width
     self.states = {
         [HOUSE] = {
                     [1] = love.graphics.newImage('graphics/house1.png'),
@@ -26,7 +26,7 @@ function Door:init(map, world, doorType)
                 },
                 }
     self.world:addCollisionClass('Door')
-    self.collider = self.world:newRectangleCollider(self.x, self.y, self.width, self.height + 2)
+    self.collider = self.world:newRectangleCollider(self.x, self.y, self.width, self.height)
     self.collider:setCollisionClass('Door')
     self.collider:setType('static')
     
