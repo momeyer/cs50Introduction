@@ -10,15 +10,22 @@ require 'Grass'
 require 'YellowTile'
 require 'GreyTile'
 require 'BlueTile'
-require 'Movement'
+require 'Actions'
 require 'Collectables'
 
-WINDOW_WIDTH = 900
-WINDOW_HEIGHT = 500
+WINDOW_WIDTH = 1300
+WINDOW_HEIGHT = 600
 
-VIRTUAL_WIDTH = 490
+VIRTUAL_WIDTH = 590
 VIRTUAL_HEIGHT = 270
 
 HOUSE = 'house'
 SCHOOL = 'school'
 PARK = 'park'
+
+gameStages = {
+    endGame = false,
+    start = false,
+    fail = false,
+    level = 4
+}

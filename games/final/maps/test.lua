@@ -4,7 +4,7 @@ return {
   tiledversion = "2020.01.22",
   orientation = "orthogonal",
   renderorder = "right-down",
-  width = 32,
+  width = 39,
   height = 17,
   tilewidth = 16,
   tileheight = 16,
@@ -70,7 +70,7 @@ return {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 1,
       name = "grass",
@@ -83,13 +83,13 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJyTZWBgkB3Fo3gQYTkGCJAZtX/U/lH7R5z9o3jkYAC23jy5"
+      data = "eJyTZWBgkB3Fo3gUY8VyDBAgMwjcMuq2UbeNum3UbaN4FA8FDAAhS0o0"
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 2,
       name = "path",
@@ -100,13 +100,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjZ2RgYB/FA4aVBhgPVuA6av+o/aP2j1j7R8HIAADYkwmJ"
+      data = "eJxjZ2RgYB/FwworDWI8FIHrQDsADxh1G3lg1G3kgVG3kQcGs9tGwSigBQAAfnMLJg=="
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 3,
       name = "house",
@@ -117,13 +117,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBhcIAqIo5FwDJ3tFwTiiUhYkM726wCxMBLWobP9SUCcgoST6Gz/KBgFo2AUjIKRAQD8vQYe"
+      data = "eJztzrEJACAMRNGsEFwjE6mVuJAbm/JSWxzCPfj9N/tHzwY0uTuFZwdy7k4RWYOCu1OsbEOLuyMiIiKPLrwrBh4="
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 4,
       name = "house_details",
@@ -134,13 +134,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFgwkEMzIwZDNC2CA6mJG+9ncC7WuD2gmiO+ls/ygYBaNgFIyCkQEAD7ADow=="
+      data = "eJxjYBgFwx0EMzIwZDNC2CA6mHFg3YMMOoFuaYO6B0R3DiK3jYJRMApGwSgYBaOAdAAAZi8Dow=="
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 8,
       name = "door",
@@ -151,13 +151,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFowATyDAOtAtGwSgYBaNgFAxnAADCRwAe"
+      data = "eJxjYBgFo2DggQzjQLtgFIyCUTAKRsEoGAXUAADtXwAe"
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 5,
       name = "path_details",
@@ -168,7 +168,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBi8wI9xoF0wMoEqIyo9CkbBKBgFo2AUUBsAAF71AJw="
+      data = "eJxjYBiawI9xoF0wCqgFVBlR6VEwCkbBKBgFo2AUDF0AAFcwAJw="
     },
     {
       type = "objectgroup",
@@ -248,7 +248,7 @@ return {
         },
         {
           id = 88,
-          name = "2",
+          name = "grass",
           type = "",
           shape = "rectangle",
           x = 112,
@@ -261,7 +261,7 @@ return {
         },
         {
           id = 89,
-          name = "4",
+          name = "grass",
           type = "",
           shape = "rectangle",
           x = 96,

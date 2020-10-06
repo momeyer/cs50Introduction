@@ -22,7 +22,7 @@ function Player:init(map, direction, world)
 
     self.playerObject = getMapObject(self.map, 'player')
     
-    self.world:addCollisionClass('Player', {ignores = {'YellowTile', 'GreyTile', 'BlueTile'}})
+    self.world:addCollisionClass('Player')
     self.collider = self.world:newCircleCollider(self.playerObject.x + 8, self.playerObject.y + 8, 5)
     self.collider:setCollisionClass('Player')
 
@@ -82,6 +82,7 @@ end
 
 function Player:walk()
     local px, py = self.collider:getPosition()
+    self.isMoving = true
     if self.direction == FACE_RIGHT then
        self.collider:setPosition(px + self.speed, py)
     elseif self.direction == FACE_UP then
@@ -93,30 +94,26 @@ function Player:walk()
     end
 end
 
-function Player:move(movement)
-    if movement == FACE_LEFT then
+function Player:move(action)
+    if action == FACE_LEFT then
         self:turnLeft()
         self.isMoving = false
-    elseif movement == FACE_RIGHT then
+    elseif action == FACE_RIGHT then
         self:turnRight()
         self.isMoving = false
-    elseif movement == WALK then
+    elseif action == WALK then
         self:walk()
         love.timer.sleep(0.1)
         self:walk()
         love.timer.sleep(0.1)
-        self.isMoving = true
-    else
-        colliders = self:findCollidersExceptFor(movement)
-        if colliders then
-            for i = 1, #colliders do
-                if colliders[i].name == 'fruit' then
-                    colliders[i].collected = true
-                end
-                colliders[i]:destroy()
-            end
-        end
+        self:collectFruits()
+    elseif action == PAINT_GREY then
+        self:paintTiles(action)
+    elseif action == nil then
+        self.isMoving = false
     end
+    self:checkIfEndOfMap()
+    self:checkIfCollide()
 end
 
 function Player:findColliders(tileColor)
@@ -129,13 +126,45 @@ function Player:findColliders(tileColor)
     end
 end
 
-function Player:findCollidersExceptFor(tileColor)
+function Player:collectFruits()
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'All', except = {tileColor, 'Player', 'Door'}})
+    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Collectables'})
     if #colliders > 0 then
-        return colliders
+        print()
+        self.map.layers[colliders[1].name].visible = false
+        colliders[1].collected = true
+        colliders[1]:destroy()
+    end     
+end
+
+function Player:paintTiles(tileColor)
+    local px, py = self.collider:getPosition()
+    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'All', except = {tileColor, 'Player', 'Door', 'Collectables', 'Grass'}})
+    if #colliders > 0 then
+        for i = 1, #colliders do
+            self.map.layers[colliders[1].name].visible = false
+            colliders[1]:destroy()
+        end
     else
         return false
+    end
+end
+
+function Player:checkIfEndOfMap()
+    local px, py = self.collider:getPosition()
+    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Door'})
+    if #colliders > 0 then
+        self.isMoving = false
+        gameStages.endGame = true
+        gameStages.level = gameStages.level + 1
+    end
+end
+
+function Player:checkIfCollide()
+    local px, py = self.collider:getPosition()
+    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Grass'})
+    if #colliders > 0 then
+        self.isMoving = false
     end
 end
 
@@ -144,12 +173,6 @@ function Player:update(dt)
         self.anim:update(dt)
         self.world:update(dt)
     end
-end
-
-function Player:resetPosition()
-    self.isMoving = false
-    self.anim = self.directions[self.initialDirection]
-    self.direction = self.initialDirection
 end
 
 function Player:draw()

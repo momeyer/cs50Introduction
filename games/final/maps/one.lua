@@ -4,12 +4,12 @@ return {
   tiledversion = "2020.01.22",
   orientation = "orthogonal",
   renderorder = "right-down",
-  width = 32,
+  width = 39,
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 18,
-  nextobjectid = 32,
+  nextlayerid = 19,
+  nextobjectid = 90,
   properties = {},
   tilesets = {
     {
@@ -70,7 +70,7 @@ return {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 1,
       name = "grass",
@@ -83,13 +83,13 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJyTZWBgkB3Fo3gQYTkGCJAZtX/U/lH7R5z9o3jkYAC23jy5"
+      data = "eJyTZWBgkB3Fo3gUE4XlGCBAZhC4ZdRto24bdduo20bxKB6MGAAvy0o0"
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 2,
       name = "path",
@@ -100,13 +100,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjZ2RgYB/FA4aVBhgPVuA6av+o/aP2j1j7R8HIAADYkwmJ"
+      data = "eJxjZ2RgYB/FwworDWI8HIDrQDsADxh1G3lg1G3kgVG3kQcGs9tGwSigBgAAW/MLJg=="
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 3,
       name = "house",
@@ -117,13 +117,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBhcIAqIo5FwDJ3tFwTiiUhYkM726wCxMBLWobP9SUCcgoST6Gz/KBgFo2AUjIKRAQD8vQYe"
+      data = "eJztzrEJACAMRNGsEFwjE6mVuJAbm/JSWh3CPfj9N/tXzwY0uTuFZwdy7k4RWYOCu1OsbEOLuyMiIiKPLlpbBh4="
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 4,
       name = "house_details",
@@ -134,13 +134,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFgwkEMzIwZDNC2CA6mJG+9ncC7WuD2gmiO+ls/ygYBaNgFIyCkQEAD7ADow=="
+      data = "eJxjYBgFIw0EMzIwZDNC2CA6mHFg3YMMOoFuaYO6B0R3DiK3jYJRMApGwSgYBaOAMAAALA8Dow=="
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 8,
       name = "door",
@@ -151,13 +151,13 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFowATyDAOtAtGwSgYBaNgFAxnAADCRwAe"
+      data = "eJxjYBgFo2DwARnGgXbBKBgFo2AUjIJRMArIAQDrjwAe"
     },
     {
       type = "tilelayer",
       x = 0,
       y = 0,
-      width = 32,
+      width = 39,
       height = 17,
       id = 5,
       name = "path_details",
@@ -168,7 +168,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBi8wI9xoF0wMoEqIyo9CkbBKBgFo2AUUBsAAF71AJw="
+      data = "eJxjYBgewI9xoF0wCqgFVBlR6VEwCkbBKBgFo2AUDB0AAE2AAJw="
     },
     {
       type = "objectgroup",
@@ -186,62 +186,10 @@ return {
           name = "player",
           type = "",
           shape = "rectangle",
-          x = 96,
+          x = 160,
           y = 192,
           width = 16,
           height = 15.9091,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 17,
-      name = "grass",
-      visible = false,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      properties = {},
-      objects = {
-        {
-          id = 28,
-          name = "1",
-          type = "",
-          shape = "rectangle",
-          x = 112,
-          y = 64,
-          width = 112,
-          height = 208,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 30,
-          name = "2",
-          type = "",
-          shape = "rectangle",
-          x = -32,
-          y = 64,
-          width = 128,
-          height = 208,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 31,
-          name = "3",
-          type = "",
-          shape = "rectangle",
-          x = 96,
-          y = 208,
-          width = 16,
-          height = 64,
           rotation = 0,
           visible = true,
           properties = {}
@@ -264,10 +212,62 @@ return {
           name = "end",
           type = "",
           shape = "rectangle",
-          x = 96,
+          x = 160,
           y = 64.0435,
           width = 16,
           height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 17,
+      name = "grass",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 87,
+          name = "3",
+          type = "",
+          shape = "rectangle",
+          x = 59,
+          y = 80,
+          width = 97,
+          height = 191,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 88,
+          name = "2",
+          type = "",
+          shape = "rectangle",
+          x = 179.818,
+          y = 80.3636,
+          width = 111.5,
+          height = 189,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 89,
+          name = "1",
+          type = "",
+          shape = "rectangle",
+          x = 160,
+          y = 210.364,
+          width = 16,
+          height = 64,
           rotation = 0,
           visible = true,
           properties = {}

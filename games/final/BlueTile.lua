@@ -12,17 +12,11 @@ end
 
 function BlueTile:getCollisionObjects(numOfObjects)
     for i = 1, numOfObjects do
-        local object = getMapObject(self.map, 'blue' .. tostring(i))
+        local name = 'blue' .. tostring(i)
+        local object = getMapObject(self.map, name)
         collider = self.world:newRectangleCollider(object.x, object.y, 0.5, 0.5)
         collider:setCollisionClass('BlueTile')
-        collider.name = 'blue'
+        collider.name = name
         collider:setType('kinematic')
     end
-end
-
-function BlueTile:update(dt, endGame)
-
-end
-
-function BlueTile:draw()
 end

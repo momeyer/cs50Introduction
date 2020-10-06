@@ -1,4 +1,4 @@
-Movement = Class{}
+Actions = Class{}
 
 FACE_LEFT = 'left'
 FACE_DOWN = 'down'
@@ -13,10 +13,10 @@ CONDITIONAL_RED = 'RedTile'
 CONDITIONAL_YELLOW = 'YellowTile'
 PAINT_GREY = 'paint grey'
 
-function Movement:init()
-    self.movement = nil
+function Actions:init()
+    self.Action = nil
     self.condition = nil
 
-    self.movements = {FACE_LEFT, FACE_RIGHT, WALK, F0, PAINT_GREY}
+    self.actions = {FACE_LEFT, FACE_RIGHT, WALK, F0, PAINT_GREY}
     self.conditions =  {CONDITIONAL_GREY, CONDITIONAL_BLUE, CONDITIONAL_RED, CONDITIONAL_YELLOW}
 end
