@@ -1,32 +1,35 @@
 Buttons = Class{}
 
 function Buttons:init(level)
-    self.titleX = 130
-    self.titleY = 90
-    self.title = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
+
     self.level = level
 
     self.selecteds = {}
 
-    table.insert(self.selecteds, Button(450, 150, FACE_LEFT))
-    table.insert(self.selecteds, Button(470, 150, WALK))
-    table.insert(self.selecteds, Button(490, 150, FACE_RIGHT))
-    table.insert(self.selecteds, Button(510, 150, F0))
-    table.insert(self.selecteds, Button(450, 170, CONDITIONAL_RED))
-    table.insert(self.selecteds, Button(470, 170, CONDITIONAL_BLUE))
-    table.insert(self.selecteds, Button(490, 170, CONDITIONAL_YELLOW))
-    table.insert(self.selecteds, Button(510, 170, CONDITIONAL_GREY))
-    table.insert(self.selecteds, Button(450, 190, PAINT_RED))
-    table.insert(self.selecteds, Button(470, 190, PAINT_BLUE))
-    table.insert(self.selecteds, Button(490, 190, PAINT_YELLOW))
-    table.insert(self.selecteds, Button(510, 190, PAINT_GREY))
-    
+    table.insert(self.selecteds, Button(500, 110, FACE_LEFT))
+    table.insert(self.selecteds, Button(520, 110, WALK))
+    table.insert(self.selecteds, Button(540, 110, FACE_RIGHT))
+    table.insert(self.selecteds, Button(560, 110, F0))
+    table.insert(self.selecteds, Button(500, 130, CONDITIONAL_RED))
+    table.insert(self.selecteds, Button(520, 130, CONDITIONAL_BLUE))
+    table.insert(self.selecteds, Button(540, 130, CONDITIONAL_YELLOW))
+    table.insert(self.selecteds, Button(560, 130, CONDITIONAL_GREY))
+    table.insert(self.selecteds, Button(500, 150, PAINT_RED))
+    table.insert(self.selecteds, Button(520, 150, PAINT_BLUE))
+    table.insert(self.selecteds, Button(540, 150, PAINT_YELLOW))
+    table.insert(self.selecteds, Button(560, 150, PAINT_GREY))
+
+    table.insert(self.selecteds, Button(500, 220, RUN))
 end
 
 function Buttons:getMouseXY(x, y)
     for i = 1, #self.selecteds do
         if self.selecteds[i]:updateStateSelected(x, y, 3) then
-            self.level:insert(self.selecteds[i].action)
+            if self.selecteds[i].action == RUN then
+                gameStages.start = true
+            else
+                self.level:insert(self.selecteds[i].action)
+            end
         end
     end
 end
@@ -36,14 +39,9 @@ function Buttons:getMouseXYReleased(x, y)
         self.selecteds[i]:updateState(x, y, 1)
     end
 end
-
-function Buttons:update(dt)
-    -- for i = 1, #self.selecteds do
-    --     self.selecteds[i]:update(dt, self.mouseX, self.mouseY)
-    -- end
-end
-
-function Buttons:render(text, answerSize)
+function Buttons:render()
+    love.graphics.setFont(FONT_SMALL)
+    love.graphics.printf('Commands:', 500, 95, VIRTUAL_WIDTH, 'left')
     for i = 1, #self.selecteds do
         if self.selecteds[i].active then
             self.selecteds[i]:render()

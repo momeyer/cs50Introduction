@@ -18,11 +18,6 @@ function love.load()
         resizable = false,
         vsync = true
     })
-
-    if gameStages.fail then
-        level:init()
-    end
-
 end
 
 function love.mousepressed(x, y, button, istouch)
@@ -44,9 +39,17 @@ function love.keypressed(key, scancode, isrepeat)
         love.event.quit()
     end
 
-    if key == "return" then
-        print('start')
-        gameStages.start = true
+    if key == "space" and gameStages.fail then
+        level:init()
+    end
+    
+    if key == "return" and gameStages.endGame then
+        gameStages.start = false
+        gameStages.endGame = false
+        gameStages.fail = false
+        gameStages.level = gameStages.level + 1
+        level = levels[gameStages.level]
+        level:init()
     end
 end
 
@@ -54,16 +57,32 @@ function love.update(dt)
     level:update(dt)
 end
 
--- function Level1:displayFailMessage()
---     if self.fail then
---         failFont = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
---         love.graphics.setFont(failFont)
---         love.graphics.printf('try again ...', VIRTUAL_WIDTH / 3, VIRTUAL_HEIGHT / 2, VIRTUAL_WIDTH, 'center')
---     end
--- end
+function displayFailMessage()
+    failFont = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
+    love.graphics.setFont(failFont)
+    love.graphics.printf('Press SPACE to try again ...', 100, 170, VIRTUAL_WIDTH, 'center')
+end
+
+function displayNextLevelMessage()
+    failFont = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
+    love.graphics.setFont(failFont)
+    love.graphics.printf('Press ENTER', 100, 170, VIRTUAL_WIDTH, 'center')
+end
 
 function love.draw()
     push:apply('start')
     level:render()
+    
+    love.graphics.setFont(FONT_LARGE)
+    love.graphics.printf('Level ' .. gameStages.level, 15, VIRTUAL_HEIGHT - 30, VIRTUAL_WIDTH, 'left')
+
+    if gameStages.fail then
+        displayFailMessage()
+    end
+    
+    if gameStages.endGame then
+        displayNextLevelMessage()
+    end
+    
     push:apply('end')
 end

@@ -156,7 +156,6 @@ function Player:checkIfEndOfMap()
     if #colliders > 0 then
         self.isMoving = false
         gameStages.endGame = true
-        gameStages.level = gameStages.level + 1
     end
 end
 

@@ -20,6 +20,7 @@ function Button:init(x, y, action)
         [PAINT_RED] = love.graphics.newImage('graphics/paint_red.png'),
         [PAINT_YELLOW] = love.graphics.newImage('graphics/paint_yellow.png'),
         [PAINT_BLUE] = love.graphics.newImage('graphics/paint_blue.png'),
+        [RUN] = love.graphics.newImage('graphics/run.png'),
         }
 
     self.x = x

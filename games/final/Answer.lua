@@ -1,43 +1,9 @@
+Answer = Class{}
 
-require 'Player'
-require 'Level1'
-require 'Level2'
-require 'Level3'
-require 'Level4'
-require 'Controllers'
-require 'Door'
-require 'Grass'
-require 'YellowTile'
-require 'GreyTile'
-require 'BlueTile'
-require 'Actions'
-require 'Collectables'
-require 'Button'
-require 'Answer'
+function Answer:init(x)
+    self.answerBackgroud = love.graphics.newImage('graphics/button.png')
 
-WINDOW_WIDTH = 1300
-WINDOW_HEIGHT = 600
-
-VIRTUAL_WIDTH = 590
-VIRTUAL_HEIGHT = 270
-
-HOUSE = 'house'
-SCHOOL = 'school'
-PARK = 'park'
-
-RUN = 'run'
-
-FONT_LARGE = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
-FONT_SMALL = love.graphics.newFont('fonts/font.ttf', 8)
-
-gameStages = {
-    endGame = false,
-    start = false,
-    fail = false,
-    level = 4
-}
-
-images = {
+    self.actions = {
         [FACE_RIGHT] = love.graphics.newImage('graphics/turn_right.png'),
         [FACE_LEFT] = love.graphics.newImage('graphics/turn_left.png'),
         [WALK] = love.graphics.newImage('graphics/walk.png'),
@@ -52,3 +18,25 @@ images = {
         [PAINT_BLUE] = love.graphics.newImage('graphics/paint_blue.png'),
         [RUN] = love.graphics.newImage('graphics/run.png'),
         }
+
+    self.x = x
+    self.y = 150
+    self.imageX = self.x
+    self.imageY = self.y
+    self.action = nil
+    self.condition = nil 
+    self.buttonState = 1
+    self.active = true
+    self.isDown = false
+
+end
+
+function Answer:render()
+    love.graphics.draw(self.answerBackgroud, self.x, self.y)
+    if self.condition ~= nil then
+        love.graphics.draw(self.condition, self.imageX, self.imageY)
+    end
+    if self.action ~= nil then
+        love.graphics.draw(self.action, self.imageX, self.imageY)
+    end
+end
