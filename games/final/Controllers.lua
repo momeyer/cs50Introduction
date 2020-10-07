@@ -1,26 +1,54 @@
-Controllers = Class{}
+Buttons = Class{}
 
-function Controllers:init()
+function Buttons:init()
     self.titleX = 130
     self.titleY = 90
     self.title = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
-    self.buttons = {
-        ['button'] = love.graphics.newImage('graphics/grey.png'),
-        ['turn_right'] = love.graphics.newImage('graphics/turn_right.png'),
-        ['turn_left'] = love.graphics.newImage('graphics/turn_left.png'),
-        ['walk'] = love.graphics.newImage('graphics/walk.png'),
-        ['f0'] = love.graphics.newImage('graphics/F0.png'),
-        ['grey'] = love.graphics.newImage('graphics/greyTile.png'),
-        ['red'] = love.graphics.newImage('graphics/red.png'),
-        ['yellow'] = love.graphics.newImage('graphics/yellow.png'),
-        
-        ['reset'] = love.graphics.newImage('graphics/x.png'),
-        ['run'] = love.graphics.newImage('graphics/run.png'),
-        ['empty'] = love.graphics.newImage('graphics/empty.png')
-    }
+    
+    self.mouseX = 0
+    self.mouseY = 0
+
+    self.selecteds = {}
+
+    table.insert(self.selecteds, Button(450, 150, FACE_LEFT))
+    table.insert(self.selecteds, Button(470, 150, WALK))
+    table.insert(self.selecteds, Button(490, 150, FACE_RIGHT))
+    table.insert(self.selecteds, Button(510, 150, F0))
+    table.insert(self.selecteds, Button(450, 170, CONDITIONAL_RED))
+    table.insert(self.selecteds, Button(470, 170, CONDITIONAL_BLUE))
+    table.insert(self.selecteds, Button(490, 170, CONDITIONAL_YELLOW))
+    table.insert(self.selecteds, Button(510, 170, CONDITIONAL_GREY))
+    table.insert(self.selecteds, Button(450, 190, PAINT_RED))
+    table.insert(self.selecteds, Button(470, 190, PAINT_BLUE))
+    table.insert(self.selecteds, Button(490, 190, PAINT_YELLOW))
+    table.insert(self.selecteds, Button(510, 190, PAINT_GREY))
 end
 
-function Controllers:render(text, answerSize)
+function Buttons:getMouseXY(x, y)
+    for i = 1, #self.selecteds do
+        self.selecteds[i]:updateStateSelected(x, y, 3)
+    end
+end
+
+function Buttons:getMouseXYReleased(x, y)
+    for i = 1, #self.selecteds do
+        self.selecteds[i]:updateState(x, y, 1)
+    end
+end
+
+function Buttons:update(dt)
+    -- for i = 1, #self.selecteds do
+    --     self.selecteds[i]:update(dt, self.mouseX, self.mouseY)
+    -- end
+end
+
+function Buttons:render(text, answerSize)
+    for i = 1, #self.selecteds do
+        if self.selecteds[i].active then
+            self.selecteds[i]:render()
+        end
+    end
+    
     --self.title = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
     -- love.graphics.setFont(self.title)
     -- love.graphics.printf(text, self.titleX, self.titleY, VIRTUAL_WIDTH, 'center')

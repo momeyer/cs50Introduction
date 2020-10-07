@@ -4,7 +4,7 @@ local windfield = require("windfield")
     
 require "Util"
 
-function Level4:init(controler)
+function Level4:init()
 
     self.map = sti("maps/four.lua")
     
@@ -20,7 +20,7 @@ function Level4:init(controler)
     self.fruit = Collectables(self.map, self.world, 2)
     
     self.player = Player(self.map, FACE_LEFT, self.world, self)
-    self.control = controler
+    self.buttons = Buttons()
     self.text = 'Help Tony to get home'
     self.numberOfCommands = 15
     self.index = 1
@@ -39,7 +39,7 @@ function Level4:update(dt)
     self.player:update(dt)
     self:executeInstruction(dt)
     self.door:update(dt, gameStages.endGame)
-
+    self.buttons:update(dt, self.index, self.functions)
     if self.player.collider:enter('Solid') then
         self.player.speed = 0
         self.player.isMoving = false
@@ -77,7 +77,7 @@ function Level4:executeInstruction(dt)
 end
 
 function Level4:drawCommands()
-    self.control:render(self.text, self.numberOfCommands)
+    self.buttons:render(self.text, self.numberOfCommands)
 end
 
 function Level4:insert(command)

@@ -12,6 +12,9 @@ CONDITIONAL_BLUE = 'BlueTile'
 CONDITIONAL_RED = 'RedTile'
 CONDITIONAL_YELLOW = 'YellowTile'
 PAINT_GREY = 'paint grey'
+PAINT_RED = 'paint red'
+PAINT_BLUE = 'paint blue'
+PAINT_YELLOW = 'paint yellow'
 
 function Actions:init()
     self.Action = nil

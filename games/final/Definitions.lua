@@ -12,6 +12,7 @@ require 'GreyTile'
 require 'BlueTile'
 require 'Actions'
 require 'Collectables'
+require 'Button'
 
 WINDOW_WIDTH = 1300
 WINDOW_HEIGHT = 600

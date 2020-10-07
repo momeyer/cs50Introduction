@@ -9,8 +9,7 @@ function love.load()
     -- Load map file
     love.physics.setMeter(32)
 
-    controller = Controllers()
-    levels = {Level1(controller), Level2(controller), Level3(controller), Level4(controller)}
+    levels = {Level1(), Level2(), Level3(), Level4()}
 
     level = levels[gameStages.level]
 
@@ -31,6 +30,18 @@ function love.load()
         ['r'] = CONDITIONAL_RED,
         ['p'] = PAINT_GREY,
     }
+end
+
+function love.mousepressed(x, y, button, istouch)
+    if button == 1 then
+        level.buttons:getMouseXY(x, y)
+    end
+end
+
+function love.mousereleased(x, y, button)
+   if button == 1 then
+        level.buttons:getMouseXYReleased(x, y)
+    end
 end
 
 function love.keypressed(key, scancode, isrepeat)
