@@ -36,6 +36,7 @@ function Button:updateStateSelected(x, y, state)
     if x > self.x * 2.203 and x < (self.x + 17) * 2.203 and y > self.y * 2.203 and y < (self.y + 17) * 2.203 and state == 3 then
         self.buttonState = state
         self.isDown = true
+        return true
     else
         self.isDown = false
     end

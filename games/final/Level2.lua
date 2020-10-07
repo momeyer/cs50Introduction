@@ -14,7 +14,6 @@ function Level2:init(controler)
     self.grass = Grass(self.map, self.world, 18)
  
     self.player = Player(self.map, FACE_RIGHT, self.world)
-    self.control = controler
     self.text = 'Help Tony to get home'
     self.numberOfCommands = 15
     self.index = 1
@@ -25,6 +24,7 @@ function Level2:init(controler)
     
     self.f0NextInstruction = 1
 
+    self.buttons = Buttons(self)
     self:setUpInstructions()
 end
 
@@ -67,7 +67,7 @@ function Level2:executeInstruction(dt)
 end
 
 function Level2:drawCommands()
-    self.control:render(self.text, self.numberOfCommands)
+    self.buttons:render(self.text, self.numberOfCommands)
 end
 
 function Level2:insert(command)
@@ -88,5 +88,5 @@ function Level2:render()
     if not gameStages.endGame then
         self.player:draw()
     end
-    self.world:draw()
+    -- self.world:draw()
 end

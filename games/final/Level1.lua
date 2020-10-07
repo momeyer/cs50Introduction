@@ -4,7 +4,7 @@ local windfield = require("windfield")
     
 require "Util"
 
-function Level1:init(controler)
+function Level1:init()
 
     self.map = sti("maps/one.lua")
     
@@ -15,7 +15,6 @@ function Level1:init(controler)
 
     self.player = Player(self.map, FACE_UP, self.world)
 
-    self.control = controler
     self.text = 'Help Tony to get home'
     self.numberOfCommands = 6
     self.index = 1
@@ -25,6 +24,7 @@ function Level1:init(controler)
     }
     self.f0NextInstruction = 1
 
+    self.buttons = Buttons(self)
     self:setUpInstructions()
 end
 
@@ -70,7 +70,7 @@ function Level1:executeInstruction(dt)
 end
 
 function Level1:drawCommands()
-    self.control:render(self.text, self.numberOfCommands)
+    self.buttons:render(self.text, self.numberOfCommands)
 end
 
 function Level1:insert(command)

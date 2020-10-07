@@ -19,17 +19,10 @@ function love.load()
         vsync = true
     })
 
-    keys = {
-        ['a'] = FACE_LEFT,
-        ['s'] = WALK,
-        ['d'] = FACE_RIGHT,
-        ['f'] = F0,
-        ['g'] = CONDITIONAL_GREY,
-        ['y'] = CONDITIONAL_YELLOW,
-        ['b'] = CONDITIONAL_BLUE,
-        ['r'] = CONDITIONAL_RED,
-        ['p'] = PAINT_GREY,
-    }
+    if gameStages.fail then
+        level:init()
+    end
+
 end
 
 function love.mousepressed(x, y, button, istouch)
@@ -54,10 +47,6 @@ function love.keypressed(key, scancode, isrepeat)
     if key == "return" then
         print('start')
         gameStages.start = true
-    end
-
-    if keys[key] ~= nil then
-        level:insert(keys[key])
     end
 end
 

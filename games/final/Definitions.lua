@@ -28,5 +28,5 @@ gameStages = {
     endGame = false,
     start = false,
     fail = false,
-    level = 4
+    level = 3
 }

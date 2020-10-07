@@ -115,7 +115,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0jsOgkAUheE7a5CVqR1URktlB0CowE4bo0Z2hPJakMfkNjNm6jMY/+TLlPcUIzLvlrBSa/IWtz0cVEre4lZBrY7kLW4ZlCqHgrrG7goPdYM7d47VC0ZojEiHtyfteH7uG9Jxp4uxTQFta823IZBtIRdDwh7h6QRn9ghPC4jYIzxtYQeb////md7xORxA"
+      data = "eJzt0jEOgjAYxfH2DHAyccPJyIjcAAiTuOFigHAkQcQD+YZvaUnnVwz/5Jd0+95QpbbdASJxJG+xS+EqMvIWuxvU4k7eYpdDJQooqWvMWhhEBz13jtEEi7zfMJN2jBr3Nem41VObvh5te+m1jyfbfC6GE3uEowYe7BGOAgjZIxxdIIHz/v//ph/ihhuh"
     },
     {
       type = "tilelayer",
@@ -132,7 +132,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo4B+YBsjA8N0PHg748C57RwjdrwLiR5It+0igF9C1cpB3fkSp2n0B/KM+PmjYBSMglEwCoYPAAD7zRWP"
+      data = "eJxjYBgFo4B+YBsjA8N0PHg748C57RwjdrwLiR5It+0igF9C1V6A0i9xGTYAQJ4RP38UjIJRMApGwfABAIAhFkA="
     },
     {
       type = "tilelayer",
@@ -216,7 +216,7 @@ return {
       draworder = "topdown",
       id = 11,
       name = "end",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -227,10 +227,10 @@ return {
           name = "end",
           type = "",
           shape = "rectangle",
-          x = 179.938,
+          x = 177.938,
           y = 96,
-          width = 9.875,
-          height = 16,
+          width = 14.0568,
+          height = 15.8182,
           rotation = 0,
           visible = true,
           properties = {}

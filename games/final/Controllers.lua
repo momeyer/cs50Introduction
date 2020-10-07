@@ -1,12 +1,10 @@
 Buttons = Class{}
 
-function Buttons:init()
+function Buttons:init(level)
     self.titleX = 130
     self.titleY = 90
     self.title = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
-    
-    self.mouseX = 0
-    self.mouseY = 0
+    self.level = level
 
     self.selecteds = {}
 
@@ -22,11 +20,14 @@ function Buttons:init()
     table.insert(self.selecteds, Button(470, 190, PAINT_BLUE))
     table.insert(self.selecteds, Button(490, 190, PAINT_YELLOW))
     table.insert(self.selecteds, Button(510, 190, PAINT_GREY))
+    
 end
 
 function Buttons:getMouseXY(x, y)
     for i = 1, #self.selecteds do
-        self.selecteds[i]:updateStateSelected(x, y, 3)
+        if self.selecteds[i]:updateStateSelected(x, y, 3) then
+            self.level:insert(self.selecteds[i].action)
+        end
     end
 end
 

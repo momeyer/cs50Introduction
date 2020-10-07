@@ -20,7 +20,6 @@ function Level4:init()
     self.fruit = Collectables(self.map, self.world, 2)
     
     self.player = Player(self.map, FACE_LEFT, self.world, self)
-    self.buttons = Buttons()
     self.text = 'Help Tony to get home'
     self.numberOfCommands = 15
     self.index = 1
@@ -31,6 +30,7 @@ function Level4:init()
 
     self.f0NextInstruction = 1
 
+    self.buttons = Buttons(self)
     self:setUpInstructions()
 end
 
