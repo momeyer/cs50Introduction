@@ -164,6 +164,7 @@ function Player:checkIfCollide()
     local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Grass'})
     if #colliders > 0 then
         self.isMoving = false
+        gameStages.fail = true
     end
 end
 

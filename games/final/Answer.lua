@@ -1,8 +1,7 @@
 Answer = Class{}
 
-function Answer:init(x)
-    self.answerBackgroud = love.graphics.newImage('graphics/button.png')
-
+function Answer:init(numOfSpots, map)
+    self.answerBackgroud = love.graphics.newImage('graphics/background.png')
     self.actions = {
         [FACE_RIGHT] = love.graphics.newImage('graphics/turn_right.png'),
         [FACE_LEFT] = love.graphics.newImage('graphics/turn_left.png'),
@@ -19,24 +18,49 @@ function Answer:init(x)
         [RUN] = love.graphics.newImage('graphics/run.png'),
         }
 
-    self.x = x
-    self.y = 150
-    self.imageX = self.x
-    self.imageY = self.y
-    self.action = nil
-    self.condition = nil 
-    self.buttonState = 1
-    self.active = true
-    self.isDown = false
+    self.numOfSpots = numOfSpots
+    self.index = 2
+    self.answerSpots = {}
+    self.map = map
 
+    self:getAnswerSpots(numOfSpots)
 end
 
-function Answer:render()
-    love.graphics.draw(self.answerBackgroud, self.x, self.y)
-    if self.condition ~= nil then
-        love.graphics.draw(self.condition, self.imageX, self.imageY)
+function Answer:getAnswerSpots(numOfSpots)
+    local object = getMapObject(self.map, 'F0')
+    local answerSpot = {}
+    answerSpot.x = object.x
+    answerSpot.y = object.y
+    answerSpot.background = self.answerBackgroud
+    answerSpot.action = self.actions[F0]
+    table.insert(self.answerSpots, answerSpot)
+
+    for i = 1, numOfSpots do
+        local object = getMapObject(self.map, 'answer' .. tostring(i))
+        local answerSpot = {}
+        answerSpot.x = object.x
+        answerSpot.y = object.y
+        answerSpot.background = self.answerBackgroud
+        answerSpot.action = nil
+        answerSpot.condition = nil
+        table.insert(self.answerSpots, answerSpot)
     end
-    if self.action ~= nil then
-        love.graphics.draw(self.action, self.imageX, self.imageY)
+end
+
+function Answer:setImage(command, index)
+    if self.index <= #self.answerSpots then
+        self.answerSpots[self.index].action = self.actions[command]
+    end
+    self.index = self.index + 1
+end
+
+function Answer:draw()
+    for i = 1, #self.answerSpots do
+        if self.answerSpots[i].action ~= nil then  
+            love.graphics.draw(self.answerSpots[i].background, self.answerSpots[i].x, self.answerSpots[i].y)
+            if self.answerSpots[i].action ~= nil then
+                love.graphics.draw(self.answerSpots[i].action, self.answerSpots[i].x, self.answerSpots[i].y)
+            end
+        end
     end
 end

@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 20,
-  nextobjectid = 69,
+  nextlayerid = 25,
+  nextobjectid = 77,
   properties = {},
   tilesets = {
     {
@@ -39,34 +39,8 @@ return {
       tiles = {}
     },
     {
-      name = "new",
-      firstgid = 487,
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 0,
-      margin = 0,
-      columns = 4,
-      image = "../tileset/new.png",
-      imagewidth = 64,
-      imageheight = 32,
-      objectalignment = "unspecified",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      terrains = {},
-      tilecount = 8,
-      tiles = {}
-    },
-    {
       name = "test",
-      firstgid = 495,
+      firstgid = 487,
       tilewidth = 16,
       tileheight = 16,
       spacing = 0,
@@ -89,9 +63,54 @@ return {
       terrains = {},
       tilecount = 486,
       tiles = {}
+    },
+    {
+      name = "functionsTextTiles",
+      firstgid = 973,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 30,
+      image = "../graphics/functionsTextTiles.png",
+      imagewidth = 480,
+      imageheight = 480,
+      objectalignment = "unspecified",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 900,
+      tiles = {}
     }
   },
   layers = {
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 24,
+      name = "info",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {
+        ["numCommands"] = 5
+      },
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
+    },
     {
       type = "tilelayer",
       x = 0,
@@ -107,7 +126,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFgwnkQfFgAwPlJm4m/PLI4UVPNxLrLnrH51B2F4wedRd2d4HEkMWR3UMvtxEKLxhAz5e0dh8x7kJXg54XaOFGYsMLG6BlGFLiLhigRdlLDXfBADXDjJruggFquI0W7qIWAACP9BJv"
+      data = "eJxjYBgFgwnkQfFgAwPlJmYm/PLI4UVPNxLrLnrH51B2F4wedRd2d4HEkMWR3UMvtxEKLxhAz5e0dh8x7kJXg54XaOFGYsMLG6BlGFLiLhigRdlLDXfBADXDjJruggFquI0W7qIWAAB3lhHv"
     },
     {
       type = "tilelayer",
@@ -124,7 +143,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJw7zsDAcHwAMT4wkO4aCLdtgNIbB8BtW5kGPrxxuWswum3UXUPLXdaMg9NdIByGxW2DwV2gMEN322BwF7YwGyzuGozxOOou6rlrsLltMLoJhgEqz+7L"
+      data = "eJw7zsDAcHwAMT4wkO4aCLdtgNIbB8Bta5kGPrxxuWswum3UXUPLXdaMg9NdIByGxW2DwV2gMEN322BwF7YwGyzuGozxOOou6rlrsLltMLoJhgF8c+3r"
     },
     {
       type = "tilelayer",
@@ -158,7 +177,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo4A44ArExkwD7QpM4ArFgw2Muos0MFjdBQKD1V0gMNjdNuo+8sGo+ygDg9ltwx0AAPnDBZo="
+      data = "eJxjYBgFo4A44ArE2kwD7QpM4ArFgw2Muos0MFjdBQKD1V0gMNjdNuo+8sGo+ygDg9ltwx0AALhjBZI="
     },
     {
       type = "tilelayer",
@@ -175,7 +194,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRgAtcYh5oF+AGg9lto2AUjIKRCwA4MgGr"
+      data = "eJxjYBgFo2AUjIJRgAucYh5oF+AGg9lto2AUjIKRCwDpgwGb"
     },
     {
       type = "tilelayer",
@@ -192,7 +211,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztzrENgDAMRNFPWmZwCyuw/0wMAFdGoJAU4Cv40jWWixdA/Ht9+wQb9ZYCc6lvwfVvdKOu9TR8laur15bh6rFluZ5sma6WLdvFjcnFpVxdytWlXF3K1aVcXcrV5d4BnDsljQ=="
+      data = "eJztzrENgDAMRNFPmMOwBvvPwxBwZQQKSQG+gi9dY7l4AcS/17dPsFFvKTCX+hZc/0Y36lpPw1e5unptGa4eW5bryZbpatmyXdyYXFzK1aVcXcrVpVxdytWlXF3uHewwJK0="
     },
     {
       type = "tilelayer",
@@ -209,7 +228,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFtACSjOTps6CuM0gGG4D4MRJ/C9NAuQQVoLtrJtBduwaB29DdtRqIzwyQW5DBqLtIByeQ2IPJXSCA7LaHQLxxoByCBZwG4rVI/FH3kQaGmvuODZRDcABk9w02t41kAAC+iCDX"
+      data = "eJxjYBgFtACSjOTps6CuM0gGG4D4MRJ/DdNAuQQVoLtrItBdmwaB29DdtRqIzwyQW5DBqLtIByeQ2IPJXSCA7LaHQLxxoByCBZwG4rVI/FH3kQaGmvuODZRDcABk9w02t41kAAACiCC/"
     },
     {
       type = "tilelayer",
@@ -226,7 +245,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYMAEGsyYYs5YxHCJE6MfmxpsAF0dLncQC4jRT6wdxKoj1q8DASgNT1IBrrAYDGFEShofaDAYwgsXGA0v0sBgDK9RMPzAaB4YBfQEAJy2BT0="
+      data = "eJxjYMAECsyYYtZYxHCJE6MfmxpsAF0dLncQC4jRT6wdxKoj1q8DASgNT1IBrrAYDGFEShofaDAYwgsXGA0v0sBgDK9RMPzAaB4YBfQEAOf8BIU="
     },
     {
       type = "tilelayer",
@@ -249,12 +268,14 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 14,
-      name = "water",
+      name = "grass",
       visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {},
+      properties = {
+        ["numObjects"] = 17
+      },
       objects = {
         {
           id = 1,
@@ -548,12 +569,14 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 17,
-      name = "yellow",
+      name = "yellowTile",
       visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {},
+      properties = {
+        ["numObjects"] = 2
+      },
       objects = {
         {
           id = 24,
@@ -587,12 +610,14 @@ return {
       type = "objectgroup",
       draworder = "topdown",
       id = 18,
-      name = "grey",
+      name = "greyTile",
       visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {},
+      properties = {
+        ["numObjects"] = 21
+      },
       objects = {
         {
           id = 48,
@@ -863,6 +888,159 @@ return {
           y = 52.1818,
           width = 0,
           height = 0,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 20,
+      name = "text",
+      visible = true,
+      opacity = 1,
+      offsetx = -48,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AU0AOcZWZgOAfE54H4AvNAuwYVXERzjyYLA4MWy8C4ZSiCr8Dw+zbI4hQEXgPd9AaI3wLxOyB+D3UjJzBuuYD4OpB/YxC5GzkcB1uYCgPDS4QFkz0KUMFgizdkMBjj7dIgDStKAQBvFBQc"
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 22,
+      name = "text2",
+      visible = true,
+      opacity = 1,
+      offsetx = -48,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AU0AuEskDwKBgFIx28ZmZgeAPEb4H4HRC/Z4aIcwLzB9doHhkFo2BIAwBEggV+"
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 23,
+      name = "answer",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {
+        ["size"] = 7
+      },
+      objects = {
+        {
+          id = 69,
+          name = "answer2",
+          type = "",
+          shape = "rectangle",
+          x = 432.157,
+          y = 144.182,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 70,
+          name = "answer4",
+          type = "",
+          shape = "rectangle",
+          x = 432.006,
+          y = 166.057,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 71,
+          name = "answer3",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 144,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 72,
+          name = "answer5",
+          type = "",
+          shape = "rectangle",
+          x = 480,
+          y = 165.813,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 73,
+          name = "answer6",
+          type = "",
+          shape = "rectangle",
+          x = 368.087,
+          y = 192.123,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 74,
+          name = "answer7",
+          type = "",
+          shape = "rectangle",
+          x = 368,
+          y = 214.197,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 75,
+          name = "F0",
+          type = "",
+          shape = "rectangle",
+          x = 400.091,
+          y = 80,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 76,
+          name = "answer1",
+          type = "",
+          shape = "rectangle",
+          x = 368.091,
+          y = 111.955,
+          width = 17,
+          height = 17,
           rotation = 0,
           visible = true,
           properties = {}

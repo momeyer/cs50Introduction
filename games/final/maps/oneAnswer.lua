@@ -8,7 +8,7 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 24,
+  nextlayerid = 23,
   nextobjectid = 109,
   properties = {},
   tilesets = {
@@ -66,25 +66,6 @@ return {
     }
   },
   layers = {
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 39,
-      height = 17,
-      id = 23,
-      name = "info",
-      visible = true,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      properties = {
-        ["numCommands"] = 2
-      },
-      encoding = "base64",
-      compression = "zlib",
-      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
-    },
     {
       type = "tilelayer",
       x = 0,
@@ -192,6 +173,58 @@ return {
     {
       type = "objectgroup",
       draworder = "topdown",
+      id = 21,
+      name = "answerSpots",
+      visible = true,
+      opacity = 1,
+      offsetx = -48,
+      offsety = 0,
+      properties = {},
+      objects = {
+        {
+          id = 94,
+          name = "F0",
+          type = "",
+          shape = "rectangle",
+          x = 431.364,
+          y = 109.091,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 106,
+          name = "answer1",
+          type = "",
+          shape = "rectangle",
+          x = 399.364,
+          y = 140.636,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 107,
+          name = "answer2",
+          type = "",
+          shape = "rectangle",
+          x = 399.182,
+          y = 172.636,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
       id = 7,
       name = "player",
       visible = false,
@@ -250,9 +283,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {
-        ["numObjects"] = 3
-      },
+      properties = {},
       objects = {
         {
           id = 87,
@@ -310,62 +341,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjILBCZ4zMjC8AOKXQPyKcaBdgwpeo7nHmYmBwYVpYNwyFMFoeJEG3kDT22i4jYKhAABg6Ach"
-    },
-    {
-      type = "objectgroup",
-      draworder = "topdown",
-      id = 21,
-      name = "answer",
-      visible = false,
-      opacity = 1,
-      offsetx = 0,
-      offsety = 0,
-      properties = {
-        ["numCommands"] = 5,
-        ["size"] = 2
-      },
-      objects = {
-        {
-          id = 94,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 384,
-          y = 112,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 106,
-          name = "answer1",
-          type = "",
-          shape = "rectangle",
-          x = 352,
-          y = 144,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 107,
-          name = "answer2",
-          type = "",
-          shape = "rectangle",
-          x = 352.011,
-          y = 175.932,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        }
-      }
+      data = "eJxjYBgFo2AUjILBCZ4zMjC8AOKXQPyKcaBdgwpeI7nHhYmBwZlp4NyCC4Dc5TII3QUCgzG8BjN4A01vo+E2CoYCAAAO3wch"
     }
   }
 }

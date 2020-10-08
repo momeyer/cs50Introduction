@@ -12,7 +12,7 @@ function love.load()
     levels = {Level1(), Level2(), Level3(), Level4()}
 
     level = levels[gameStages.level]
-
+    -- level = Level2()
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
         resizable = false,
@@ -60,13 +60,13 @@ end
 function displayFailMessage()
     failFont = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
     love.graphics.setFont(failFont)
-    love.graphics.printf('Press SPACE to try again ...', 100, 170, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf('Press SPACE to try again ...', 15, VIRTUAL_HEIGHT - 50, VIRTUAL_WIDTH, 'left')
 end
 
 function displayNextLevelMessage()
     failFont = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
     love.graphics.setFont(failFont)
-    love.graphics.printf('Press ENTER', 100, 170, VIRTUAL_WIDTH, 'center')
+    love.graphics.printf('Press ENTER for next level', 15, VIRTUAL_HEIGHT - 50, VIRTUAL_WIDTH, 'left')
 end
 
 function love.draw()
@@ -76,12 +76,11 @@ function love.draw()
     love.graphics.setFont(FONT_LARGE)
     love.graphics.printf('Level ' .. gameStages.level, 15, VIRTUAL_HEIGHT - 30, VIRTUAL_WIDTH, 'left')
 
-    if gameStages.fail then
-        displayFailMessage()
-    end
-    
+   
     if gameStages.endGame then
         displayNextLevelMessage()
+    elseif gameStages.fail then
+        displayFailMessage()
     end
     
     push:apply('end')

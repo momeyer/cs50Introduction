@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 13,
-  nextobjectid = 48,
+  nextlayerid = 16,
+  nextobjectid = 54,
   properties = {},
   tilesets = {
     {
@@ -63,9 +63,54 @@ return {
       terrains = {},
       tilecount = 532,
       tiles = {}
+    },
+    {
+      name = "functionsTextTiles",
+      firstgid = 1019,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 30,
+      image = "../graphics/functionsTextTiles.png",
+      imagewidth = 480,
+      imageheight = 480,
+      objectalignment = "unspecified",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 900,
+      tiles = {}
     }
   },
   layers = {
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 15,
+      name = "info",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {
+        ["numCommands"] = 5
+      },
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
+    },
     {
       type = "tilelayer",
       x = 0,
@@ -246,7 +291,9 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {},
+      properties = {
+        ["numObjects"] = 18
+      },
       objects = {
         {
           id = 25,
@@ -333,8 +380,8 @@ return {
           shape = "rectangle",
           x = 114.909,
           y = 195.455,
-          width = 16,
-          height = 48,
+          width = 102,
+          height = 76,
           rotation = 0,
           visible = true,
           properties = {}
@@ -346,8 +393,8 @@ return {
           shape = "rectangle",
           x = 98.9091,
           y = 211.455,
-          width = 16,
-          height = 32,
+          width = 73,
+          height = 59.3333,
           rotation = 0,
           visible = true,
           properties = {}
@@ -357,9 +404,9 @@ return {
           name = "9",
           type = "",
           shape = "rectangle",
-          x = 82.9091,
-          y = 227.455,
-          width = 72.7273,
+          x = 82.5455,
+          y = 226.727,
+          width = 160.394,
           height = 44.3333,
           rotation = 0,
           visible = true,
@@ -476,6 +523,116 @@ return {
           shape = "rectangle",
           x = 44.3333,
           y = 205.333,
+          width = 16,
+          height = 16,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 13,
+      name = "text",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJztzssJgEAUQ9HAe9qHn0a0EW1EGxkb0db8BmQW7gUDzoUssjtAKpX6e6sBG7dzB2cOuH+tujvt+Qu6ShFbLKMnFzPFKrpqUVtDVytq6+jqRW0DXaOoLdA1idpmuhY1m5rnpS6o3wrQ"
+    },
+    {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 14,
+      name = "answer",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {
+        ["size"] = 5
+      },
+      objects = {
+        {
+          id = 48,
+          name = "answer1",
+          type = "",
+          shape = "rectangle",
+          x = 416,
+          y = 128,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 49,
+          name = "answer2",
+          type = "",
+          shape = "rectangle",
+          x = 416.061,
+          y = 150.03,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 50,
+          name = "answer3",
+          type = "",
+          shape = "rectangle",
+          x = 416.03,
+          y = 171.758,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 51,
+          name = "answer4",
+          type = "",
+          shape = "rectangle",
+          x = 416.061,
+          y = 193.697,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 52,
+          name = "answer5",
+          type = "",
+          shape = "rectangle",
+          x = 416.03,
+          y = 215.606,
+          width = 17,
+          height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 53,
+          name = "F0",
+          type = "",
+          shape = "rectangle",
+          x = 448.125,
+          y = 93.6591,
           width = 16,
           height = 16,
           rotation = 0,

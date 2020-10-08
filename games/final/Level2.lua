@@ -9,13 +9,12 @@ function Level2:init(controler)
     
     self.world = windfield.newWorld()
     self.world:setQueryDebugDrawing(true)
-    self.world:addCollisionClass('Solid')
     self.door = Door(self.map, self.world, SCHOOL)
-    self.grass = Grass(self.map, self.world, 18)
+    self.grass = Grass(self.map, self.world)
  
     self.player = Player(self.map, FACE_RIGHT, self.world)
     self.text = 'Help Tony to get home'
-    self.numberOfCommands = 5
+    self.numberOfCommands = self.map.layers.info.properties.numCommands
     self.index = 1
     
     self.functions = {
@@ -27,10 +26,11 @@ function Level2:init(controler)
     self.buttons = Buttons(self)
     self:setUpInstructions()
 
+    gameStages.start = false
+    gameStages.endGame = false
+    gameStages.fail = false
 
-    self.answerSpaces = {}
-
-    self:setUpAnswers()
+    self.answer = Answer(self.map.layers.answer.properties.size, self.map)
 end
 
 function Level2:update(dt)
@@ -38,12 +38,6 @@ function Level2:update(dt)
     self.player:update(dt)
     self:executeInstruction(dt)
     self.door:update(dt, gameStages.endGame)
-
-    if self.player.collider:enter('Grass') then
-        self.player.speed = 0
-        self.player.isMoving = false
-        gameStages.fail = true
-    end
 end
 
 
@@ -54,9 +48,9 @@ function Level2:setUpInstructions()
 end
 
 function Level2:executeInstruction(dt)
-    if gameStages.start then
+    if gameStages.start and not gameStages.fail then
         local nextMovement = self.functions[F0][self.f0NextInstruction]
-        if nextMovement.action == nil then
+        if nextMovement == nil then
             gameStages.fail = true
         elseif nextMovement.action == F0 then
             self.f0NextInstruction = 1
@@ -78,32 +72,16 @@ function Level2:drawCommands()
     self.buttons:render(self.text, self.numberOfCommands)
 end
 
-
-function Level2:setUpAnswers()
-    for i = 1, self.numberOfCommands do
-        table.insert(self.answerSpaces, Answer( (i * 20) + 300 ))
-    end
-end
-
-function Level2:drawAnswer()
-    love.graphics.setFont(FONT_LARGE)
-    love.graphics.printf(self.text, 90, 70, VIRTUAL_WIDTH, 'center')
-
-    for i = 1, #self.answerSpaces do
-        self.answerSpaces[i]:render()
-    end
-
-end
-
-
 function Level2:insert(command)
+
     if self.index <= level.numberOfCommands then
         if inTable(self.functions[F0][self.index].conditions, command) then
             self.functions[F0][self.index].condition = command
-            self.answerSpaces[self.index].condition = images[command]
+            self.answer:setImage(command)
+            pritn(self.functions[F0][self.index].condition)
         else
             self.functions[F0][self.index].action = command
-            self.answerSpaces[self.index].action = images[command]
+            self.answer:setImage(command)
             self.index = self.index + 1
         end
     end
@@ -113,7 +91,7 @@ function Level2:render()
     self.map:draw()
     self:drawCommands()
     self.door:draw()
-    self:drawAnswer()
+    self.answer:draw()
 
     if not gameStages.endGame then
         self.player:draw()

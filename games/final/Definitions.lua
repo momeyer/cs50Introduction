@@ -4,7 +4,7 @@ require 'Level1'
 require 'Level2'
 require 'Level3'
 require 'Level4'
-require 'Controllers'
+require 'Buttons'
 require 'Door'
 require 'Grass'
 require 'YellowTile'
@@ -34,7 +34,7 @@ gameStages = {
     endGame = false,
     start = false,
     fail = false,
-    level = 4
+    level = 1
 }
 
 images = {
