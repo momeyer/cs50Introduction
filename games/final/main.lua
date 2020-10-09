@@ -9,23 +9,25 @@ function love.load()
     -- Load map file
     love.physics.setMeter(32)
 
-    -- levels = {Level1(), Level2(), Level3(), Level4()}
+    levels = createLevels(4)
 
-    -- level = levels[level.gameStages.level]
-    levels = {
-        "maps/one.lua",
-        "maps/two.lua",
-        "maps/three.lua",
-        "maps/four.lua"
-    }
-
-    level = Level(levels[4])
+    levelIndex = 1
+    level = Level(levels[levelIndex])
 
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
         resizable = false,
         vsync = true
     })
+end
+
+function createLevels(numLevels)
+    levels = {}
+    for i = 1, numLevels do
+        table.insert(levels, 'maps/' .. tostring(i) .. '.lua')
+    end
+
+    return levels
 end
 
 function love.mousepressed(x, y, button, istouch)
@@ -48,13 +50,12 @@ function love.keypressed(key, scancode, isrepeat)
     end
 
     if key == "space" and level.game.stages.fail then
-        level:init(levels[1])
+        level:init(levels[levelIndex])
     end
     
     if key == "return" and level.game.stages.endGame then
-        -- level.gameStages.level = level.gameStages.level + 1
-        -- level = levels[level.gameStages.level]
-        -- level:init()
+        levelIndex = levelIndex + 1
+        level = Level(levels[levelIndex])
     end
 end
 

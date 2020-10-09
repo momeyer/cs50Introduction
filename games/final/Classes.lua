@@ -6,18 +6,18 @@ function Classes:init(map, world, game)
     self.player = Player(map, self.mapProperties.face, world, game.stages)
 
     if self.mapProperties.grass then
-        grass = Grass(map, world)
+        Tile(map, world, 'grass')
     end
     if self.mapProperties.yellowTile then
-        yellowTile = YellowTile(map, world)
+        Tile(map, world, 'yellowTile')
     end
     if self.mapProperties.blueTile then
-        blueTile = BlueTile(map, world)
+        Tile(map, world, 'blueTile')
     end
      if self.mapProperties.greyTile then
-        blueTile = GreyTile(map, world)
+        Tile(map, world, 'greyTile')
     end
     if self.mapProperties.fruit then
-        fruit = Collectables(map, world)
+        Tile(map, world, 'fruit')
     end
 end
