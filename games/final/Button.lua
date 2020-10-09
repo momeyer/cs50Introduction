@@ -3,7 +3,6 @@ Button = Class{}
 function Button:init(x, y, action)
     self.buttonStates = {
         [1] = love.graphics.newImage('graphics/button.png'),
-        [2] = love.graphics.newImage('graphics/buttonHover.png'),
         [3] = love.graphics.newImage('graphics/buttonPressed.png')
     }
 

@@ -25,12 +25,11 @@ function Level:init(mapToRender)
         [F0] = {}
     }
 
-    print(self.game.stages.fail)
+   
     self.f0NextInstruction = 1
     
     self.buttons = Buttons(self)
     self:setUpInstructions()
-    print(self.mapProperties.size)
     self.answer = Answer(self.mapProperties.size, self.map)
 end
 
@@ -50,7 +49,7 @@ end
 function Level:executeInstruction(dt)
     if self.game.stages.start and not self.game.stages.fail then
         local nextMovement = self.functions[F0][self.f0NextInstruction]
-        if nextMovement.action == nil then
+        if nextMovement == nil then
             self.game.stages.fail = true
         elseif nextMovement.action == F0 then
             self.f0NextInstruction = 1
@@ -92,8 +91,10 @@ function Level:render()
     self.classes.door:draw()
 
     self.answer:draw()
-    print(self.game.stages.endGame)
-    if self.game.stages.endGame == false and not (self.mapProperties.doorType ~= PARK) then
+    if self.game.stages.endGame == false then
+        self.classes.player:draw()
+    end
+    if self.mapProperties.doorType == PARK then
         self.classes.player:draw()
     end
     -- self.world:draw()

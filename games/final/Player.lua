@@ -11,7 +11,7 @@ function Player:init(map, direction, world, gameStages)
     self.width = 16
     self.height = 16
     self.xOffset = 8
-    self.yOffset = 8
+    self.yOffset = 14
     self.speed = 8
     self.direction = direction
     self.initialDirection = direction
@@ -120,7 +120,9 @@ end
 
 function Player:findColliders(tileColor)
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {tileColor})
+    px = px - 8
+    py = py - 10
+    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {tileColor})
     if #colliders > 0 then
         return colliders[1]
     else
@@ -130,9 +132,11 @@ end
 
 function Player:collectFruits()
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Collectables'})
+    px = px - 8
+    py = py - 10
+    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'fruit'})
     if #colliders > 0 then
-        print()
+        print(colliders[1].name)
         self.map.layers[colliders[1].name].visible = false
         colliders[1].collected = true
         colliders[1]:destroy()
@@ -141,7 +145,9 @@ end
 
 function Player:paintTiles(tileColor)
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'All', except = {tileColor, 'Player', 'Door', 'Collectables', 'Grass'}})
+    px = px - 8
+    py = py - 10
+    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'All', except = {tileColor, 'Player', 'Door', 'fruit', 'grass'}})
     if #colliders > 0 then
         for i = 1, #colliders do
             self.map.layers[colliders[1].name].visible = false
@@ -154,7 +160,9 @@ end
 
 function Player:checkIfEndOfMap()
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Door'})
+    px = px - 8
+    py = py - 10
+    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'Door'})
     if #colliders > 0 then
         self.isMoving = false
         self.gameStages.endGame = true
@@ -163,9 +171,10 @@ end
 
 function Player:checkIfCollide()
     local px, py = self.collider:getPosition()
-    local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Grass'})
+    px = px - 8
+    py = py - 10
+    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'grass'})
     if #colliders > 0 then
-        print('found grass')
         self.isMoving = false
         self.gameStages.fail = true
     end
@@ -179,5 +188,5 @@ function Player:update(dt)
 end
 
 function Player:draw()
-    self.anim:draw(self.texture, self.collider:getX() - 8, self.collider:getY() - 14)
+    self.anim:draw(self.texture, self.collider:getX() - self.xOffset, self.collider:getY() - self.yOffset)
 end

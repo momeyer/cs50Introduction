@@ -6,19 +6,27 @@ function Buttons:init(level)
 
     self.selecteds = {}
 
-    table.insert(self.selecteds, Button(507, 80, FACE_LEFT))
-    table.insert(self.selecteds, Button(527, 80, WALK))
-    table.insert(self.selecteds, Button(547, 80, FACE_RIGHT))
-    table.insert(self.selecteds, Button(567, 80, F0))
-    table.insert(self.selecteds, Button(507, 100, CONDITIONAL_RED))
-    table.insert(self.selecteds, Button(527, 100, CONDITIONAL_BLUE))
-    table.insert(self.selecteds, Button(547, 100, CONDITIONAL_YELLOW))
-    table.insert(self.selecteds, Button(567, 100, CONDITIONAL_GREY))
-    table.insert(self.selecteds, Button(507, 120, PAINT_RED))
-    table.insert(self.selecteds, Button(527, 120, PAINT_BLUE))
-    table.insert(self.selecteds, Button(547, 120, PAINT_YELLOW))
-    table.insert(self.selecteds, Button(567, 120, PAINT_GREY))
-    table.insert(self.selecteds, Button(507, 220, RUN))
+    local yOne = 80
+    local yTwo = 100
+    local yThree = 120
+    local xOne = 510
+    local xTwo = 530
+    local xThree = 550
+    local xFour = 570
+
+    table.insert(self.selecteds, Button(xOne, yOne, FACE_LEFT))
+    table.insert(self.selecteds, Button(xTwo, yOne, WALK))
+    table.insert(self.selecteds, Button(xThree, yOne, FACE_RIGHT))
+    table.insert(self.selecteds, Button(xFour, yOne, F0))
+    table.insert(self.selecteds, Button(xOne, yTwo, CONDITIONAL_RED))
+    table.insert(self.selecteds, Button(xTwo, yTwo, CONDITIONAL_BLUE))
+    table.insert(self.selecteds, Button(xThree, yTwo, CONDITIONAL_YELLOW))
+    table.insert(self.selecteds, Button(xFour, yTwo, CONDITIONAL_GREY))
+    table.insert(self.selecteds, Button(xOne, yThree, PAINT_RED))
+    table.insert(self.selecteds, Button(xTwo, yThree, PAINT_BLUE))
+    table.insert(self.selecteds, Button(xThree, yThree, PAINT_YELLOW))
+    table.insert(self.selecteds, Button(xFour, yThree, PAINT_GREY))
+    table.insert(self.selecteds, Button(xOne, 220, RUN))
 end
 
 function Buttons:getMouseXY(x, y)
@@ -41,7 +49,7 @@ end
 
 function Buttons:render()
     love.graphics.setFont(FONT_SMALL)
-    love.graphics.printf('Commands:', 507, 70, VIRTUAL_WIDTH, 'left')
+    love.graphics.printf('Commands:', 510, 70, VIRTUAL_WIDTH, 'left')
     for i = 1, #self.selecteds do
         if self.selecteds[i].active then
             self.selecteds[i]:render()

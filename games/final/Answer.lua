@@ -18,7 +18,6 @@ function Answer:init(numOfSpots, map)
         [RUN] = love.graphics.newImage('graphics/run.png'),
         }
 
-    self.numOfSpots = numOfSpots
     self.index = 2
     self.answerSpots = {}
     self.map = map
@@ -56,11 +55,9 @@ end
 
 function Answer:draw()
     for i = 1, #self.answerSpots do
-        if self.answerSpots[i].action ~= nil then  
+        if self.answerSpots[i].action ~= nil then
             love.graphics.draw(self.answerSpots[i].background, self.answerSpots[i].x, self.answerSpots[i].y)
-            if self.answerSpots[i].action ~= nil then
-                love.graphics.draw(self.answerSpots[i].action, self.answerSpots[i].x, self.answerSpots[i].y)
-            end
+            love.graphics.draw(self.answerSpots[i].action, self.answerSpots[i].x, self.answerSpots[i].y)
         end
     end
 end
