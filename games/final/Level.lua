@@ -1,69 +1,66 @@
-Level1 = Class{}
+Level = Class{}
 
 local windfield = require("windfield")
     
 require "Util"
 
-function Level1:init()
+function Level:init(mapToRender)
 
-    self.map = sti("maps/one.lua")
-    
+    self.map = sti(mapToRender)
     self.world = windfield.newWorld()
     self.world:setQueryDebugDrawing(true)
-    self.door = Door(self.map, self.world, HOUSE)
-    self.grass = Grass(self.map, self.world)
+    self.game = Game()
+    self.mapProperties = self.map.layers.info.properties
 
-    self.player = Player(self.map, FACE_UP, self.world)
+    self.classes = Classes(self.map, self.world, self.game)
+    -- try to break into another class
+   
+    -- up to here
 
-    self.text = 'Help Tony to get home'
-    self.numberOfCommands = self.map.layers.info.properties.numCommands
+    self.text = self.mapProperties.title
+    self.numberOfCommands = self.mapProperties.numCommands
     self.index = 1
-    
+
     self.functions = {
         [F0] = {}
     }
 
+    print(self.game.stages.fail)
     self.f0NextInstruction = 1
-
+    
     self.buttons = Buttons(self)
     self:setUpInstructions()
-
-    self.answer = Answer(self.map.layers.answer.properties.size, self.map)
-
-    gameStages.start = false
-    gameStages.endGame = false
-    gameStages.fail = false
-
+    print(self.mapProperties.size)
+    self.answer = Answer(self.mapProperties.size, self.map)
 end
 
-function Level1:update(dt)
+function Level:update(dt)
     self.map:update(dt)
-
-    self.player:update(dt)
+    self.classes.player:update(dt)
     self:executeInstruction(dt)
-    self.door:update(dt, gameStages.endGame)
+    self.classes.door:update(dt, self.game.stages.endGame)
 end
 
-function Level1:setUpInstructions()
+function Level:setUpInstructions()
     for i = 1, self.numberOfCommands do
         table.insert(self.functions[F0], Actions())
     end
 end
 
-function Level1:executeInstruction(dt)
-    if gameStages.start and not gameStages.fail then
+function Level:executeInstruction(dt)
+    if self.game.stages.start and not self.game.stages.fail then
         local nextMovement = self.functions[F0][self.f0NextInstruction]
-        if nextMovement == nil then
-            gameStages.fail = true
+        if nextMovement.action == nil then
+            self.game.stages.fail = true
         elseif nextMovement.action == F0 then
             self.f0NextInstruction = 1
         elseif nextMovement.condition ~= nil then
-            if self.player:findColliders(nextMovement.condition) then
-                self.player:move(nextMovement.action, dt)
+            if self.classes.player:findColliders(nextMovement.condition) then
+                self.classes.player:move(nextMovement.action, dt)
             end
             self.f0NextInstruction = self.f0NextInstruction + 1
         else
-            self.player:move(nextMovement.action, dt)
+            self.classes.player:move(nextMovement.action, dt)
             self.f0NextInstruction = self.f0NextInstruction + 1
         end
         nextMovement = self.functions[F0][self.f0NextInstruction]
@@ -71,14 +68,12 @@ function Level1:executeInstruction(dt)
     end
 end
 
-function Level1:drawCommands()
-    self.buttons:render()
+function Level:drawCommands()
+    self.buttons:render(self.text, self.numberOfCommands)
 end
 
-
-function Level1:insert(command)
+function Level:insert(command)
     if self.index <= level.numberOfCommands then
-
         if inTable(self.functions[F0][self.index].conditions, command) then
             self.functions[F0][self.index].condition = command
             self.answer:setImage(command)
@@ -90,14 +85,16 @@ function Level1:insert(command)
     end
 end
 
-function Level1:render()
+
+function Level:render()
     self.map:draw()
     self:drawCommands()
-    self.answer:draw()
-    self.door:draw()
+    self.classes.door:draw()
 
-    if not gameStages.endGame then
-        self.player:draw()
+    self.answer:draw()
+    print(self.game.stages.endGame)
+    if self.game.stages.endGame == false and not (self.mapProperties.doorType ~= PARK) then
+        self.classes.player:draw()
     end
     -- self.world:draw()
 end

@@ -30,22 +30,17 @@ function Button:init(x, y, action)
     self.action = action
     self.buttonState = 1
     self.active = true
-    self.isDown = false
 end
 
-function Button:updateStateSelected(x, y, state)
-    if x > self.x * 2.203 and x < (self.x + 17) * 2.203 and y > self.y * 2.203 and y < (self.y + 17) * 2.203 and state == 3 then
-        self.buttonState = state
-        self.isDown = true
+function Button:updateStateSelected(x, y)
+    if x > self.x * 2.203 and x < (self.x + 17) * 2.203 and y > self.y * 2.203 and y < (self.y + 17) * 2.203 then
+        self.buttonState = 3
         return true
-    else
-        self.isDown = false
     end
 end
 
-function Button:updateState(x, y, state)
-    self.isDown = false
-    self.buttonState = state
+function Button:updateState()
+    self.buttonState = 1
 end
 
 function Button:render()

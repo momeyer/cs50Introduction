@@ -35,7 +35,6 @@ function Level3:init(controler)
     gameStages.fail = false
     
     self.answer = Answer(self.map.layers.answer.properties.size, self.map)
-
 end
 
 function Level3:update(dt)
@@ -43,11 +42,6 @@ function Level3:update(dt)
     self.player:update(dt)
     self:executeInstruction(dt)
     self.door:update(dt, gameStages.endGame)
-
-    if gameStages.endGame then
-        self.functions[F0] = {}
-    end
-
 end
 
 function Level3:setUpInstructions()
@@ -57,7 +51,7 @@ function Level3:setUpInstructions()
 end
 
 function Level3:executeInstruction(dt)
-    if gameStages.start then
+    if gameStages.start and not gameStages.fail then
         local nextMovement = self.functions[F0][self.f0NextInstruction]
         if nextMovement == nil then
             gameStages.fail = true

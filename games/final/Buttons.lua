@@ -23,9 +23,9 @@ end
 
 function Buttons:getMouseXY(x, y)
     for i = 1, #self.selecteds do
-        if self.selecteds[i]:updateStateSelected(x, y, 3) then
+        if self.selecteds[i]:updateStateSelected(x, y) then
             if self.selecteds[i].action == RUN then
-                gameStages.start = true
+                self.level.game.stages.start = true
             else
                 self.level:insert(self.selecteds[i].action)
             end
@@ -33,11 +33,12 @@ function Buttons:getMouseXY(x, y)
     end
 end
 
-function Buttons:getMouseXYReleased(x, y)
+function Buttons:getMouseXYReleased()
     for i = 1, #self.selecteds do
-        self.selecteds[i]:updateState(x, y, 1)
+        self.selecteds[i]:updateState()
     end
 end
+
 function Buttons:render()
     love.graphics.setFont(FONT_SMALL)
     love.graphics.printf('Commands:', 507, 70, VIRTUAL_WIDTH, 'left')

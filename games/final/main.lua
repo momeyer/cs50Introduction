@@ -9,10 +9,18 @@ function love.load()
     -- Load map file
     love.physics.setMeter(32)
 
-    levels = {Level1(), Level2(), Level3(), Level4()}
+    -- levels = {Level1(), Level2(), Level3(), Level4()}
 
-    level = levels[gameStages.level]
-    -- level = Level2()
+    -- level = levels[level.gameStages.level]
+    levels = {
+        "maps/one.lua",
+        "maps/two.lua",
+        "maps/three.lua",
+        "maps/four.lua"
+    }
+
+    level = Level(levels[4])
+
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
         resizable = false,
@@ -39,17 +47,14 @@ function love.keypressed(key, scancode, isrepeat)
         love.event.quit()
     end
 
-    if key == "space" and gameStages.fail then
-        level:init()
+    if key == "space" and level.game.stages.fail then
+        level:init(levels[1])
     end
     
-    if key == "return" and gameStages.endGame then
-        gameStages.start = false
-        gameStages.endGame = false
-        gameStages.fail = false
-        gameStages.level = gameStages.level + 1
-        level = levels[gameStages.level]
-        level:init()
+    if key == "return" and level.game.stages.endGame then
+        -- level.gameStages.level = level.gameStages.level + 1
+        -- level = levels[level.gameStages.level]
+        -- level:init()
     end
 end
 
@@ -58,14 +63,12 @@ function love.update(dt)
 end
 
 function displayFailMessage()
-    failFont = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
-    love.graphics.setFont(failFont)
+    love.graphics.setFont(FONT_LARGE)
     love.graphics.printf('Press SPACE to try again ...', 15, VIRTUAL_HEIGHT - 50, VIRTUAL_WIDTH, 'left')
 end
 
 function displayNextLevelMessage()
-    failFont = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
-    love.graphics.setFont(failFont)
+    love.graphics.setFont(FONT_LARGE)
     love.graphics.printf('Press ENTER for next level', 15, VIRTUAL_HEIGHT - 50, VIRTUAL_WIDTH, 'left')
 end
 
@@ -74,12 +77,12 @@ function love.draw()
     level:render()
     
     love.graphics.setFont(FONT_LARGE)
-    love.graphics.printf('Level ' .. gameStages.level, 15, VIRTUAL_HEIGHT - 30, VIRTUAL_WIDTH, 'left')
+    love.graphics.printf(level.text, 300, 57, VIRTUAL_WIDTH, 'left')
+    -- love.graphics.printf('Level ' .. level.gameStages.level, 15, VIRTUAL_HEIGHT - 30, VIRTUAL_WIDTH, 'left')
 
-   
-    if gameStages.endGame then
+    if level.game.stages.endGame then
         displayNextLevelMessage()
-    elseif gameStages.fail then
+    elseif level.game.stages.fail then
         displayFailMessage()
     end
     

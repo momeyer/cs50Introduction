@@ -6,7 +6,7 @@ local anim8 = require 'anim8'
 
 local WALKING_SPEED = 110
 
-function Player:init(map, direction, world)
+function Player:init(map, direction, world, gameStages)
 
     self.width = 16
     self.height = 16
@@ -19,6 +19,8 @@ function Player:init(map, direction, world)
     self.isMoving = false
     self.world = world
     self.map = map
+
+    self.gameStages = gameStages
 
     self.playerObject = getMapObject(self.map, 'player')
     
@@ -155,7 +157,7 @@ function Player:checkIfEndOfMap()
     local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Door'})
     if #colliders > 0 then
         self.isMoving = false
-        gameStages.endGame = true
+        self.gameStages.endGame = true
     end
 end
 
@@ -163,8 +165,9 @@ function Player:checkIfCollide()
     local px, py = self.collider:getPosition()
     local colliders = self.world:queryRectangleArea(px - 8, py - 10, 16, 16, {'Grass'})
     if #colliders > 0 then
+        print('found grass')
         self.isMoving = false
-        gameStages.fail = true
+        self.gameStages.fail = true
     end
 end
 

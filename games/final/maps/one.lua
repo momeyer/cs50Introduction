@@ -79,7 +79,16 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
-        ["numCommands"] = 2
+        ["blueTile"] = false,
+        ["doorType"] = "house",
+        ["face"] = "up",
+        ["fruit"] = false,
+        ["grass"] = true,
+        ["greyTile"] = false,
+        ["numCommands"] = 2,
+        ["size"] = 2,
+        ["title"] = "Help Tonny on the way home",
+        ["yellowTile"] = false
       },
       encoding = "base64",
       compression = "zlib",
@@ -321,10 +330,7 @@ return {
       opacity = 1,
       offsetx = 0,
       offsety = 0,
-      properties = {
-        ["numCommands"] = 5,
-        ["size"] = 2
-      },
+      properties = {},
       objects = {
         {
           id = 94,

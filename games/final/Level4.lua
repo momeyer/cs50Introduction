@@ -42,10 +42,6 @@ function Level4:update(dt)
     self.player:update(dt)
     self:executeInstruction(dt)
     self.door:update(dt, gameStages.endGame)
-
-    if gameStages.endGame then
-        gameStages.start = false
-    end
 end
 
 function Level4:setUpInstructions()
@@ -55,7 +51,7 @@ function Level4:setUpInstructions()
 end
 
 function Level4:executeInstruction(dt)
-    if gameStages.start then
+    if gameStages.start and not gameStages.fail then
         local nextMovement = self.functions[F0][self.f0NextInstruction]
         if nextMovement.action == nil then
             gameStages.fail = true

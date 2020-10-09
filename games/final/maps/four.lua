@@ -105,7 +105,16 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
-        ["numCommands"] = 6
+        ["blueTile"] = false,
+        ["doorType"] = "park",
+        ["face"] = "left",
+        ["fruit"] = false,
+        ["grass"] = true,
+        ["greyTile"] = false,
+        ["numCommands"] = 6,
+        ["size"] = 9,
+        ["title"] = "Help Tonny on the way to the mall",
+        ["yellowTile"] = true
       },
       encoding = "base64",
       compression = "zlib",

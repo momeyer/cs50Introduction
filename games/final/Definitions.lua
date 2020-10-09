@@ -1,5 +1,8 @@
 
 require 'Player'
+require 'Level'
+require 'Classes'
+
 require 'Level1'
 require 'Level2'
 require 'Level3'
@@ -14,6 +17,7 @@ require 'Actions'
 require 'Collectables'
 require 'Button'
 require 'Answer'
+require 'Game'
 
 WINDOW_WIDTH = 1300
 WINDOW_HEIGHT = 600
@@ -29,13 +33,6 @@ RUN = 'run'
 
 FONT_LARGE = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
 FONT_SMALL = love.graphics.newFont('fonts/font.ttf', 8)
-
-gameStages = {
-    endGame = false,
-    start = false,
-    fail = false,
-    level = 1
-}
 
 images = {
         [FACE_RIGHT] = love.graphics.newImage('graphics/turn_right.png'),
