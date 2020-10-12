@@ -5,7 +5,7 @@ FACE_DOWN = 'down'
 FACE_RIGHT = 'right'
 FACE_UP = 'up'
 
-F0 = 'f0'
+F0 = 'F0'
 WALK = 'walk'
 CONDITIONAL_GREY = 'greyTile'
 CONDITIONAL_BLUE = 'blueTile'
@@ -17,7 +17,7 @@ PAINT_BLUE = 'paint blue'
 PAINT_YELLOW = 'paint yellow'
 
 function Actions:init()
-    self.Action = nil
+    self.action = nil
     self.condition = nil
 
     self.actions = {FACE_LEFT, FACE_RIGHT, WALK, F0, PAINT_GREY}

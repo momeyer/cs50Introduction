@@ -77,8 +77,6 @@ function love.draw()
     push:apply('start')
     level:render()
     
-    love.graphics.setFont(FONT_LARGE)
-    love.graphics.printf(level.text, 300, 57, VIRTUAL_WIDTH, 'left')
     -- love.graphics.printf('Level ' .. level.gameStages.level, 15, VIRTUAL_HEIGHT - 30, VIRTUAL_WIDTH, 'left')
 
     if level.game.stages.endGame then

@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 24,
-  nextobjectid = 109,
+  nextlayerid = 26,
+  nextobjectid = 111,
   properties = {},
   tilesets = {
     {
@@ -92,7 +92,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
+      data = "eJxjYBgFo2AUjIJRMApGwWADp5kG2gWjYBSQBwA7BADO"
     },
     {
       type = "tilelayer",
@@ -170,9 +170,26 @@ return {
       y = 0,
       width = 39,
       height = 17,
-      id = 8,
-      name = "door",
+      id = 24,
+      name = "door2",
       visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2DwAXPGgXbBKBgFo2AUjIJRMArIAQC9SgA5"
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 8,
+      name = "close_door",
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -367,6 +384,19 @@ return {
           y = 175.932,
           width = 17,
           height = 17,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        },
+        {
+          id = 110,
+          name = "answerText",
+          type = "",
+          shape = "point",
+          x = 320,
+          y = 63.75,
+          width = 0,
+          height = 0,
           rotation = 0,
           visible = true,
           properties = {}

@@ -1,10 +1,18 @@
 Button = Class{}
 
 function Button:init(x, y, action)
-    self.buttonStates = {
-        [1] = love.graphics.newImage('graphics/button.png'),
-        [3] = love.graphics.newImage('graphics/buttonPressed.png')
-    }
+
+    if action == RUN then 
+        self.buttonStates = {
+            [NORMAL] = love.graphics.newImage('graphics/buttonLarge.png'),
+            [PRESSED] = love.graphics.newImage('graphics/buttonLargePressed.png'),
+        }
+    else
+        self.buttonStates = {
+            [NORMAL] = love.graphics.newImage('graphics/button.png'),
+            [PRESSED] = love.graphics.newImage('graphics/buttonPressed.png'),
+        }
+    end
 
     self.actions = {
         [FACE_RIGHT] = love.graphics.newImage('graphics/turn_right.png'),
@@ -27,22 +35,37 @@ function Button:init(x, y, action)
     self.imageX = self.x
     self.imageY = self.y
     self.action = action
-    self.buttonState = 1
+    self.width = self.actions[self.action]:getWidth()
+    
+    self.buttonState = self.buttonStates[NORMAL]
     self.active = true
 end
 
+function Button:checkIfClicked(x, y)
+    local xOfset = WINDOW_WIDTH / VIRTUAL_WIDTH
+    local yOfset = WINDOW_HEIGHT / VIRTUAL_HEIGHT
+    local buttonWidth = self.x + self.width
+    local buttonHeight = self.y + self.width
+    
+    local buttonWidthArea = x > (self.x * xOfset) and x < (buttonWidth * xOfset)
+    local buttonHeightArea = y > (self.y * yOfset) and y < (buttonHeight * yOfset)
+    
+    return (buttonWidthArea and buttonHeightArea)
+end
+
 function Button:updateStateSelected(x, y)
-    if x > self.x * 2.203 and x < (self.x + 17) * 2.203 and y > self.y * 2.203 and y < (self.y + 17) * 2.203 then
-        self.buttonState = 3
+    local clicked = self:checkIfClicked(x, y)
+    if clicked then
+        self.buttonState = self.buttonStates[PRESSED]
         return true
     end
 end
 
 function Button:updateState()
-    self.buttonState = 1
+    self.buttonState = self.buttonStates[NORMAL]
 end
 
 function Button:render()
-    love.graphics.draw(self.buttonStates[self.buttonState], self.x, self.y)
+    love.graphics.draw(self.buttonState, self.x, self.y)
     love.graphics.draw(self.actions[self.action], self.imageX, self.imageY)
 end

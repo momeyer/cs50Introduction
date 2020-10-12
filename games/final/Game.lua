@@ -15,3 +15,13 @@ function Game:reset()
     self.stages.fail = false
 end
 
+function Game:fail(player)
+    self.stages.fail = true
+    player.isMoving = false
+end
+
+function Game:endGame(player)
+    self.stages.endGame = true
+    player.isMoving = false
+end
+

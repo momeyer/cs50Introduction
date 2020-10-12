@@ -2,11 +2,9 @@ Player = Class{}
 
 require "Util"
 
-local anim8 = require 'anim8'
-
 local WALKING_SPEED = 110
 
-function Player:init(map, direction, world, gameStages)
+function Player:init(map, direction, world, game)
 
     self.width = 16
     self.height = 16
@@ -15,71 +13,54 @@ function Player:init(map, direction, world, gameStages)
     self.speed = 8
     self.direction = direction
     self.initialDirection = direction
-    self.texture = love.graphics.newImage('graphics/playerAnim8.png')
     self.isMoving = false
     self.world = world
     self.map = map
-
-    self.gameStages = gameStages
-
-    self.playerObject = getMapObject(self.map, 'player')
+    self.colliderSize = 5
+    self.game = game
+    self.playerObject = getMapObject(self.map, PLAYER)
     
-    self.world:addCollisionClass('Player')
-    self.collider = self.world:newCircleCollider(self.playerObject.x + 8, self.playerObject.y + 8, 5)
-    self.collider:setCollisionClass('Player')
+    self.world:addCollisionClass(PLAYER)
+    self.collider = self.world:newCircleCollider(self.playerObject.x + self.xOffset, self.playerObject.y + self.xOffset, self.colliderSize)
+    self.collider:setCollisionClass(PLAYER)
 
-    self.grids = {}
-    self.grids.walk = anim8.newGrid(self.width, self.height, self.texture:getWidth(), self.texture:getHeight())
-
-    self.animations = {}
-    self.animations.walkDown = anim8.newAnimation(self.grids.walk('1-3', 2), 0.3)
-    self.animations.walkRight = anim8.newAnimation(self.grids.walk('1-3', 1), 0.3)
-    self.animations.walkLeft = anim8.newAnimation(self.grids.walk('1-3', 3), 0.3)
-    self.animations.walkUp = anim8.newAnimation(self.grids.walk('1-3', 4), 0.1)
+    self.animation = Animation(self.width, self.height)
 
     self.startX = self.collider:getX()
     self.startY = self.collider:getY()
 
     self.directions = {
-        [FACE_UP] = self.animations.walkUp,
-        [FACE_RIGHT] = self.animations.walkRight,
-        [FACE_LEFT] = self.animations.walkLeft,
-        [FACE_DOWN] = self.animations.walkDown,    
+        [FACE_UP] = self.animation.walkUp,
+        [FACE_RIGHT] = self.animation.walkRight,
+        [FACE_LEFT] = self.animation.walkLeft,
+        [FACE_DOWN] = self.animation.walkDown,    
     }
 
     self.anim = self.directions[self.direction]
 end
 
 function Player:turnLeft()
-    if self.direction == FACE_UP then
-        self.direction = FACE_LEFT
-        self.anim = self.animations.walkLeft
-    elseif self.direction == FACE_DOWN then
-        self.direction = FACE_RIGHT
-        self.anim = self.animations.walkRight
-    elseif self.direction == FACE_LEFT then
-        self.direction = FACE_DOWN
-        self.anim = self.animations.walkDown
-    elseif self.direction == FACE_RIGHT then
-        self.direction = FACE_UP
-        self.anim = self.animations.walkUp
-    end
+    local turnLeft = {
+        [FACE_UP] = {FACE_LEFT, self.animation.walkLeft},
+        [FACE_DOWN] = {FACE_RIGHT, self.animation.walkRight},
+        [FACE_LEFT] = { FACE_DOWN, self.animation.walkDown},
+        [FACE_RIGHT] = {FACE_UP, self.animation.walkUp}
+    }
+    local movement = turnLeft[self.direction]
+    self.direction = movement[1]
+    self.anim = movement[2]
 end
 
 function Player:turnRight()
-    if self.direction == FACE_UP then
-        self.direction = FACE_RIGHT
-        self.anim = self.animations.walkRight
-    elseif self.direction == FACE_DOWN then
-        self.direction = FACE_LEFT
-        self.anim = self.animations.walkLeft
-    elseif self.direction == FACE_LEFT then
-        self.direction = FACE_UP
-        self.anim = self.animations.walkUp
-    elseif self.direction == FACE_RIGHT then
-        self.direction = FACE_DOWN
-        self.anim = self.animations.walkDown
-    end
+    local turnRight = {
+        [FACE_UP] = {FACE_RIGHT, self.animation.walkRight},
+        [FACE_DOWN] = {FACE_LEFT, self.animation.walkLeft},
+        [FACE_LEFT] = { FACE_UP, self.animation.walkUp},
+        [FACE_RIGHT] = {FACE_DOWN, self.animation.walkDown}
+    }
+    local movement = turnRight[self.direction]
+    self.direction = movement[1]
+    self.anim = movement[2]
 end
 
 function Player:walk()
@@ -108,20 +89,21 @@ function Player:move(action)
         love.timer.sleep(0.1)
         self:walk()
         love.timer.sleep(0.1)
-        self:collectFruits()
     elseif action == PAINT_GREY then
         self:paintTiles(action)
     elseif action == nil then
         self.isMoving = false
     end
-    self:checkIfEndOfMap()
+
+    self:collectFruits()
+    -- self:checkIfEndOfMap()
     self:checkIfCollide()
 end
 
-function Player:findColliders(tileColor)
+function Player:getFirstCollider(tileColor)
     local px, py = self.collider:getPosition()
-    px = px - 8
-    py = py - 10
+    px = px - self.xOffset
+    py = py - self.xOffset
     local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {tileColor})
     if #colliders > 0 then
         return colliders[1]
@@ -130,53 +112,42 @@ function Player:findColliders(tileColor)
     end
 end
 
-function Player:collectFruits()
-    local px, py = self.collider:getPosition()
-    px = px - 8
-    py = py - 10
-    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'fruit'})
-    if #colliders > 0 then
-        print(colliders[1].name)
-        self.map.layers[colliders[1].name].visible = false
-        colliders[1].collected = true
-        colliders[1]:destroy()
-    end     
+function Player:findColliders(tileColor)
+    return self:getFirstCollider(tileColor)
 end
 
-function Player:paintTiles(tileColor)
-    local px, py = self.collider:getPosition()
-    px = px - 8
-    py = py - 10
-    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'All', except = {tileColor, 'Player', 'Door', 'fruit', 'grass'}})
-    if #colliders > 0 then
-        for i = 1, #colliders do
-            self.map.layers[colliders[1].name].visible = false
-            colliders[1]:destroy()
-        end
-    else
-        return false
+function Player:collectFruits()
+    local collider = self:getFirstCollider(FRUIT)
+    if collider then
+        self.map.layers[collider.name].visible = false
+        collider.collected = true
+        collider:destroy()
     end
 end
 
-function Player:checkIfEndOfMap()
+function Player:paintTiles(tileColor)
+    local exception = {tileColor, PLAYER, DOOR, FRUIT, GRASS}
+    self:findCollidersExceptFor(exception)
+end
+
+function Player:findCollidersExceptFor(exception)
     local px, py = self.collider:getPosition()
-    px = px - 8
-    py = py - 10
-    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'Door'})
+    px = px - self.xOffset
+    py = py - self.xOffset
+    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'All', except = exception})
     if #colliders > 0 then
-        self.isMoving = false
-        self.gameStages.endGame = true
+        self.map.layers[colliders[1].name].visible = false
+        colliders[1]:destroy()
     end
 end
 
 function Player:checkIfCollide()
-    local px, py = self.collider:getPosition()
-    px = px - 8
-    py = py - 10
-    local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'grass'})
-    if #colliders > 0 then
-        self.isMoving = false
-        self.gameStages.fail = true
+    local grass = self:findColliders(GRASS)
+    local door = self:findColliders(DOOR)
+    if door then
+        self.game:endGame(self)
+    elseif grass then
+        self.game:fail(self)
     end
 end
 
@@ -188,5 +159,5 @@ function Player:update(dt)
 end
 
 function Player:draw()
-    self.anim:draw(self.texture, self.collider:getX() - self.xOffset, self.collider:getY() - self.yOffset)
+    self.anim:draw(self.animation.texture, self.collider:getX() - self.xOffset, self.collider:getY() - self.yOffset)
 end

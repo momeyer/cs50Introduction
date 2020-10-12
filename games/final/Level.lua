@@ -5,17 +5,13 @@ local windfield = require("windfield")
 require "Util"
 
 function Level:init(mapToRender)
-
     self.map = sti(mapToRender)
     self.world = windfield.newWorld()
     self.world:setQueryDebugDrawing(true)
     self.game = Game()
     self.mapProperties = self.map.layers.info.properties
 
-    self.classes = Classes(self.map, self.world, self.game)
-    -- try to break into another class
-   
-    -- up to here
+    self.tiles = Tiles(self.map, self.world, self.game)
 
     self.text = self.mapProperties.title
     self.numberOfCommands = self.mapProperties.numCommands
@@ -25,7 +21,6 @@ function Level:init(mapToRender)
         [F0] = {}
     }
 
-   
     self.f0NextInstruction = 1
     
     self.buttons = Buttons(self)
@@ -35,9 +30,12 @@ end
 
 function Level:update(dt)
     self.map:update(dt)
-    self.classes.player:update(dt)
+    self.tiles.player:update(dt)
     self:executeInstruction(dt)
-    self.classes.door:update(dt, self.game.stages.endGame)
+    self.tiles.door:update(dt, self.game.stages.endGame)
+    if self.game.stages.endGame then
+        self.functions[F0] = {}
+    end
 end
 
 function Level:setUpInstructions()
@@ -54,12 +52,12 @@ function Level:executeInstruction(dt)
         elseif nextMovement.action == F0 then
             self.f0NextInstruction = 1
         elseif nextMovement.condition ~= nil then
-            if self.classes.player:findColliders(nextMovement.condition) then
-                self.classes.player:move(nextMovement.action, dt)
+            if self.tiles.player:findColliders(nextMovement.condition) then
+                self.tiles.player:move(nextMovement.action, dt)
             end
             self.f0NextInstruction = self.f0NextInstruction + 1
         else
-            self.classes.player:move(nextMovement.action, dt)
+            self.tiles.player:move(nextMovement.action, dt)
             self.f0NextInstruction = self.f0NextInstruction + 1
         end
         nextMovement = self.functions[F0][self.f0NextInstruction]
@@ -88,14 +86,13 @@ end
 function Level:render()
     self.map:draw()
     self:drawCommands()
-    self.classes.door:draw()
 
     self.answer:draw()
     if self.game.stages.endGame == false then
-        self.classes.player:draw()
+        self.tiles.player:draw()
     end
     if self.mapProperties.doorType == PARK then
-        self.classes.player:draw()
+        self.tiles.player:draw()
     end
     -- self.world:draw()
 end

@@ -8,7 +8,7 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 33,
+  nextlayerid = 34,
   nextobjectid = 42,
   properties = {},
   tilesets = {
@@ -220,7 +220,24 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzLZWRgyAViEMhFYo8C/CCAEYJlGBHsUTAKRsEoGAWjYBSMgpEOAFwRAxo="
+      data = "eJzLZWRgyAViEMhFYo8C/CCAEYItGBHsUTAKRsEoGAWjYBSMgpEOAFswAzY="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 33,
+      name = "close_door",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFlABZxoF2wSgYBaNgFIyCUTAKRsHgAQAbsgAf"
     },
     {
       type = "tilelayer",

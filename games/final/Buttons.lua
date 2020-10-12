@@ -6,14 +6,15 @@ function Buttons:init(level)
 
     self.selecteds = {}
 
-    local yOne = 80
-    local yTwo = 100
-    local yThree = 120
+    local yOne = 180
+    local yTwo = 200
+    local yThree = 220
     local xOne = 510
     local xTwo = 530
     local xThree = 550
     local xFour = 570
 
+    -- make it selectable and automate
     table.insert(self.selecteds, Button(xOne, yOne, FACE_LEFT))
     table.insert(self.selecteds, Button(xTwo, yOne, WALK))
     table.insert(self.selecteds, Button(xThree, yOne, FACE_RIGHT))
@@ -26,7 +27,8 @@ function Buttons:init(level)
     table.insert(self.selecteds, Button(xTwo, yThree, PAINT_BLUE))
     table.insert(self.selecteds, Button(xThree, yThree, PAINT_YELLOW))
     table.insert(self.selecteds, Button(xFour, yThree, PAINT_GREY))
-    table.insert(self.selecteds, Button(xOne, 220, RUN))
+    
+    table.insert(self.selecteds, Button(xOne, 245, RUN))
 end
 
 function Buttons:getMouseXY(x, y)
@@ -49,7 +51,7 @@ end
 
 function Buttons:render()
     love.graphics.setFont(FONT_SMALL)
-    love.graphics.printf('Commands:', 510, 70, VIRTUAL_WIDTH, 'left')
+    love.graphics.printf('Commands:', 510, 170, VIRTUAL_WIDTH, 'left')
     for i = 1, #self.selecteds do
         if self.selecteds[i].active then
             self.selecteds[i]:render()
