@@ -4,8 +4,8 @@ function Button:init(x, y, action)
 
     if action == RUN then 
         self.buttonStates = {
-            [NORMAL] = love.graphics.newImage('graphics/buttonLarge.png'),
-            [PRESSED] = love.graphics.newImage('graphics/buttonLargePressed.png'),
+        [NORMAL] = love.graphics.newImage('graphics/buttonLarge.png'),
+        [PRESSED] = love.graphics.newImage('graphics/buttonLargePressed.png'),
         }
     else
         self.buttonStates = {

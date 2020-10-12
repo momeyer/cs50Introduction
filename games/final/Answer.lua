@@ -55,11 +55,6 @@ end
 
 function Answer:draw()
 
-    text = getMapObject(self.map, 'answerText')
-  
-    -- love.graphics.setFont(FONT_LARGE)
-    -- love.graphics.printf(level.text, 300, 57, VIRTUAL_WIDTH, 'left')
-
     for i = 1, #self.answerSpots do
         if self.answerSpots[i].action ~= nil then
             love.graphics.draw(self.answerSpots[i].background, self.answerSpots[i].x, self.answerSpots[i].y)

@@ -34,5 +34,5 @@ DOOR = 'Door'
 NORMAL = 1
 PRESSED = 2
 
-FONT_LARGE = love.graphics.newFont('fonts/mini_pixel-7.ttf', 20)
+FONT_LARGE = love.graphics.newFont('fonts/mini_pixel-7.ttf', 21)
 FONT_SMALL = love.graphics.newFont('fonts/font.ttf', 8)

@@ -3,32 +3,46 @@ Buttons = Class{}
 function Buttons:init(level)
 
     self.level = level
-
+    self.firstRow = {FACE_LEFT, WALK, FACE_RIGHT, F0}
+    
     self.selecteds = {}
 
-    local yOne = 180
-    local yTwo = 200
-    local yThree = 220
-    local xOne = 510
-    local xTwo = 530
-    local xThree = 550
-    local xFour = 570
+    self:create()
+end
 
-    -- make it selectable and automate
-    table.insert(self.selecteds, Button(xOne, yOne, FACE_LEFT))
-    table.insert(self.selecteds, Button(xTwo, yOne, WALK))
-    table.insert(self.selecteds, Button(xThree, yOne, FACE_RIGHT))
-    table.insert(self.selecteds, Button(xFour, yOne, F0))
-    table.insert(self.selecteds, Button(xOne, yTwo, CONDITIONAL_RED))
-    table.insert(self.selecteds, Button(xTwo, yTwo, CONDITIONAL_BLUE))
-    table.insert(self.selecteds, Button(xThree, yTwo, CONDITIONAL_YELLOW))
-    table.insert(self.selecteds, Button(xFour, yTwo, CONDITIONAL_GREY))
-    table.insert(self.selecteds, Button(xOne, yThree, PAINT_RED))
-    table.insert(self.selecteds, Button(xTwo, yThree, PAINT_BLUE))
-    table.insert(self.selecteds, Button(xThree, yThree, PAINT_YELLOW))
-    table.insert(self.selecteds, Button(xFour, yThree, PAINT_GREY))
+function Buttons:insertRow(x, y, buttons)
+    for i = 1, #buttons do
+        table.insert(self.selecteds, Button(x, y, buttons[i]))
+        x = x + 20
+    end
+end
+
+function Buttons:getButtonsFromMap()
+    local secondRow = self.level.map.layers.buttonsSecondRow.properties
+    local thirdRow = self.level.map.layers.buttonsThirdRow.properties
     
-    table.insert(self.selecteds, Button(xOne, 245, RUN))
+    local second = {}
+    for i, v in pairs(secondRow) do
+        table.insert(second, v)
+    end
+    
+    local third = {}
+    for i, v in pairs(thirdRow) do
+        table.insert(third, v)
+    end
+
+    return second, third
+end
+
+function Buttons:create()
+    second, third = self:getButtonsFromMap()
+    local yCoordinates = {170, 190, 210, 245}
+    local buttonsList = {self.firstRow, second, third, {RUN}}
+    local x = 490
+    
+    for i = 1, #buttonsList do
+        self:insertRow(x, yCoordinates[i], buttonsList[i])
+    end
 end
 
 function Buttons:getMouseXY(x, y)
@@ -51,7 +65,7 @@ end
 
 function Buttons:render()
     love.graphics.setFont(FONT_SMALL)
-    love.graphics.printf('Commands:', 510, 170, VIRTUAL_WIDTH, 'left')
+    love.graphics.printf('Commands:', 490, 160, VIRTUAL_WIDTH, 'left')
     for i = 1, #self.selecteds do
         if self.selecteds[i].active then
             self.selecteds[i]:render()

@@ -8,7 +8,7 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 26,
+  nextlayerid = 28,
   nextobjectid = 111,
   properties = {},
   tilesets = {
@@ -336,7 +336,41 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjILBCZ4zMjC8AOKXQPyKcaBdgwpeo7nHmYmBwYVpYNwyFMFoeJEG3kDT22i4jYKhAABg6Ach"
+      data = "eJzt0jkOgDAQQ1EnOUe4DNz/GqwtO0hxQQMdBRoi+UuvtyYBlFJfN3pgopkWWmmjnQ46KQagCNZL/1XtgIZa6pz1mnv9Y0/JN6y8zZYc073eNVz/TXdTOZQA67oQNQ=="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 26,
+      name = "buttonsSecondRow",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 27,
+      name = "buttonsThirdRow",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
     },
     {
       type = "objectgroup",
@@ -384,19 +418,6 @@ return {
           y = 175.932,
           width = 17,
           height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 110,
-          name = "answerText",
-          type = "",
-          shape = "point",
-          x = 320,
-          y = 63.75,
-          width = 0,
-          height = 0,
           rotation = 0,
           visible = true,
           properties = {}

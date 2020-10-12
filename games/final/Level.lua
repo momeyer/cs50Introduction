@@ -66,6 +66,7 @@ function Level:executeInstruction(dt)
 end
 
 function Level:drawCommands()
+
     self.buttons:render(self.text, self.numberOfCommands)
 end
 

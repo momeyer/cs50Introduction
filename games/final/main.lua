@@ -23,7 +23,7 @@ end
 
 function createLevels(numLevels)
     levels = {}
-    for i = 1, numLevels do
+    for i = 4, numLevels do
         table.insert(levels, 'maps/' .. tostring(i) .. '.lua')
     end
 

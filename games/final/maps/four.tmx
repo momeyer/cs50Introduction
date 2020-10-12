@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="39" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="36" nextobjectid="42">
+ <editorsettings>
+  <export target="4.lua" format="lua"/>
+ </editorsettings>
+ <tileset firstgid="1" name="tilemap_packed" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../tileset/Tilemap/tilemap_packed.png" width="432" height="288"/>
+ </tileset>
+ <tileset firstgid="487" name="test" tilewidth="16" tileheight="16" tilecount="486" columns="27">
+  <image source="../tileset/Tilemap/test.png" width="432" height="288"/>
+ </tileset>
+ <tileset firstgid="973" name="functionsTextTiles" tilewidth="16" tileheight="16" tilecount="900" columns="30">
+  <image source="../graphics/functionsTextTiles.png" width="480" height="480"/>
+ </tileset>
+ <layer id="32" name="info" width="39" height="17">
+  <properties>
+   <property name="blueTile" type="bool" value="true"/>
+   <property name="doorType" value="school"/>
+   <property name="face" value="left"/>
+   <property name="fruit" type="bool" value="true"/>
+   <property name="grass" type="bool" value="true"/>
+   <property name="greyTile" type="bool" value="false"/>
+   <property name="numCommands" type="int" value="6"/>
+   <property name="size" type="int" value="9"/>
+   <property name="title" value="Help Tonny on the way to the mall"/>
+   <property name="yellowTile" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ==
+  </data>
+ </layer>
+ <layer id="17" name="background" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALqAG2mgXbB0ASj4TYKBhIsYCZNfBSMAkIAANueAaE=
+  </data>
+ </layer>
+ <layer id="1" name="grass" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJyTZWBgkCURy6HxZcgwA4aZmXBjcswbdRuqXcTaMeq2oeE2hkHsNhBtDsQWaJgYt1GCiXUbNjBYwo0RiJnQ8GBxG8gONizxio4tB8htxKSlgcqnQ8Vt2NIfCDPT0W2KUDuV0NyGy86BqusHs9uIwfRyGwCm7j8d
+  </data>
+ </layer>
+ <layer id="2" name="street" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAPnGNkYDgPxBcYyTSAhmDUbeSBUbeRB0bdRh7YDHTTFiDeOgjdNpjDbdRtmGAb0L7pBPCVAXIbKEx2APFZPHjnALqNkJ0DFaejbiMPbCaiTKWH2wDouzv8
+  </data>
+ </layer>
+ <layer id="4" name="path" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwxVoMw20C3AD14F2AB4w6jbywGB2GygvgNyHjgcDGCzuwAZwuW0wlC0wtw0Gt6CDwRyngzG8RsHwAwBTKwRj
+  </data>
+ </layer>
+ <layer id="9" name="house" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJztkEEKQFAURZ8tYBtYhcIqFFZhK9iFYkzMMWYr7uANPpkp76t/6nSnp9sSUQdb3p70oYK1YiObc2GBq+Imm2P4CBs6rCvccseDPhsIt6iEFlGEjdlEuEcl1bitRFuGzdlCuOcvDPhttKQrntnRdXDbhJ017TQY3nICRmMVmg==
+  </data>
+ </layer>
+ <layer id="10" name="house_details" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJzLZWRgyAViEMhFYo8C/CCAEYItGBHsUTAKRsEoGAWjYBSMgpEOAFswAzY=
+  </data>
+ </layer>
+ <layer id="33" name="close_door" width="39" height="17" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFlABZxoF2wSgYBaNgFIyCUTAKRsHgAQAbsgAf
+  </data>
+ </layer>
+ <layer id="5" name="trees" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAE7Iy4MQcjFg10BEqMuLHyALttFIxsMGsQpr/ZjAwNIPrAwDoDKzjAAHHbKBgFo2DgwWCuUxWA7qgDYiMorTBI3AUCyWhu8RhEbhtIAADchAgF
+  </data>
+ </layer>
+ <layer id="11" name="extra" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCANcDKSqIGG4B0Ug9wEw4MFsDJCMAsUDya3oQOWQey2UTAKRsEoGAW0BYqMEIwMXg2MU0bBMAEAZ+UDWA==
+  </data>
+ </layer>
+ <layer id="12" name="benches" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAdaKPxBcgwg1YA3W3o/IEEg8ltUUAcDcUxWNwykG6bAMQToXgSFrcMpNuyGVHxYHJbGyMqHkxuC2BExYPJbbpArAfF+ljcMtDhNheI5w1wuPEAsTMBrDFAbiPHnoFw22sgfoMFv8Wjh5YA2Z6XQPwKi5qXePTQEiDbw8kIoddB6VhGVHFsemgJkO1hYcSuBl18oOIUG6BXnAIAFc0fQQ==
+  </data>
+ </layer>
+ <layer id="3" name="cars" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYCAP3GWE0P2MZBpAB7BqELqtZxC6CQaWD2K3TRjEbls9iN02CigDRwdx3D4YBG7rArqhexC4AxtYCnTXskHqtlFAGAyXMn/iIPbHGhq6DQAOowsT
+  </data>
+ </layer>
+ <layer id="20" name="blueTile1" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIKRB84wD7QLRsEoGAWjYHgCAGM1ANA=
+  </data>
+ </layer>
+ <layer id="23" name="yellowTile1" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjILhDU4xD7QLRsEoGAWjYOQAAGh5AM4=
+  </data>
+ </layer>
+ <layer id="21" name="blueTile2" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwUgAZ5gH2gWjYCQAAPyAANA=
+  </data>
+ </layer>
+ <layer id="22" name="blueTile3" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwxWcYR5oF4yCUTAKRsEoGAWjYKQBAOozANA=
+  </data>
+ </layer>
+ <layer id="24" name="fruit1" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGwUgAN9kG2gWjYCQAACMMAOA=
+  </data>
+ </layer>
+ <layer id="25" name="fruit2" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwxXcZBtoF4yCUTAKRsEoGAWjYKQBAHI/AOA=
+  </data>
+ </layer>
+ <objectgroup id="13" name="end" visible="0">
+  <object id="1" name="end" x="32" y="32" width="16" height="20.0114"/>
+ </objectgroup>
+ <objectgroup id="19" name="fruit" visible="0">
+  <properties>
+   <property name="numObjects" type="int" value="2"/>
+  </properties>
+  <object id="38" name="fruit1" x="38.9375" y="219" width="0.53125" height="0.4375"/>
+  <object id="41" name="fruit2" x="39.25" y="59.625" width="0.152778" height="0.152778"/>
+ </objectgroup>
+ <objectgroup id="15" name="yellowTile" visible="0">
+  <properties>
+   <property name="numObjects" type="int" value="1"/>
+  </properties>
+  <object id="17" name="yellowTile1" x="34" y="133.545" width="2.90909" height="3.90909"/>
+ </objectgroup>
+ <objectgroup id="16" name="blueTile" visible="0" opacity="0.88">
+  <properties>
+   <property name="numObjects" type="int" value="3"/>
+  </properties>
+  <object id="34" name="blueTile2" x="38.7273" y="218" width="0.306061" height="0.443434"/>
+  <object id="35" name="blueTile3" x="39.8717" y="55.5343" width="0.525253" height="0.643434"/>
+  <object id="36" name="blueTile1" x="118.727" y="135.818" width="1.27273" height="2"/>
+ </objectgroup>
+ <objectgroup id="14" name="grass" visible="0">
+  <properties>
+   <property name="numObjects" type="int" value="5"/>
+  </properties>
+  <object id="2" name="grass1" x="1.19697" y="3.66667" width="26.5" height="266.5"/>
+  <object id="3" name="grass2" x="51.8182" y="0.181818" width="234.5" height="122.5"/>
+  <object id="4" name="grass3" x="51.4848" y="148" width="235" height="122"/>
+  <object id="5" name="grass5" x="0.5" y="227.5" width="254" height="43.5"/>
+  <object id="10" name="grass4" x="131.333" y="-0.666667" width="160" height="256"/>
+ </objectgroup>
+ <objectgroup id="18" name="player" visible="0">
+  <object id="19" name="player" x="112" y="128" width="16" height="16"/>
+ </objectgroup>
+ <layer id="26" name="text" width="39" height="17" offsetx="-31.5" offsety="-25.5">
+  <data encoding="base64" compression="zlib">
+   eJzt1TsOgkAURuGbACvQreAbdA8isg1fwCbx1eo2MFEx4ZSGRBvNMMU9yVdQzZ8pGBHNli6uyBW+J9JDHwMMMcIYEwQIMcXMM7NtzjkRFoixRII7ex94osLLNbPnvRU71thgix1SZMgN3c+nCkdkjwOOTrtbmp0ae0q+b5ZttDm9L03TfqnDe9lt4c381vlP/7QaICYYoA==
+  </data>
+ </layer>
+ <layer id="34" name="buttonsSecondRow" width="39" height="17">
+  <properties>
+   <property name="blue" value="blueTile"/>
+   <property name="yellow" value="yellowTile"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ==
+  </data>
+ </layer>
+ <layer id="35" name="buttonsThirdRow" width="39" height="17">
+  <properties>
+   <property name="paint" value="paint grey"/>
+  </properties>
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ==
+  </data>
+ </layer>
+ <layer id="29" name="text2" width="39" height="17" offsetx="-31.5" offsety="-25.5">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMFzAa2YGhjdA/BaI3wHxe2aIOCcLAwMXy8C6DRv4CnTfNyD+zozKHgxAGBheIkAsyoLKHgzAEOgOIyA2ZkFlj4JRMBgAAOI/DHY=
+  </data>
+ </layer>
+ <layer id="30" name="text3" width="39" height="17" offsetx="-32" offsety="-19.5">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApoD14zMzC8AeK3QPwOiN8zQ8Q5WRgYuFgG1m2jYBSMAuoBAK8PBMw=
+  </data>
+ </layer>
+ <layer id="31" name="text4" width="39" height="17" offsetx="-32" offsety="-14">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGNnjNzMDwBojfAvE7IH7PDBHnZGFg4GIZWLcNdqAPDB+D0TAaBUgAAJhxBTM=
+  </data>
+ </layer>
+ <objectgroup id="28" name="answer" visible="0">
+  <properties>
+   <property name="size" type="int" value="9"/>
+  </properties>
+  <object id="23" name="answer3" x="448" y="117.333" width="17" height="17"/>
+  <object id="24" name="F0" x="368" y="53.3333" width="17" height="17"/>
+  <object id="25" name="answer1" x="336.083" y="85.2083" width="17" height="17"/>
+  <object id="27" name="answer2" x="400" y="117.333" width="17" height="17"/>
+  <object id="28" name="answer4" x="399.875" y="139.208" width="17" height="17"/>
+  <object id="29" name="answer5" x="448.125" y="139.083" width="17" height="17"/>
+  <object id="30" name="answer6" x="400.167" y="161.292" width="17" height="17"/>
+  <object id="31" name="answer7" x="448" y="161.396" width="17" height="17"/>
+  <object id="32" name="answer8" x="335.561" y="178.682" width="17" height="17"/>
+  <object id="33" name="answer9" x="335.955" y="203.379" width="17" height="17"/>
+ </objectgroup>
+</map>
