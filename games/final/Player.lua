@@ -135,7 +135,9 @@ function Player:findCollidersExceptFor(exception)
     px = px - self.xOffset
     py = py - self.xOffset
     local colliders = self.world:queryRectangleArea(px, py, self.width, self.height, {'All', except = exception})
+    print(#colliders)
     if #colliders > 0 then
+        print('painting ' .. colliders[1].name)
         self.map.layers[colliders[1].name].visible = false
         colliders[1]:destroy()
     end

@@ -9,11 +9,9 @@ function love.load()
     -- Load map file
     love.physics.setMeter(32)
     love.window.setTitle('Can you help Tonny?')
-
-
-
-    levels = createLevels(4)
-    levelIndex = 1
+    numLevels = 5
+    levels = createLevels(numLevels)
+    levelIndex = 5
     level = Level(levels[levelIndex])
 
     menu = Menu(level.game.stages)
@@ -72,7 +70,11 @@ function love.keypressed(key, scancode, isrepeat)
     
     if key == "return" and level.game.stages.endGame then
         levelIndex = levelIndex + 1
-        level = Level(levels[levelIndex])
+        if levelIndex <= numLevels then
+            level = Level(levels[levelIndex])
+        else
+            level.game.stages.menu = true
+        end
     end
 
 

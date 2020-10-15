@@ -17,15 +17,17 @@ end
 function MenuButtons:getMouseXYReleased()
     if self.playButton:updateState() then
         self.gameStages.menu = false
+        self.gameStages.theEnd = true
     end
     if self.instructionButton:updateState() then
         self.gameStages.instruction = 2
     end
     if self.nextButton:updateState() then
-        print(self.gameStages.instruction)
         if self.gameStages.instruction < 3 then
             self.gameStages.instruction = self.gameStages.instruction + 1
         else
+            self.gameStages.theEnd = true
+            self.gameStages.instruction = nil 
             self.gameStages.menu = false
         end
     end

@@ -89,6 +89,32 @@ return {
       terrains = {},
       tilecount = 900,
       tiles = {}
+    },
+    {
+      name = "instructions1",
+      firstgid = 1873,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 0,
+      margin = 0,
+      columns = 32,
+      image = "../graphics/instructions1.png",
+      imagewidth = 512,
+      imageheight = 272,
+      objectalignment = "unspecified",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 544,
+      tiles = {}
     }
   },
   layers = {
@@ -152,7 +178,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJyTZWBgkCURy6HxZcgwA4aZmXBjcswbdRuqXcTaMeq2oeE2hkHsNhBtDsQWaJgYt1GCiXUbNjBYwo0RiJnQ8GBxG8gONizxio4tB8htxKSlgcqnQ8Vt2NIfCDPT0W2KUDuV0NyGy86BqusHs9uIwfRyGwCm7j8d"
+      data = "eJyTZWBgkCURy6HxZcgwA4aZmXBjcswbdRuqXcTaMeq2oeE2hkHsNhBtDsQWaFgOS35BdxslmFi3YQODJdwYgZgJDb9gHBxuA9nBhiVe0bHlALmNmLQ0UPl0qLgNW/oDYWY6uk0RaqcSmttw2TlQdf1gdhsxmF5uAwCCDz/s"
     },
     {
       type = "tilelayer",
@@ -203,7 +229,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztkEEKQFAURZ8tYBtYhcIqFFZhK9iFYkzMMWYr7uANPpkp76t/6nSnp9sSUQdb3p70oYK1YiObc2GBq+Imm2P4CBs6rCvccseDPhsIt6iEFlGEjdlEuEcl1bitRFuGzdlCuOcvDPhttKQrntnRdXDbhJ017TQY3nICRmMVmg=="
+      data = "eJzbysDAsAOIt0LpnQyDB8wB4rlIeN7AOgcFXALiy0j4ysA6ZxTQCQgBsTAUiwywW9CBLhDrQbH+ALsFGUxjZmDwANKeUOw1wO5BBhsHsdtAIBmIU6A4dYDdMlTAYUYGhiOMA+0K7OAe0F33oW47BqSPD1J3joJRQCkAAKWrFcQ="
     },
     {
       type = "tilelayer",
@@ -385,8 +411,8 @@ return {
       name = "fruit1",
       visible = true,
       opacity = 1,
-      offsetx = 0,
-      offsety = 0,
+      offsetx = 0.25,
+      offsety = -3.5,
       properties = {},
       encoding = "base64",
       compression = "zlib",
@@ -402,8 +428,8 @@ return {
       name = "fruit2",
       visible = true,
       opacity = 1,
-      offsetx = 0,
-      offsety = 0,
+      offsetx = 0.5,
+      offsety = -3.5,
       properties = {},
       encoding = "base64",
       compression = "zlib",
@@ -699,7 +725,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
+      data = "eJxjYBgFo4A4cJ59oF2AG7wfxG7j5xhoF+AG+oPYbf6D2G35g9ht/YPYbaNgFIyCkQEALhcDgA=="
     },
     {
       type = "tilelayer",
