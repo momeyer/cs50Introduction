@@ -1091,7 +1091,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRsIFloF0wCkbBKBgFwwMAAMbFALU="
+      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
     },
     {
       type = "tilelayer",

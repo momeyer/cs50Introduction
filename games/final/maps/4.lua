@@ -230,7 +230,7 @@ return {
       height = 17,
       id = 33,
       name = "close_door",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -407,7 +407,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFwxXcZBtoF4yCUTAKRsEoGAWjYKQBAHI/AOA="
+      data = "eJxjYBgFwxXcZBtoF4yCUTAKBgMwH8RlwajbRsEoGH4AADHCAZc="
     },
     {
       type = "objectgroup",
@@ -735,7 +735,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRMFzAa2YGhjdA/BaI3wHxe2aIOCcLAwMXy8C6DRv4CnTfNyD+zozKHgxAGBheIkAsyoLKHgzAEOgOIyA2ZkFlj4JRMBgAAOI/DHY="
+      data = "eJxjYBgFo2AUjIJRMFzAa2YGhjdA/BaI3wHxe2aIOCcLAwMXy8C6DRv4CnTfNyD+zozKHgxAGBheIkBszobKHgzAEOgWI6h7kNmDCQw294wC+gEAXyMNBw=="
     },
     {
       type = "tilelayer",

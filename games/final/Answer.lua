@@ -54,7 +54,6 @@ function Answer:setImage(command, index)
 end
 
 function Answer:draw()
-
     for i = 1, #self.answerSpots do
         if self.answerSpots[i].action ~= nil then
             love.graphics.draw(self.answerSpots[i].background, self.answerSpots[i].x, self.answerSpots[i].y)

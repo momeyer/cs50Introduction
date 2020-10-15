@@ -67,8 +67,6 @@ function Buttons:render()
     love.graphics.setFont(FONT_SMALL)
     love.graphics.printf('Commands:', 490, 160, VIRTUAL_WIDTH, 'left')
     for i = 1, #self.selecteds do
-        if self.selecteds[i].active then
-            self.selecteds[i]:render()
-        end
+        self.selecteds[i]:render()
     end
 end

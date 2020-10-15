@@ -2,6 +2,8 @@ Game = Class{}
 
 function Game:init()
     self.stages = {
+        menu = false,
+        instruction = nil,
         endGame = false,
         start = false,
         fail = false

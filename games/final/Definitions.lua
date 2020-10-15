@@ -7,10 +7,12 @@ require 'Buttons'
 require 'Door'
 require 'Game'
 require 'Level'
+require 'Menu'
+require 'MenuButton'
+require 'MenuButtons'
 require 'Player'
 require 'Tile'
 require 'Tiles'
-
 
 WINDOW_WIDTH = 1300
 WINDOW_HEIGHT = 600
@@ -33,6 +35,14 @@ DOOR = 'Door'
 
 NORMAL = 1
 PRESSED = 2
+
+PLAY = 'play'
+INSTRUCTION = 'instruction'
+NEXT = 'next'
+
+MENU_IMAGE = 'graphics/menuTiles.png'
+INSTRUCTION_1 = 'graphics/instructions1.png'
+INSTRUCTION_2 = 'graphics/instructions2.png'
 
 FONT_LARGE = love.graphics.newFont('fonts/mini_pixel-7.ttf', 21)
 FONT_SMALL = love.graphics.newFont('fonts/font.ttf', 8)

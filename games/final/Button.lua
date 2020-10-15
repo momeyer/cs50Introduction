@@ -2,18 +2,6 @@ Button = Class{}
 
 function Button:init(x, y, action)
 
-    if action == RUN then 
-        self.buttonStates = {
-        [NORMAL] = love.graphics.newImage('graphics/buttonLarge.png'),
-        [PRESSED] = love.graphics.newImage('graphics/buttonLargePressed.png'),
-        }
-    else
-        self.buttonStates = {
-            [NORMAL] = love.graphics.newImage('graphics/button.png'),
-            [PRESSED] = love.graphics.newImage('graphics/buttonPressed.png'),
-        }
-    end
-
     self.actions = {
         [FACE_RIGHT] = love.graphics.newImage('graphics/turn_right.png'),
         [FACE_LEFT] = love.graphics.newImage('graphics/turn_left.png'),
@@ -30,15 +18,31 @@ function Button:init(x, y, action)
         [RUN] = love.graphics.newImage('graphics/run.png'),
         }
 
+    self.buttonStates = self:setUpStates(action)
+
     self.x = x
     self.y = y
     self.imageX = self.x
     self.imageY = self.y
     self.action = action
-    self.width = self.actions[self.action]:getWidth()
+    self.width = self.buttonStates[1]:getWidth()
     
     self.buttonState = self.buttonStates[NORMAL]
-    self.active = true
+    -- self.active = true
+end
+
+function Button:setUpStates(action)
+    if action == RUN then 
+        return {
+            [NORMAL] = love.graphics.newImage('graphics/buttonLarge.png'),
+            [PRESSED] = love.graphics.newImage('graphics/buttonLargePressed.png'),
+        }
+    else
+        return {
+            [NORMAL] = love.graphics.newImage('graphics/button.png'),
+            [PRESSED] = love.graphics.newImage('graphics/buttonPressed.png'),
+        }
+    end
 end
 
 function Button:checkIfClicked(x, y)
@@ -67,5 +71,7 @@ end
 
 function Button:render()
     love.graphics.draw(self.buttonState, self.x, self.y)
-    love.graphics.draw(self.actions[self.action], self.imageX, self.imageY)
+    if self.action ~= 'play' then
+        love.graphics.draw(self.actions[self.action], self.imageX, self.imageY)
+    end
 end
