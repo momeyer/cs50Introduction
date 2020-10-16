@@ -11,7 +11,7 @@ function love.load()
     love.window.setTitle('Can you help Tonny?')
     numLevels = 5
     levels = createLevels(numLevels)
-    levelIndex = 5
+    levelIndex = 1
     level = Level(levels[levelIndex])
 
     menu = Menu(level.game.stages)
@@ -102,7 +102,8 @@ function love.draw()
     else
         push:apply('start')
         level:render()
-        if level.game.stages.endGame then
+
+        if level.game.stages.endGame and (level.game.stages.fruitsTotal == 0) then
             displayNextLevelMessage()
         elseif level.game.stages.fail then
             displayFailMessage()

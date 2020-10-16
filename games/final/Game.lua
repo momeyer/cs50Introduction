@@ -1,14 +1,14 @@
 Game = Class{}
 
-function Game:init()
+function Game:init(mapProperties)
     self.stages = {
         menu = false,
         instruction = nil,
         endGame = false,
         start = false,
-        fail = false
+        fail = false,
+        fruitsTotal = mapProperties.fruitsTotal
 }
-
 end
 
 function Game:reset()

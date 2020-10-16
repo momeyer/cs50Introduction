@@ -8,7 +8,7 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 36,
+  nextlayerid = 41,
   nextobjectid = 27,
   properties = {},
   tilesets = {
@@ -63,6 +63,32 @@ return {
       terrains = {},
       tilecount = 900,
       tiles = {}
+    },
+    {
+      name = "UIpackSheet_transparent",
+      firstgid = 1387,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 2,
+      margin = 0,
+      columns = 30,
+      image = "../tileset/Tilemap/UIpackSheet_transparent.png",
+      imagewidth = 538,
+      imageheight = 592,
+      objectalignment = "unspecified",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 990,
+      tiles = {}
     }
   },
   layers = {
@@ -83,6 +109,7 @@ return {
         ["doorType"] = "house",
         ["face"] = "right",
         ["fruit"] = true,
+        ["fruitsTotal"] = 4,
         ["grass"] = true,
         ["greyTile"] = false,
         ["numCommands"] = 4,
@@ -301,7 +328,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzbxcjAsItMTGtArrtA+AKN3TeY3XaWkTy8kw5xOgpGwSgYBaNgFIyC4Q0AFN0ugA=="
+      data = "eJzbxcjAcB6Id5FAwzCtwS5G8vEFGruPlPBCDzdau+0sI3l4Jx3idBSMglEwCkbBKBgFwxsAAJbEL3w="
     },
     {
       type = "tilelayer",
@@ -455,6 +482,91 @@ return {
       encoding = "base64",
       compression = "zlib",
       data = "eJxjYBgFo2AUjALKQBAjAg820MmIwKOAeDCY4zSPEYEHGxhNb6NgFDAwAAB5DQZ8"
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 36,
+      name = "buttons",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRQE0gwc7AIImGpdgH2lUQYAZ0hzkathgkbpsAdMdENDxpkLhtHdAd69HwhlG3EQSjbiMPnAG64ywaPjdI3EYMAAArgxvN"
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 37,
+      name = "apple1",
+      visible = true,
+      opacity = 1,
+      offsetx = 1.21212,
+      offsety = -3.75758,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMJLAZ5aBdsEoGAWjYDgDAEcQAPg="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 38,
+      name = "apple2",
+      visible = true,
+      opacity = 1,
+      offsetx = 1.21212,
+      offsety = -3.75758,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMNLAZ5aBdsEoGAWjYLgCAEM0APg="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 39,
+      name = "apple3",
+      visible = true,
+      opacity = 1,
+      offsetx = 1.21212,
+      offsety = -3.75758,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMBLBZ5aBdsEoGAWjYDgCAD9YAPg="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 40,
+      name = "apple4",
+      visible = true,
+      opacity = 1,
+      offsetx = 1.21212,
+      offsety = -3.75758,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMFLBZ5aBdsEoGAWjYLgBADt8APg="
     },
     {
       type = "objectgroup",

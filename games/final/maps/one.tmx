@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="39" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="28" nextobjectid="111">
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="39" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="33" nextobjectid="113">
  <editorsettings>
   <export target="1.lua" format="lua"/>
  </editorsettings>
@@ -9,12 +9,16 @@
  <tileset firstgid="487" name="functionsTextTiles" tilewidth="16" tileheight="16" tilecount="900" columns="30">
   <image source="../graphics/functionsTextTiles.png" width="480" height="480"/>
  </tileset>
+ <tileset firstgid="1387" name="UIpackSheet_transparent" tilewidth="16" tileheight="16" spacing="2" tilecount="990" columns="30">
+  <image source="../tileset/Tilemap/UIpackSheet_transparent.png" width="538" height="592"/>
+ </tileset>
  <layer id="23" name="info" width="39" height="17">
   <properties>
    <property name="blueTile" type="bool" value="false"/>
    <property name="doorType" value="house"/>
    <property name="face" value="up"/>
-   <property name="fruit" type="bool" value="false"/>
+   <property name="fruit" type="bool" value="true"/>
+   <property name="fruitsTotal" type="int" value="1"/>
    <property name="grass" type="bool" value="true"/>
    <property name="greyTile" type="bool" value="false"/>
    <property name="numCommands" type="int" value="2"/>
@@ -78,6 +82,14 @@
   <object id="88" name="grass2" x="179.818" y="80.3636" width="111.5" height="189"/>
   <object id="89" name="grass1" x="160" y="210.364" width="16" height="64"/>
  </objectgroup>
+ <objectgroup id="31" name="fruit" visible="0">
+  <object id="112" name="fruit1" x="168" y="102.25" width="0.25" height="0.5"/>
+ </objectgroup>
+ <layer id="32" name="fruit1" width="39" height="17" offsetx="0.75" offsety="-4.25">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDBfwmWWgXTAKRsEoGAWjYKQDAFvGAPg=
+  </data>
+ </layer>
  <layer id="22" name="answerText" width="39" height="17" offsetx="-48" offsety="0">
   <data encoding="base64" compression="zlib">
    eJzt0jkOgDAQQ1EnOUe4DNz/GqwtO0hxQQMdBRoi+UuvtyYBlFJfN3pgopkWWmmjnQ46KQagCNZL/1XtgIZa6pz1mnv9Y0/JN6y8zZYc073eNVz/TXdTOZQA67oQNQ==
@@ -98,4 +110,19 @@
   <object id="106" name="answer1" x="352" y="144" width="17" height="17"/>
   <object id="107" name="answer2" x="352.011" y="175.932" width="17" height="17"/>
  </objectgroup>
+ <layer id="28" name="buttons" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJztzjEOABAQAMHr7vt4CB6CN7lEdw3RUOwk268IAADvBRWJrqSvr5ZsH8VVedvi7U6zj+4an7ydmBdRGZk=
+  </data>
+ </layer>
+ <layer id="29" name="fruitBanner" width="39" height="17">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQE0gwc7AIImGpdgH2lUQYAZ0hzkathgkbhsFo2AUDA8AAB6OAjU=
+  </data>
+ </layer>
+ <layer id="30" name="apple1" width="39" height="17" offsetx="8.27273" offsety="-3.0303">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMNLAZ5aBdsEoGAWjYLgCAEM0APg=
+  </data>
+ </layer>
 </map>

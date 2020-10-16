@@ -8,9 +8,8 @@ function Level:init(mapToRender)
     self.map = sti(mapToRender)
     self.world = windfield.newWorld()
     self.world:setQueryDebugDrawing(true)
-    self.game = Game()
     self.mapProperties = self.map.layers.info.properties
-
+    self.game = Game(self.mapProperties)
     self.tiles = Tiles(self.map, self.world, self.game)
 
     self.text = self.mapProperties.title

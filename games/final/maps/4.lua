@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 36,
-  nextobjectid = 42,
+  nextlayerid = 44,
+  nextobjectid = 43,
   properties = {},
   tilesets = {
     {
@@ -91,16 +91,16 @@ return {
       tiles = {}
     },
     {
-      name = "instructions1",
+      name = "UIpackSheet_transparent",
       firstgid = 1873,
       tilewidth = 16,
       tileheight = 16,
-      spacing = 0,
+      spacing = 2,
       margin = 0,
-      columns = 32,
-      image = "../graphics/instructions1.png",
-      imagewidth = 512,
-      imageheight = 272,
+      columns = 30,
+      image = "../tileset/Tilemap/UIpackSheet_transparent.png",
+      imagewidth = 538,
+      imageheight = 592,
       objectalignment = "unspecified",
       tileoffset = {
         x = 0,
@@ -113,7 +113,7 @@ return {
       },
       properties = {},
       terrains = {},
-      tilecount = 544,
+      tilecount = 990,
       tiles = {}
     }
   },
@@ -135,6 +135,7 @@ return {
         ["doorType"] = "school",
         ["face"] = "left",
         ["fruit"] = true,
+        ["fruitsTotal"] = 2,
         ["grass"] = true,
         ["greyTile"] = false,
         ["numCommands"] = 6,
@@ -256,7 +257,7 @@ return {
       height = 17,
       id = 33,
       name = "close_door",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -521,9 +522,9 @@ return {
           type = "",
           shape = "rectangle",
           x = 34,
-          y = 133.545,
-          width = 2.90909,
-          height = 3.90909,
+          y = 135.483,
+          width = 0.590909,
+          height = 0.502841,
           rotation = 0,
           visible = true,
           properties = {}
@@ -725,7 +726,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo4A4cJ59oF2AG7wfxG7j5xhoF+AG+oPYbf6D2G35g9ht/YPYbaNgFIyCkQEALhcDgA=="
+      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
     },
     {
       type = "tilelayer",
@@ -941,6 +942,74 @@ return {
           properties = {}
         }
       }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 40,
+      name = "buttons",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMAoGHpRxMjCUo+EKzoF2FQRMAbpjKhqeNuo2gmDUbeSBTUB3bEbDWwaJ24gBAIwRFjk="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 41,
+      name = "fruitBanner",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRQE3wj4OB4T8aZuAcaFdBgAzQHbJoWG6QuG0UjIJRMDwAALEsBhA="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 42,
+      name = "apple2",
+      visible = true,
+      opacity = 1,
+      offsetx = 0.5,
+      offsety = -3.5,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMBLBTbaBdsEoGAWjYDgCANanAOA="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 43,
+      name = "apple1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0.5,
+      offsety = -3.5,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMNLATbaBdsEoGAWjYLgCANojAOA="
     }
   }
 }

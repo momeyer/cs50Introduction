@@ -8,8 +8,8 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 28,
-  nextobjectid = 111,
+  nextlayerid = 33,
+  nextobjectid = 113,
   properties = {},
   tilesets = {
     {
@@ -63,6 +63,32 @@ return {
       terrains = {},
       tilecount = 900,
       tiles = {}
+    },
+    {
+      name = "UIpackSheet_transparent",
+      firstgid = 1387,
+      tilewidth = 16,
+      tileheight = 16,
+      spacing = 2,
+      margin = 0,
+      columns = 30,
+      image = "../tileset/Tilemap/UIpackSheet_transparent.png",
+      imagewidth = 538,
+      imageheight = 592,
+      objectalignment = "unspecified",
+      tileoffset = {
+        x = 0,
+        y = 0
+      },
+      grid = {
+        orientation = "orthogonal",
+        width = 16,
+        height = 16
+      },
+      properties = {},
+      terrains = {},
+      tilecount = 990,
+      tiles = {}
     }
   },
   layers = {
@@ -82,7 +108,8 @@ return {
         ["blueTile"] = false,
         ["doorType"] = "house",
         ["face"] = "up",
-        ["fruit"] = false,
+        ["fruit"] = true,
+        ["fruitsTotal"] = 1,
         ["grass"] = true,
         ["greyTile"] = false,
         ["numCommands"] = 2,
@@ -322,6 +349,51 @@ return {
       }
     },
     {
+      type = "objectgroup",
+      draworder = "topdown",
+      id = 31,
+      name = "fruit",
+      visible = false,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {
+        ["numObjects"] = 1
+      },
+      objects = {
+        {
+          id = 112,
+          name = "fruit1",
+          type = "",
+          shape = "rectangle",
+          x = 168,
+          y = 102.25,
+          width = 0.25,
+          height = 0.5,
+          rotation = 0,
+          visible = true,
+          properties = {}
+        }
+      }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 32,
+      name = "fruit1",
+      visible = true,
+      opacity = 1,
+      offsetx = 0.75,
+      offsety = -4.25,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUDBfwmWWgXTAKRsEoGAWjYKQDAFvGAPg="
+    },
+    {
       type = "tilelayer",
       x = 0,
       y = 0,
@@ -423,6 +495,57 @@ return {
           properties = {}
         }
       }
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 28,
+      name = "buttons",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJztzjEOABAQAMHr7vt4CB6CN7lEdw3RUOwk268IAADvBRWJrqSvr5ZsH8VVedvi7U6zj+4an7ydmBdRGZk="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 29,
+      name = "fruitBanner",
+      visible = true,
+      opacity = 1,
+      offsetx = 0,
+      offsety = 0,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRQE0gwc7AIImGpdgH2lUQYAZ0hzkathgkbhsFo2AUDA8AAB6OAjU="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 30,
+      name = "apple1",
+      visible = true,
+      opacity = 1,
+      offsetx = 8.27273,
+      offsety = -3.0303,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjIJRMNLAZ5aBdsEoGAWjYLgCAEM0APg="
     }
   }
 }

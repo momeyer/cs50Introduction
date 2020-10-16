@@ -6,7 +6,7 @@ function Buttons:init(level)
     self.firstRow = {FACE_LEFT, WALK, FACE_RIGHT, F0}
     
     self.selecteds = {}
-
+    
     self:create()
 end
 
@@ -36,7 +36,7 @@ end
 
 function Buttons:create()
     second, third = self:getButtonsFromMap()
-    local yCoordinates = {170, 190, 210, 245}
+    local yCoordinates = {173, 193, 213, 233}
     local buttonsList = {self.firstRow, second, third, {RUN}}
     local x = 490
     
@@ -65,8 +65,12 @@ end
 
 function Buttons:render()
     love.graphics.setFont(FONT_SMALL)
-    love.graphics.printf('Commands:', 490, 160, VIRTUAL_WIDTH, 'left')
+    -- love.graphics.setColor()
+    love.graphics.setColor(	151/255,113/255, 74/255, 1)
+    love.graphics.printf('Commands:', 490, 164, VIRTUAL_WIDTH, 'left')
+    love.graphics.setColor(1,1,1, 1)
     for i = 1, #self.selecteds do
         self.selecteds[i]:render()
+
     end
 end
