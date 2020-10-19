@@ -20,9 +20,6 @@ WINDOW_HEIGHT = 600
 VIRTUAL_WIDTH = 590
 VIRTUAL_HEIGHT = 270
 
-HOUSE = 'house'
-SCHOOL = 'school'
-PARK = 'park'
 RUN = 'run'
 
 PLAYER = 'player'
@@ -41,9 +38,18 @@ INSTRUCTION = 'instruction'
 NEXT = 'next'
 
 MENU_IMAGE = 'graphics/menuTiles.png'
-INSTRUCTION_1 = 'graphics/instructions1.png'
-INSTRUCTION_2 = 'graphics/instructions2.png'
-THE_END = 'graphics/end.png'
+INSTRUCTION_1_IMAGE = 'graphics/instructions1.png'
+INSTRUCTION_2_IMAGE = 'graphics/instructions2.png'
+THE_END_IMAGE = 'graphics/end.png'
+
+FAIL_MESSAGE = love.graphics.newImage('graphics/failMessage.png')
+SUCCESS_MESSAGE = love.graphics.newImage('graphics/successMessage.png')
 
 FONT_LARGE = love.graphics.newFont('fonts/mini_pixel-7.ttf', 21)
 FONT_SMALL = love.graphics.newFont('fonts/font.ttf', 8)
+
+
+MENU = 1
+INSTRUCTION1 = 2
+INSTRUCTION2 = 3
+THE_END = 4

@@ -15,7 +15,7 @@
  <layer id="23" name="info" width="39" height="17">
   <properties>
    <property name="blueTile" type="bool" value="false"/>
-   <property name="doorType" value="house"/>
+   <property name="door" type="bool" value="true"/>
    <property name="face" value="up"/>
    <property name="fruit" type="bool" value="true"/>
    <property name="fruitsTotal" type="int" value="1"/>
@@ -23,7 +23,6 @@
    <property name="greyTile" type="bool" value="false"/>
    <property name="numCommands" type="int" value="2"/>
    <property name="size" type="int" value="2"/>
-   <property name="title" value="Help Tonny on the way home"/>
    <property name="yellowTile" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
@@ -83,6 +82,9 @@
   <object id="89" name="grass1" x="160" y="210.364" width="16" height="64"/>
  </objectgroup>
  <objectgroup id="31" name="fruit" visible="0">
+  <properties>
+   <property name="numObjects" type="int" value="1"/>
+  </properties>
   <object id="112" name="fruit1" x="168" y="102.25" width="0.25" height="0.5"/>
  </objectgroup>
  <layer id="32" name="fruit1" width="39" height="17" offsetx="0.75" offsety="-4.25">

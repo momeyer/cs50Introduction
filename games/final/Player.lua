@@ -4,7 +4,7 @@ require "Util"
 
 local WALKING_SPEED = 110
 
-function Player:init(map, direction, world, game)
+function Player:init(map, direction, world, game, endPoint)
 
     self.width = 16
     self.height = 16
@@ -20,6 +20,8 @@ function Player:init(map, direction, world, game)
     self.game = game
     self.playerObject = getMapObject(self.map, PLAYER)
     
+    self.endPoint = endPoint
+
     self.world:addCollisionClass(PLAYER)
     self.collider = self.world:newCircleCollider(self.playerObject.x + self.xOffset, self.playerObject.y + self.xOffset, self.colliderSize)
     self.collider:setCollisionClass(PLAYER)
@@ -96,8 +98,8 @@ function Player:move(action)
     end
 
     self:collectFruits()
-    -- self:checkIfEndOfMap()
     self:checkIfCollide()
+
 end
 
 function Player:getFirstCollider(tileColor)
@@ -124,6 +126,11 @@ function Player:collectFruits()
         self.game.stages.fruitsTotal = self.game.stages.fruitsTotal - 1
         collider.collected = true
         collider:destroy()
+    end
+
+    if not self.endPoint and (self.game.stages.fruitsTotal == 0) then
+        self.game.stages.endGame = true
+        self.isMoving = false
     end
 end
 

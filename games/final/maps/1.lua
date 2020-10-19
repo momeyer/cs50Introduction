@@ -106,7 +106,7 @@ return {
       offsety = 0,
       properties = {
         ["blueTile"] = false,
-        ["doorType"] = "house",
+        ["door"] = true,
         ["face"] = "up",
         ["fruit"] = true,
         ["fruitsTotal"] = 1,
@@ -114,7 +114,6 @@ return {
         ["greyTile"] = false,
         ["numCommands"] = 2,
         ["size"] = 2,
-        ["title"] = "Help Tonny on the way home",
         ["yellowTile"] = false
       },
       encoding = "base64",

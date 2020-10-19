@@ -63,32 +63,6 @@ return {
       terrains = {},
       tilecount = 900,
       tiles = {}
-    },
-    {
-      name = "UIpackSheet_transparent",
-      firstgid = 1387,
-      tilewidth = 16,
-      tileheight = 16,
-      spacing = 2,
-      margin = 0,
-      columns = 30,
-      image = "../tileset/Tilemap/UIpackSheet_transparent.png",
-      imagewidth = 538,
-      imageheight = 592,
-      objectalignment = "unspecified",
-      tileoffset = {
-        x = 0,
-        y = 0
-      },
-      grid = {
-        orientation = "orthogonal",
-        width = 16,
-        height = 16
-      },
-      properties = {},
-      terrains = {},
-      tilecount = 990,
-      tiles = {}
     }
   },
   layers = {
@@ -106,7 +80,7 @@ return {
       offsety = 0,
       properties = {
         ["blueTile"] = false,
-        ["doorType"] = "house",
+        ["door"] = true,
         ["face"] = "right",
         ["fruit"] = true,
         ["fruitsTotal"] = 4,
@@ -114,7 +88,6 @@ return {
         ["greyTile"] = false,
         ["numCommands"] = 4,
         ["size"] = 5,
-        ["title"] = "",
         ["yellowTile"] = true
       },
       encoding = "base64",
@@ -328,7 +301,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzbxcjAcB6Id5FAwzCtwS5G8vEFGruPlPBCDzdau+0sI3l4Jx3idBSMglEwCkbBKBgFwxsAAJbEL3w="
+      data = "eJzbxcjAsItMTGtArrtA+AKN3TeY3XaWkTy8kw5xOgpGwSgYBaNgFIyC4Q0AFN0ugA=="
     },
     {
       type = "tilelayer",
@@ -404,6 +377,23 @@ return {
       y = 0,
       width = 39,
       height = 17,
+      id = 12,
+      name = "houseDetails",
+      visible = true,
+      opacity = 1,
+      offsetx = -8,
+      offsety = 5,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjALKQBAjAg820MmIwKOAeDCY4zSPEYEHGxhNb6NgFDAwAAB5DQZ8"
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
       id = 16,
       name = "fruit1",
       visible = true,
@@ -472,23 +462,6 @@ return {
       y = 0,
       width = 39,
       height = 17,
-      id = 12,
-      name = "houseDetails",
-      visible = true,
-      opacity = 1,
-      offsetx = -8,
-      offsety = 5,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      data = "eJxjYBgFo2AUjALKQBAjAg820MmIwKOAeDCY4zSPEYEHGxhNb6NgFDAwAAB5DQZ8"
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 39,
-      height = 17,
       id = 36,
       name = "buttons",
       visible = true,
@@ -498,7 +471,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRQE0gwc7AIImGpdgH2lUQYAZ0hzkathgkbpsAdMdENDxpkLhtHdAd69HwhlG3EQSjbiMPnAG64ywaPjdI3EYMAAArgxvN"
+      data = "eJztzskNggAQQNE5wElc2nBtAxXbcIF2XKAN1zYUtQ1ArYCf0AAHE+YwP3n3L2JZlmX9s60jssMeB8RInKavqo58nHDGBVfclLzd+XggxRMvvJW8ZXzkKPDBFz8lby1XxEMbHXTRc5u+qurzMcAQI4wxUfLm8zHFDHMEWCh5W/KxwhobhIiUvNWpBAlzGJE="
     },
     {
       type = "tilelayer",
@@ -510,8 +483,8 @@ return {
       name = "apple1",
       visible = true,
       opacity = 1,
-      offsetx = 1.21212,
-      offsety = -3.75758,
+      offsetx = 1.81818,
+      offsety = -2.54545,
       properties = {},
       encoding = "base64",
       compression = "zlib",
@@ -527,8 +500,8 @@ return {
       name = "apple2",
       visible = true,
       opacity = 1,
-      offsetx = 1.21212,
-      offsety = -3.75758,
+      offsetx = 1.81818,
+      offsety = -2.54545,
       properties = {},
       encoding = "base64",
       compression = "zlib",
@@ -544,8 +517,8 @@ return {
       name = "apple3",
       visible = true,
       opacity = 1,
-      offsetx = 1.21212,
-      offsety = -3.75758,
+      offsetx = 1.81818,
+      offsety = -2.54545,
       properties = {},
       encoding = "base64",
       compression = "zlib",
@@ -561,8 +534,8 @@ return {
       name = "apple4",
       visible = true,
       opacity = 1,
-      offsetx = 1.21212,
-      offsety = -3.75758,
+      offsetx = 1.81818,
+      offsety = -2.54545,
       properties = {},
       encoding = "base64",
       compression = "zlib",

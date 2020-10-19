@@ -1,22 +1,17 @@
 Menu = Class{}
 
-menu = 1
-instruction1 = 2
-instruction2 = 3
-theEnd = 4
-
 function Menu:init(gameStages)
 
     self.gameStages = gameStages
     self.gameStages.menu = true
     self.images = {
-        [menu] = love.graphics.newImage(MENU_IMAGE),
-        [instruction1] = love.graphics.newImage(INSTRUCTION_1),
-        [instruction2] = love.graphics.newImage(INSTRUCTION_2),
-        [theEnd] = love.graphics.newImage(THE_END),
+        [MENU] = love.graphics.newImage(MENU_IMAGE),
+        [INSTRUCTION1] = love.graphics.newImage(INSTRUCTION_1_IMAGE),
+        [INSTRUCTION2] = love.graphics.newImage(INSTRUCTION_2_IMAGE),
+        [THE_END] = love.graphics.newImage(THE_END_IMAGE),
     }
 
-    self.curImage = menu
+    self.curImage = MENU
     self.image = self.images[self.curImage]
     self.playButtonY = 370
     self.instructionButtonY = self.playButtonY + 70
@@ -26,9 +21,8 @@ end
 
 function Menu:update(dt)
     self:selectImageToDisplay()
-
     if self.gameStages.theEnd then
-        self.curImage = 4
+        self.curImage = THE_END
     end
 end
 

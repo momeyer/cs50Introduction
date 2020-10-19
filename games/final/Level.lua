@@ -31,7 +31,10 @@ function Level:update(dt)
     self.map:update(dt)
     self.tiles.player:update(dt)
     self:executeInstruction(dt)
-    self.tiles.door:update(dt, self.game.stages.endGame)
+    
+    if self.mapProperties.door then
+        self.tiles.door:update(dt, self.game.stages.endGame)
+    end
     if self.game.stages.endGame then
         self.functions[F0] = {}
     end
@@ -91,7 +94,7 @@ function Level:render()
     if self.game.stages.endGame == false then
         self.tiles.player:draw()
     end
-    if self.mapProperties.doorType == PARK then
+    if not self.mapProperties.door then
         self.tiles.player:draw()
     end
     -- self.world:draw()

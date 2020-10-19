@@ -18,7 +18,7 @@
  <layer id="32" name="info" width="39" height="17">
   <properties>
    <property name="blueTile" type="bool" value="true"/>
-   <property name="doorType" value="school"/>
+   <property name="door" type="bool" value="true"/>
    <property name="face" value="left"/>
    <property name="fruit" type="bool" value="true"/>
    <property name="fruitsTotal" type="int" value="2"/>
@@ -26,7 +26,6 @@
    <property name="greyTile" type="bool" value="false"/>
    <property name="numCommands" type="int" value="6"/>
    <property name="size" type="int" value="9"/>
-   <property name="title" value="Help Tonny on the way to the mall"/>
    <property name="yellowTile" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="zlib">

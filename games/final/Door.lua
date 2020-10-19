@@ -2,10 +2,9 @@ Door = Class{}
 
 require "Util"
 
-function Door:init(map, world, doorType)
+function Door:init(map, world)
     self.map = map
     self.world = world
-    self.doorType = doorType
     local mapObject = getMapObject(self.map, "end")
     self.x = mapObject.x
     self.y = mapObject.y

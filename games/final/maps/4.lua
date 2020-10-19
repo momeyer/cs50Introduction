@@ -132,7 +132,7 @@ return {
       offsety = 0,
       properties = {
         ["blueTile"] = true,
-        ["doorType"] = "school",
+        ["door"] = true,
         ["face"] = "left",
         ["fruit"] = true,
         ["fruitsTotal"] = 2,
@@ -140,7 +140,6 @@ return {
         ["greyTile"] = false,
         ["numCommands"] = 6,
         ["size"] = 9,
-        ["title"] = "Help Tonny on the way to the mall",
         ["yellowTile"] = true
       },
       encoding = "base64",

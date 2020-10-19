@@ -9,11 +9,10 @@ function love.load()
     -- Load map file
     love.physics.setMeter(32)
     love.window.setTitle('Can you help Tonny?')
-    numLevels = 5
+    numLevels = 6
     levels = createLevels(numLevels)
-    levelIndex = 1
+    levelIndex = 6
     level = Level(levels[levelIndex])
-
     menu = Menu(level.game.stages)
 
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
@@ -21,6 +20,8 @@ function love.load()
         resizable = false,
         vsync = true
     })
+
+    
 end
 
 function createLevels(numLevels)
@@ -76,8 +77,6 @@ function love.keypressed(key, scancode, isrepeat)
             level.game.stages.menu = true
         end
     end
-
-
 end
 
 function love.update(dt)
@@ -86,13 +85,11 @@ function love.update(dt)
 end
 
 function displayFailMessage()
-    love.graphics.setFont(FONT_LARGE)
-    love.graphics.printf('Press SPACE to try again ...', 15, VIRTUAL_HEIGHT - 50, VIRTUAL_WIDTH, 'left')
+    love.graphics.draw(FAIL_MESSAGE, 0, 0)
 end
 
 function displayNextLevelMessage()
-    love.graphics.setFont(FONT_LARGE)
-    love.graphics.printf('Press ENTER for next level', 15, VIRTUAL_HEIGHT - 50, VIRTUAL_WIDTH, 'left')
+    love.graphics.draw(SUCCESS_MESSAGE, 0, 0)
 end
 
 function love.draw()
