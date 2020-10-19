@@ -76,10 +76,10 @@ function Level:insert(command)
     if self.index <= level.numberOfCommands then
         if inTable(self.functions[F0][self.index].conditions, command) then
             self.functions[F0][self.index].condition = command
-            self.answer:setImage(command)
+            self.answer:setImage(command, self.index, true)
         else
             self.functions[F0][self.index].action = command
-            self.answer:setImage(command)
+            self.answer:setImage(command, self.index, false)
             self.index = self.index + 1
         end
     end

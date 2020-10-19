@@ -65,7 +65,6 @@ end
 
 function Buttons:render()
     love.graphics.setFont(FONT_SMALL)
-    -- love.graphics.setColor()
     love.graphics.setColor(	151/255,113/255, 74/255, 1)
     love.graphics.printf('Commands:', 490, 164, VIRTUAL_WIDTH, 'left')
     love.graphics.setColor(1,1,1, 1)

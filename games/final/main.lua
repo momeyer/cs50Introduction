@@ -11,7 +11,7 @@ function love.load()
     love.window.setTitle('Can you help Tonny?')
     numLevels = 6
     levels = createLevels(numLevels)
-    levelIndex = 6
+    levelIndex = 4
     level = Level(levels[levelIndex])
     menu = Menu(level.game.stages)
 

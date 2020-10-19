@@ -30,7 +30,7 @@ function Answer:getAnswerSpots(numOfSpots)
     local answerSpot = {}
     answerSpot.x = object.x
     answerSpot.y = object.y
-    answerSpot.background = self.answerBackgroud
+    -- answerSpot.background = self.answerBackgroud
     answerSpot.action = self.actions[F0]
     table.insert(self.answerSpots, answerSpot)
 
@@ -39,24 +39,31 @@ function Answer:getAnswerSpots(numOfSpots)
         local answerSpot = {}
         answerSpot.x = object.x
         answerSpot.y = object.y
-        answerSpot.background = self.answerBackgroud
+        -- answerSpot.background = self.answerBackgroud
         answerSpot.action = nil
         answerSpot.condition = nil
         table.insert(self.answerSpots, answerSpot)
     end
 end
 
-function Answer:setImage(command, index)
-    if self.index <= #self.answerSpots then
-        self.answerSpots[self.index].action = self.actions[command]
+function Answer:setImage(command, index, condition)
+    index = index + 1
+    if condition then
+        self.answerSpots[index].condition = self.actions[command]
+    else
+        self.answerSpots[index].action = self.actions[command]
     end
-    self.index = self.index + 1
 end
 
 function Answer:draw()
     for i = 1, #self.answerSpots do
+        if self.answerSpots[i].condition ~= nil or self.answerSpots[i].action ~= nil then
+            love.graphics.draw(self.answerBackgroud, self.answerSpots[i].x, self.answerSpots[i].y)
+        end
+        if self.answerSpots[i].condition ~= nil then
+            love.graphics.draw(self.answerSpots[i].condition, self.answerSpots[i].x, self.answerSpots[i].y)
+        end
         if self.answerSpots[i].action ~= nil then
-            love.graphics.draw(self.answerSpots[i].background, self.answerSpots[i].x, self.answerSpots[i].y)
             love.graphics.draw(self.answerSpots[i].action, self.answerSpots[i].x, self.answerSpots[i].y)
         end
     end

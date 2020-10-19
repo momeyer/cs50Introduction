@@ -8,7 +8,7 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 86,
+  nextlayerid = 87,
   nextobjectid = 76,
   properties = {},
   tilesets = {
@@ -113,7 +113,7 @@ return {
         ["grass"] = true,
         ["greyTile"] = false,
         ["numCommands"] = 3,
-        ["size"] = 4,
+        ["size"] = 3,
         ["yellowTile"] = true
       },
       encoding = "base64",
@@ -1039,7 +1039,24 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0DkOwjAURdFvIGyDIVWyBxI62AT0EIYw7AAWzkWisoxE94zlKx3JSeMnm6Xfzpnt0eGAI044o8cFV9xwd+q18fR+igGGGIm3+BXed4VaMeRPi/W9JphihjnKz/8FGrRYKoZ9aYNt4KxohbXw/lBj9YAfeuCpHpHLJdYL1AAKoQ=="
+      data = "eJzt0DkOgDAMRFEnLHdlX28AZ+Q8fFpEQTdR5C89yeXIZvnXBLMWHXoMGDFhxoIVG/agXptOzysiCpTiLe8q9YAfXfH7VlarB3heYh041SM8L7Nu6CgIBw=="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 86,
+      name = "text",
+      visible = true,
+      opacity = 1,
+      offsetx = 8.14888,
+      offsety = -0.00395257,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AU0ApcYxpoF4yCUTAKRsEoGAX0BQDvRQDZ"
     },
     {
       type = "objectgroup",
@@ -1774,7 +1791,7 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
-        ["numObjects"] = 4
+        ["numObjects"] = 3
       },
       objects = {
         {
@@ -1808,8 +1825,8 @@ return {
           name = "answer2",
           type = "",
           shape = "rectangle",
-          x = 384,
-          y = 112,
+          x = 344.063,
+          y = 79.9375,
           width = 16,
           height = 16,
           rotation = 0,
@@ -1821,21 +1838,8 @@ return {
           name = "answer3",
           type = "",
           shape = "rectangle",
-          x = 432,
-          y = 112,
-          width = 16,
-          height = 16,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 30,
-          name = "answer4",
-          type = "",
-          shape = "rectangle",
-          x = 320.034,
-          y = 133.364,
+          x = 367.989,
+          y = 80.0056,
           width = 16,
           height = 16,
           rotation = 0,

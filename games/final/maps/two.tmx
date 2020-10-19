@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="39" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="28" nextobjectid="57">
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="39" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="32" nextobjectid="57">
  <editorsettings>
   <export target="2.lua" format="lua"/>
  </editorsettings>
@@ -103,22 +103,37 @@
   <object id="46" name="grass17" x="44.3333" y="189.333" width="32" height="16"/>
   <object id="47" name="grass18" x="44.3333" y="205.333" width="16" height="16"/>
  </objectgroup>
- <layer id="13" name="text" width="39" height="17" offsetx="-48" offsety="0">
-  <data encoding="base64" compression="zlib">
-   eJztzssNgkAYReE/mRkTn6BgAaCNaCPQiDYijWBr+OAkZBbuSbgx3OQs7u4zmzfvf7YMZita04a2tKOEUtrTgTLK6RimFmusc2YvetOHnDfzfmrVsK/7/QWuUsQWF/AsxExxJ1xnUdsF11XUVuGqRW03XHdR2wNXI2prcT3VbGqekdYDOA4L1A==
-  </data>
- </layer>
- <objectgroup id="14" name="answer" visible="0">
+ <objectgroup id="14" name="answer" visible="0" offsetx="0.0197917" offsety="0.0420139">
   <properties>
    <property name="size" type="int" value="5"/>
   </properties>
-  <object id="48" name="answer1" x="368.031" y="128.105" width="17" height="17"/>
-  <object id="49" name="answer2" x="368.092" y="150.135" width="17" height="17"/>
-  <object id="50" name="answer3" x="368.062" y="171.863" width="17" height="17"/>
-  <object id="51" name="answer4" x="368.031" y="193.378" width="17" height="17"/>
-  <object id="52" name="answer5" x="368.062" y="215.711" width="17" height="17"/>
-  <object id="53" name="F0" x="400.156" y="93.7642" width="17" height="17"/>
+  <object id="48" name="answer1" x="307.007" y="133.746" width="17" height="17"/>
+  <object id="49" name="answer2" x="330.989" y="133.677" width="17" height="17"/>
+  <object id="50" name="answer3" x="355.102" y="133.742" width="17" height="17"/>
+  <object id="51" name="answer4" x="379.027" y="133.723" width="17" height="17"/>
+  <object id="52" name="answer5" x="403.093" y="133.711" width="17" height="17"/>
+  <object id="53" name="F0" x="350.478" y="93.7253" width="17" height="17"/>
  </objectgroup>
+ <layer id="13" name="text" width="39" height="17" offsetx="-96" offsety="0">
+  <data encoding="base64" compression="zlib">
+   eJzt0kkKgDAQRNGCThbOU7z/QR0/eAUlQfrD29eiJM/7T1WUajRo0aHHgBETZixIWGPuxWW0mbTjwAkLUgi5Vz1dlnuB93qFfMvzvG+6AfdeBhg=
+  </data>
+ </layer>
+ <layer id="29" name="answerSpots" width="39" height="17" offsetx="-96.5455" offsety="5.81818">
+  <data encoding="base64" compression="zlib">
+   eJztzrENgCAABdFfkFCIimOAivtvx/UOAJp/yetPcs65dyGMPvhGS5QSVmzYkXHE0WdS4aHixIUbDc8Eb865/9YBUbECAQ==
+  </data>
+ </layer>
+ <layer id="28" name="answerSpots" width="39" height="17" offsetx="3.07386" offsety="5.75568">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRQAhcYMPN5mGnv3uIAZpAd2kNUreNglEwCoYvAAACEgL3
+  </data>
+ </layer>
+ <layer id="31" name="answerSpots" width="39" height="17" offsetx="11.0833" offsety="5.75">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjETAzc7AwMM+0K7ADjSB7tIahG67wIadPQpGwSgYBaMAAQDAdQIz
+  </data>
+ </layer>
  <layer id="18" name="buttonsSecondRow" width="39" height="17">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ==

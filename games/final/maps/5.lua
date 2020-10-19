@@ -8,7 +8,7 @@ return {
   height = 17,
   tilewidth = 16,
   tileheight = 16,
-  nextlayerid = 41,
+  nextlayerid = 42,
   nextobjectid = 27,
   properties = {},
   tilesets = {
@@ -87,7 +87,7 @@ return {
         ["grass"] = true,
         ["greyTile"] = false,
         ["numCommands"] = 4,
-        ["size"] = 5,
+        ["size"] = 4,
         ["yellowTile"] = true
       },
       encoding = "base64",
@@ -126,7 +126,24 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0EcKwkAAheFJiG2lV7B3r2CJXa9g717CXm5qPYS/6EZcuHIcJA8+MgmB9xgh/j9eQwgf/AggiBDCiCCKGOJIIImUIWdbmp4MssjBRB4FFFFCGRVUUUNd0rYGPU200EYHXfTQxwBDjDDGBFMJ2w6aEEeccNYe32b0zrHAEiusscEWO+wlbLtor+9uXQiP/v3ef4mq92Vjkx0OOOF6bvTzDCi412RTXn8//yJJulMK3tE9NXbVFdt21T7/Y8WK6rkB0NAZqA=="
+      data = "eJzt0McJQkEURuE7MI2Ysy2Ysy2Ys02YQ1H2YyzCA25dCOKIcg988JjNf3ki/5/Hinjhgx8BBBFCGBFEEUMcCSStm9tS7KSRQRY55FFAESWUUUEVNdQd3dZgp4kW2uigix76GGCIEcaYYOrgtqMROeGMi3m8zdidY4ElVlhjgy122Du47Wo+v/FuB/v8+5vdfuC/aZqmaa91B7GqGFo="
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 41,
+      name = "text",
+      visible = true,
+      opacity = 1,
+      offsetx = 8.47576,
+      offsety = 0.0191919,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJxjYBgFo2AUjDSwhwU7exSMglEwCkbBKKAUAACX2wGB"
     },
     {
       type = "tilelayer",
@@ -817,7 +834,7 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
-        ["numObjects"] = 5
+        ["numObjects"] = 4
       },
       objects = {
         {
@@ -851,8 +868,8 @@ return {
           name = "answer2",
           type = "",
           shape = "rectangle",
-          x = 368,
-          y = 128,
+          x = 328.406,
+          y = 95.8125,
           width = 16,
           height = 16,
           rotation = 0,
@@ -864,8 +881,8 @@ return {
           name = "answer3",
           type = "",
           shape = "rectangle",
-          x = 416,
-          y = 128,
+          x = 351.957,
+          y = 96.0145,
           width = 16,
           height = 16,
           rotation = 0,
@@ -877,21 +894,8 @@ return {
           name = "answer4",
           type = "",
           shape = "rectangle",
-          x = 304.182,
-          y = 149.795,
-          width = 16,
-          height = 16,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 26,
-          name = "answer5",
-          type = "",
-          shape = "rectangle",
-          x = 304.25,
-          y = 171.875,
+          x = 376.515,
+          y = 95.9162,
           width = 16,
           height = 16,
           rotation = 0,

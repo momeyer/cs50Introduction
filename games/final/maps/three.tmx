@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="39" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="37" nextobjectid="107">
+<map version="1.2" tiledversion="2020.01.22" orientation="orthogonal" renderorder="right-down" compressionlevel="-1" width="39" height="17" tilewidth="16" tileheight="16" infinite="0" nextlayerid="38" nextobjectid="107">
  <editorsettings>
   <export target="3.lua" format="lua"/>
  </editorsettings>
@@ -22,11 +22,11 @@
    <property name="grass" type="bool" value="true"/>
    <property name="greyTile" type="bool" value="true"/>
    <property name="numCommands" type="int" value="5"/>
-   <property name="size" type="int" value="7"/>
+   <property name="size" type="int" value="5"/>
    <property name="yellowTile" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="zlib">
-   eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ==
+   eJxjYBgFo2AUjETAxj7QLsANBrPbRsHwBKNpbhSMAuoBANMrACg=
   </data>
  </layer>
  <layer id="5" name="background" width="39" height="17">
@@ -81,12 +81,17 @@
  </layer>
  <layer id="20" name="text" width="39" height="17" offsetx="-69.5" offsety="-8.5">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AU0AOcZWZgOAfE54H4AvNAuwYVXERzjyYLA4MWy8C4ZSiCr8Dw+zbI4hQEXgPd9AaI3wLxOyB+D3UjJzBuuYD4OpB/YxC5GzkcB1uYCgPDS4QFkz0KUMFgizdkMBjj7dIgDStKAQBvFBQc
+   eJxjYBgFo2AU0AOcZWZgOAfE54H4AvNAuwYVXBxk7sEGFrERZtMbXBoC4TYKRsEoGAX0BgBHYQbo
   </data>
  </layer>
- <layer id="22" name="text2" width="39" height="17" offsetx="-70.0391" offsety="-2.03065">
+ <layer id="37" name="answer" width="39" height="17" offsetx="3.25" offsety="7.5">
   <data encoding="base64" compression="zlib">
-   eJzt07kNgDAQRNEB2wH0R/WcBjKuEuBLroAIEPull2y0yUiWda/aSw1adOgxIGLEhBknFKQMeXj663dU+cSy/t7ipBUbdhwu3Qv2UdpGLOvTXcqXD3Y=
+   eJxjYBgFo2AUjGSwiA07exSMglEwCkbBKCAHAABWaAFR
+  </data>
+ </layer>
+ <layer id="22" name="text2" width="39" height="17" offsetx="-64.3724" offsety="-2.03065">
+  <data encoding="base64" compression="zlib">
+   eJzt0jkOgCAQQNHRuJzQ+3BPFwT0FK5frS2oppmfvAYKJmFELCuvvhIZMGKCx4yAiIQFF6QWKVDWOrOujc67f3XVx8pr5B8neMwIiEjfuePeac22McOOAyeuZ+da9r59z92mOJtlWZZGNzclHMg=
   </data>
  </layer>
  <layer id="27" name="buttonsSecondRow" width="39" height="17">
@@ -125,16 +130,14 @@
  </layer>
  <objectgroup id="23" name="answer" visible="0">
   <properties>
-   <property name="size" type="int" value="7"/>
+   <property name="size" type="int" value="5"/>
   </properties>
-  <object id="69" name="answer2" x="410.728" y="134.557" width="17" height="17"/>
-  <object id="70" name="answer4" x="410.577" y="156.432" width="17" height="17"/>
-  <object id="71" name="answer3" x="458.571" y="134.375" width="17" height="17"/>
-  <object id="72" name="answer5" x="458.571" y="156.188" width="17" height="17"/>
-  <object id="73" name="answer6" x="346.658" y="182.498" width="17" height="17"/>
-  <object id="74" name="answer7" x="346.571" y="204.572" width="17" height="17"/>
-  <object id="75" name="F0" x="378.662" y="70.375" width="17" height="17"/>
-  <object id="76" name="answer1" x="346.662" y="102.33" width="17" height="17"/>
+  <object id="69" name="answer2" x="370.973" y="103.509" width="17" height="17"/>
+  <object id="70" name="answer4" x="418.693" y="103.453" width="17" height="17"/>
+  <object id="71" name="answer3" x="394.2" y="103.522" width="17" height="17"/>
+  <object id="72" name="answer5" x="441.803" y="103.49" width="17" height="17"/>
+  <object id="75" name="F0" x="377.662" y="68.375" width="17" height="17"/>
+  <object id="76" name="answer1" x="346.518" y="103.477" width="17" height="17"/>
  </objectgroup>
  <layer id="34" name="apple1" width="39" height="17" offsetx="-6" offsety="-2.66667">
   <data encoding="base64" compression="zlib">
@@ -177,7 +180,7 @@
  <objectgroup id="15" name="end" visible="0">
   <object id="21" name="end" x="288" y="32" width="16" height="16"/>
  </objectgroup>
- <objectgroup id="29" name="fruit">
+ <objectgroup id="29" name="fruit" visible="0">
   <properties>
    <property name="numObjects" type="int" value="3"/>
   </properties>
