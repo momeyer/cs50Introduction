@@ -20,8 +20,6 @@ function love.load()
         resizable = false,
         vsync = true
     })
-
-    
 end
 
 function createLevels(numLevels)
@@ -59,10 +57,6 @@ function love.keypressed(key, scancode, isrepeat)
     if key == "escape" then
         level.world:destroy()
         love.event.quit()
-    end
-
-    if key == "a" then
-       level.game.stages.menu = false
     end
 
     if key == "space" and level.game.stages.fail then

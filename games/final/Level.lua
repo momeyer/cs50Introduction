@@ -17,10 +17,11 @@ function Level:init(mapToRender)
     self.index = 1
 
     self.functions = {
-        [F0] = {}
+        [F0] = {},
+        -- [F1] = {},
     }
 
-    self.f0NextInstruction = 1
+    self.nextInstruction = {F0, 1}
     
     self.buttons = Buttons(self)
     self:setUpInstructions()
@@ -48,27 +49,25 @@ end
 
 function Level:executeInstruction(dt)
     if self.game.stages.start and not self.game.stages.fail then
-        local nextMovement = self.functions[F0][self.f0NextInstruction]
+        local nextMovement = self.functions[self.nextInstruction[1]][self.nextInstruction[2]]
         if nextMovement == nil then
             self.game.stages.fail = true
         elseif nextMovement.action == F0 then
-            self.f0NextInstruction = 1
+            self.nextInstruction[2] = 1
         elseif nextMovement.condition ~= nil then
             if self.tiles.player:findColliders(nextMovement.condition) then
                 self.tiles.player:move(nextMovement.action, dt)
             end
-            self.f0NextInstruction = self.f0NextInstruction + 1
+            self.nextInstruction[2] = self.nextInstruction[2] + 1
         else
             self.tiles.player:move(nextMovement.action, dt)
-            self.f0NextInstruction = self.f0NextInstruction + 1
+            self.nextInstruction[2] = self.nextInstruction[2] + 1
         end
-        nextMovement = self.functions[F0][self.f0NextInstruction]
         love.timer.sleep(0.1)
     end
 end
 
 function Level:drawCommands()
-
     self.buttons:render(self.text, self.numberOfCommands)
 end
 
@@ -76,10 +75,10 @@ function Level:insert(command)
     if self.index <= level.numberOfCommands then
         if inTable(self.functions[F0][self.index].conditions, command) then
             self.functions[F0][self.index].condition = command
-            self.answer:setImage(command, self.index, true)
+            self.answer:setConditionImage(command, self.index)
         else
             self.functions[F0][self.index].action = command
-            self.answer:setImage(command, self.index, false)
+            self.answer:setActionImage(command, self.index)
             self.index = self.index + 1
         end
     end

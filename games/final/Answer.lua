@@ -30,7 +30,6 @@ function Answer:getAnswerSpots(numOfSpots)
     local answerSpot = {}
     answerSpot.x = object.x
     answerSpot.y = object.y
-    -- answerSpot.background = self.answerBackgroud
     answerSpot.action = self.actions[F0]
     table.insert(self.answerSpots, answerSpot)
 
@@ -39,20 +38,18 @@ function Answer:getAnswerSpots(numOfSpots)
         local answerSpot = {}
         answerSpot.x = object.x
         answerSpot.y = object.y
-        -- answerSpot.background = self.answerBackgroud
         answerSpot.action = nil
         answerSpot.condition = nil
         table.insert(self.answerSpots, answerSpot)
     end
 end
 
-function Answer:setImage(command, index, condition)
-    index = index + 1
-    if condition then
-        self.answerSpots[index].condition = self.actions[command]
-    else
-        self.answerSpots[index].action = self.actions[command]
-    end
+function Answer:setConditionImage(command, index)
+    self.answerSpots[index + 1].condition = self.actions[command]
+end
+
+function Answer:setActionImage(command, index)
+    self.answerSpots[index + 1].action = self.actions[command]
 end
 
 function Answer:draw()
