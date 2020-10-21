@@ -88,9 +88,9 @@ function Player:move(action)
         self.isMoving = false
     elseif action == WALK then
         self:walk()
-        love.timer.sleep(0.1)
+        --love.timer.sleep(0.1)
         self:walk()
-        love.timer.sleep(0.1)
+        --love.timer.sleep(0.1)
     elseif action == PAINT_GREY then
         self:paintTiles(action)
     elseif action == nil then

@@ -13,6 +13,7 @@ end
 function Tile:getCollisionObjects(color)
     for i = 1, self.numOfObjects do
         local name = color .. tostring(i)
+        print(name)
         local object = getMapObject(self.map, name)
         collider = self.world:newRectangleCollider(object.x, object.y, object.width, object.height)
         collider:setCollisionClass(color)
