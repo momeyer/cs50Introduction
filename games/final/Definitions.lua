@@ -21,6 +21,7 @@ VIRTUAL_WIDTH = 590
 VIRTUAL_HEIGHT = 270
 
 RUN = 'run'
+RESET = 'reset'
 
 PLAYER = 'player'
 GRASS = 'grass'

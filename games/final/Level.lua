@@ -12,20 +12,37 @@ function Level:init(mapToRender)
     self.game = Game(self.mapProperties)
     self.tiles = Tiles(self.map, self.world, self.game)
 
-    self.text = self.mapProperties.title
-    self.numberOfCommands = self.mapProperties.numCommands
-    self.index = 1
+    self.funcIndex = 1
+    self.funcIndex1 = 1
+    self.answerIndex = 1
 
     self.functions = {
         [F0] = {},
-        -- [F1] = {},
+        [F1] = {},
     }
 
     self.nextInstruction = {F0, 1}
     
     self.buttons = Buttons(self)
     self:setUpInstructions()
-    self.answer = Answer(self.mapProperties.size, self.map)
+    self.answer = Answer(self.mapProperties, self.map)
+end
+
+function Level:reset()
+    self.funcIndex = 1
+    self.funcIndex1 = 1
+    self.answerIndex = 1
+
+    self.functions = {
+        [F0] = {},
+        [F1] = {},
+    }
+
+    self.nextInstruction = {F0, 1}
+    
+    self.buttons = Buttons(self)
+    self:setUpInstructions()
+    self.answer = Answer(self.mapProperties, self.map)
 end
 
 function Level:update(dt)
@@ -36,24 +53,27 @@ function Level:update(dt)
     if self.mapProperties.door then
         self.tiles.door:update(dt, self.game.stages.endGame)
     end
-    if self.game.stages.endGame then
-        self.functions[F0] = {}
-    end
 end
 
+
 function Level:setUpInstructions()
-    for i = 1, self.numberOfCommands do
-        table.insert(self.functions[F0], Actions())
+    local funcs = {F0, F1}
+    for i = 1, self.mapProperties.numFunc do
+        for j = 1, self.mapProperties[funcs[i]] do
+            table.insert(self.functions[funcs[i]], Actions())
+        end
     end
 end
 
 function Level:executeInstruction(dt)
-    if self.game.stages.start and not self.game.stages.fail then
+    if self.game.stages.start and not self.game.stages.fail and not self.game.stages.endGame then
         local nextMovement = self.functions[self.nextInstruction[1]][self.nextInstruction[2]]
-        if nextMovement == nil then
+        if nextMovement == nil or nextMovement.action == nil then
             self.game.stages.fail = true
         elseif nextMovement.action == F0 then
-            self.nextInstruction[2] = 1
+            self.nextInstruction = {F0, 1}
+        elseif nextMovement.action == F1 then
+            self.nextInstruction = {F1, 1}
         elseif nextMovement.condition ~= nil then
             if self.tiles.player:findColliders(nextMovement.condition) then
                 self.tiles.player:move(nextMovement.action, dt)
@@ -68,22 +88,36 @@ function Level:executeInstruction(dt)
 end
 
 function Level:drawCommands()
-    self.buttons:render(self.text, self.numberOfCommands)
+    self.buttons:render()
 end
 
 function Level:insert(command)
-    if self.index <= level.numberOfCommands then
-        if inTable(self.functions[F0][self.index].conditions, command) then
-            self.functions[F0][self.index].condition = command
-            self.answer:setConditionImage(command, self.index)
+    if self.funcIndex <= self.mapProperties[F0] then
+        if inTable(self.functions[F0][self.funcIndex].conditions, command) then
+            self.functions[F0][self.funcIndex].condition = command
+            self.answer:setConditionImage(command, self.answerIndex)
         else
-            self.functions[F0][self.index].action = command
-            self.answer:setActionImage(command, self.index)
-            self.index = self.index + 1
+            self.functions[F0][self.funcIndex].action = command
+            self.answer:setActionImage(command, self.answerIndex)
+            self.funcIndex = self.funcIndex + 1
+            self.answerIndex = self.answerIndex + 1
         end
+    else
+        
+        if self.funcIndex1 <= self.mapProperties[F1] then
+            if inTable(self.functions[F1][self.funcIndex1].conditions, command) then
+                self.functions[F1][self.funcIndex1].condition = command
+                self.answer:setConditionImage(command, self.answerIndex)
+            else
+                self.functions[F1][self.funcIndex1].action = command
+                self.answer:setActionImage(command, self.answerIndex)
+                self.funcIndex1 = self.funcIndex1 + 1
+                self.answerIndex = self.answerIndex + 1
+            end
+        end
+        
     end
 end
-
 
 function Level:render()
     self.map:draw()

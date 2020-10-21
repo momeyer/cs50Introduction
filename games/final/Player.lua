@@ -96,7 +96,6 @@ function Player:move(action)
     elseif action == nil then
         self.isMoving = false
     end
-
     self:collectFruits()
     self:checkIfCollide()
 

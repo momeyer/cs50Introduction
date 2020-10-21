@@ -105,6 +105,7 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
+        ["F0"] = 2,
         ["blueTile"] = false,
         ["door"] = true,
         ["face"] = "up",
@@ -112,8 +113,8 @@ return {
         ["fruitsTotal"] = 1,
         ["grass"] = true,
         ["greyTile"] = false,
-        ["numCommands"] = 2,
-        ["size"] = 2,
+        ["numFunc"] = 1,
+        ["totalSize"] = 2,
         ["yellowTile"] = false
       },
       encoding = "base64",
@@ -407,7 +408,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJztkEsOgkAQBd/IXENvTuAeBu4hsOfn1h9iYiW4kTVkZtGVVF4vKy0ZhrE3t4N0xwc+8YUTvnHGDx4T6ZSELo2L1kkd9ji40DX/jPSkfrkzNvdhe9acfz0FW0bUduVvF3oqrLGJqM0wjG34AgIZFjg="
+      data = "eJzt0DsOQFAQRuHh2gY7txJhHx69Z+tN4hQahY7cW8xJvkz7Z0Q0Tfu70ReZMGPBig07DpwIjUhkbC91q9oTadCi82yvedazJw5sr3gvubel3MyhnQN/y9lToETl0DZN077pAoe8FPE="
     },
     {
       type = "tilelayer",
@@ -424,7 +425,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjILBCb6zDLQLcANRVgYGMSC2YB1ol6CCPYM4zEbBKBgFIwMAAFYqAi4="
+      data = "eJxjYBgFo2AUjILBCb6zDLQLcANRVghtwTqw7kAHe4BhJg50k8Qgc9coGAWjYOQAAM0hAkw="
     },
     {
       type = "tilelayer",
@@ -434,14 +435,14 @@ return {
       height = 17,
       id = 34,
       name = "answer3",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = -8.875,
       offsety = -1.5,
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRMNzAHpaBdsEoGAWjYKQCAGqFAME="
+      data = "eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ=="
     },
     {
       type = "tilelayer",
@@ -493,8 +494,8 @@ return {
           name = "F0",
           type = "",
           shape = "rectangle",
-          x = 385.541,
-          y = 110.435,
+          x = 383.916,
+          y = 110.06,
           width = 17,
           height = 17,
           rotation = 0,
@@ -508,8 +509,8 @@ return {
           shape = "rectangle",
           x = 353.459,
           y = 142.366,
-          width = 17,
-          height = 17,
+          width = 16,
+          height = 16,
           rotation = 0,
           visible = true,
           properties = {}
@@ -519,10 +520,10 @@ return {
           name = "answer2",
           type = "",
           shape = "rectangle",
-          x = 375.099,
-          y = 142.485,
-          width = 17,
-          height = 17,
+          x = 377.447,
+          y = 142.398,
+          width = 16,
+          height = 16,
           rotation = 0,
           visible = true,
           properties = {}

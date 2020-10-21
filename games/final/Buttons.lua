@@ -8,12 +8,16 @@ function Buttons:init(level)
     self.selecteds = {}
     
     self:create()
+
+
 end
 
 function Buttons:insertRow(x, y, buttons)
     for i = 1, #buttons do
         table.insert(self.selecteds, Button(x, y, buttons[i]))
-        x = x + 20
+        local last = #self.selecteds
+        local gap = 3
+        x = x + self.selecteds[last].width + gap
     end
 end
 
@@ -37,7 +41,7 @@ end
 function Buttons:create()
     second, third = self:getButtonsFromMap()
     local yCoordinates = {173, 193, 213, 233}
-    local buttonsList = {self.firstRow, second, third, {RUN}}
+    local buttonsList = {self.firstRow, second, third, {RUN, RESET}}
     local x = 490
     
     for i = 1, #buttonsList do
@@ -49,7 +53,9 @@ function Buttons:getMouseXY(x, y)
     for i = 1, #self.selecteds do
         if self.selecteds[i]:updateStateSelected(x, y) then
             if self.selecteds[i].action == RUN then
-                self.level.game.stages.start = true
+                self.level.game:start()
+            elseif self.selecteds[i].action == RESET then
+                self.level:reset()
             else
                 self.level:insert(self.selecteds[i].action)
             end
@@ -70,6 +76,5 @@ function Buttons:render()
     love.graphics.setColor(1,1,1, 1)
     for i = 1, #self.selecteds do
         self.selecteds[i]:render()
-
     end
 end

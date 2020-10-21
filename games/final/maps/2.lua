@@ -105,6 +105,7 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
+        ["F0"] = 5,
         ["blueTile"] = false,
         ["door"] = true,
         ["face"] = "right",
@@ -112,8 +113,8 @@ return {
         ["fruitsTotal"] = 3,
         ["grass"] = true,
         ["greyTile"] = false,
-        ["numCommands"] = 5,
-        ["size"] = 5,
+        ["numFunc"] = 1,
+        ["totalSize"] = 5,
         ["yellowTile"] = false
       },
       encoding = "base64",
@@ -690,23 +691,6 @@ return {
       y = 0,
       width = 39,
       height = 17,
-      id = 29,
-      name = "answerSpots",
-      visible = true,
-      opacity = 1,
-      offsetx = -96.5455,
-      offsety = 5.81818,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      data = "eJztzrENgCAABdFfkFCIimOAivtvx/UOAJp/yetPcs65dyGMPvhGS5QSVmzYkXHE0WdS4aHixIUbDc8Eb865/9YBUbECAQ=="
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 39,
-      height = 17,
       id = 28,
       name = "answerSpots",
       visible = true,
@@ -716,7 +700,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRQAhcYMPN5mGnv3uIAZpAd2kNUreNglEwCoYvAAACEgL3"
+      data = "eJxjYBgFo2AUjIJRQAhcYGNg0GZnYNBhx2TzsA+060bBKBgFo2DwAABeTgNg"
     },
     {
       type = "tilelayer",
@@ -733,7 +717,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjETAzc7AwMM+0K7ADjSB7tIahG67wIadPQpGwSgYBaMAAQDAdQIz"
+      data = "eJxjYBgFo2AUjETAzc7AwMM+0K4YBaNgFIyCUTDcAAD14gAm"
     },
     {
       type = "tilelayer",

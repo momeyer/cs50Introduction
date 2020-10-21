@@ -131,6 +131,7 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
+        ["F0"] = 6,
         ["blueTile"] = true,
         ["door"] = true,
         ["face"] = "left",
@@ -138,8 +139,8 @@ return {
         ["fruitsTotal"] = 2,
         ["grass"] = true,
         ["greyTile"] = false,
-        ["numCommands"] = 6,
-        ["size"] = 6,
+        ["numFunc"] = 1,
+        ["totalSize"] = 6,
         ["yellowTile"] = true
       },
       encoding = "base64",
@@ -705,7 +706,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0EkOgkAQRuFKoL2RgqLCHcThGg4g5+E+DLrVizglvqUxGnYNJPWSL+ld/ykRrStdXJErhkZkBA8+xpggwBQzzBEiMna2LfgnxhIrrLHBjb13PPDEy7Wz57MtO3bY44AEKY7ILN3nX4UjUqJC7bS75btTx/b8Kh80v2137sHdNE3T2uwNC/MWhw=="
+      data = "eJzt0kkOgkAURdGfQLEjxQ5hD7bbsMX1sB8amcJGsIt3aIxMC0z+TU5Ss3qplIjWlypXpMbAiAzhY4QxJphihgBzhIiMnW0L7llihTU22KJh7w13PPB07ez5bMeOPQ444oQzYlwsvU9bqSOSIUfhdLvlu2vP9vwq8fhTeHntZ9uVf/BumqZpXfYGgLkcnA=="
     },
     {
       type = "tilelayer",
@@ -752,26 +753,9 @@ return {
       y = 0,
       width = 39,
       height = 17,
-      id = 30,
-      name = "text3",
-      visible = true,
-      opacity = 1,
-      offsetx = -23.5909,
-      offsety = -9.54545,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      data = "eJxjYBgFo2AUjHSwiI0wexSMglEwCkbBKCAGAABovgH5"
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 39,
-      height = 17,
       id = 31,
       name = "text4",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = -32,
       offsety = -14,

@@ -14,6 +14,7 @@
  </tileset>
  <layer id="15" name="info" width="39" height="17">
   <properties>
+   <property name="F0" type="int" value="5"/>
    <property name="blueTile" type="bool" value="false"/>
    <property name="door" type="bool" value="true"/>
    <property name="face" value="right"/>
@@ -21,8 +22,8 @@
    <property name="fruitsTotal" type="int" value="3"/>
    <property name="grass" type="bool" value="true"/>
    <property name="greyTile" type="bool" value="false"/>
-   <property name="numCommands" type="int" value="5"/>
-   <property name="size" type="int" value="5"/>
+   <property name="numFunc" type="int" value="1"/>
+   <property name="totalSize" type="int" value="5"/>
    <property name="yellowTile" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
@@ -119,19 +120,14 @@
    eJzt0kkKgDAQRNGCThbOU7z/QR0/eAUlQfrD29eiJM/7T1WUajRo0aHHgBETZixIWGPuxWW0mbTjwAkLUgi5Vz1dlnuB93qFfMvzvG+6AfdeBhg=
   </data>
  </layer>
- <layer id="29" name="answerSpots" width="39" height="17" offsetx="-96.5455" offsety="5.81818">
-  <data encoding="base64" compression="zlib">
-   eJztzrENgCAABdFfkFCIimOAivtvx/UOAJp/yetPcs65dyGMPvhGS5QSVmzYkXHE0WdS4aHixIUbDc8Eb865/9YBUbECAQ==
-  </data>
- </layer>
  <layer id="28" name="answerSpots" width="39" height="17" offsetx="3.07386" offsety="5.75568">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRQAhcYMPN5mGnv3uIAZpAd2kNUreNglEwCoYvAAACEgL3
+   eJxjYBgFo2AUjIJRQAhcYGNg0GZnYNBhx2TzsA+060bBKBgFo2DwAABeTgNg
   </data>
  </layer>
  <layer id="31" name="answerSpots" width="39" height="17" offsetx="11.0833" offsety="5.75">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjETAzc7AwMM+0K7ADjSB7tIahG67wIadPQpGwSgYBaMAAQDAdQIz
+   eJxjYBgFo2AUjETAzc7AwMM+0K4YBaNgFIyCUTDcAAD14gAm
   </data>
  </layer>
  <layer id="18" name="buttonsSecondRow" width="39" height="17">

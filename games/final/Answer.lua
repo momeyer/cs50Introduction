@@ -1,39 +1,42 @@
 Answer = Class{}
 
-function Answer:init(numOfSpots, map)
+function Answer:init(mapProps, map)
     self.answerBackgroud = love.graphics.newImage('graphics/background.png')
     self.actions = {
         [FACE_RIGHT] = love.graphics.newImage('graphics/turn_right.png'),
         [FACE_LEFT] = love.graphics.newImage('graphics/turn_left.png'),
         [WALK] = love.graphics.newImage('graphics/walk.png'),
         [F0] = love.graphics.newImage('graphics/F0.png'),
-        [CONDITIONAL_GREY] = love.graphics.newImage('graphics/greyTile.png'),
+        [F1] = love.graphics.newImage('graphics/F1.png'),
+        [CONDITIONAL_GREY] = love.graphics.newImage('graphics/greyTileAnswer.png'),
         [CONDITIONAL_RED] = love.graphics.newImage('graphics/red.png'),
-        [CONDITIONAL_YELLOW] = love.graphics.newImage('graphics/yellow.png'),
-        [CONDITIONAL_BLUE] = love.graphics.newImage('graphics/blue.png'),
+        [CONDITIONAL_YELLOW] = love.graphics.newImage('graphics/yellowAnswer.png'),
+        [CONDITIONAL_BLUE] = love.graphics.newImage('graphics/blueAnswer.png'),
         [PAINT_GREY] = love.graphics.newImage('graphics/paint_grey.png'),
         [PAINT_RED] = love.graphics.newImage('graphics/paint_red.png'),
         [PAINT_YELLOW] = love.graphics.newImage('graphics/paint_yellow.png'),
         [PAINT_BLUE] = love.graphics.newImage('graphics/paint_blue.png'),
         [RUN] = love.graphics.newImage('graphics/run.png'),
         }
-
-    self.index = 2
+        
     self.answerSpots = {}
     self.map = map
-
-    self:getAnswerSpots(numOfSpots)
+    self.numFuncs = mapProps.numFunc
+    self:getAnswerSpots(mapProps.totalSize, mapProps.numFunc)
 end
 
-function Answer:getAnswerSpots(numOfSpots)
-    local object = getMapObject(self.map, F0)
-    local answerSpot = {}
-    answerSpot.x = object.x
-    answerSpot.y = object.y
-    answerSpot.action = self.actions[F0]
-    table.insert(self.answerSpots, answerSpot)
+function Answer:getAnswerSpots(totalSize, numFuncs)
+    local funcs = {F0, F1}
+    for i = 1, numFuncs do
+        local object = getMapObject(self.map, funcs[i])
+        local answerSpot = {}
+        answerSpot.x = object.x
+        answerSpot.y = object.y
+        answerSpot.action = self.actions[funcs[i]]
+        table.insert(self.answerSpots, answerSpot)
+    end
 
-    for i = 1, numOfSpots do
+    for i = 1, totalSize do
         local object = getMapObject(self.map, 'answer' .. tostring(i))
         local answerSpot = {}
         answerSpot.x = object.x
@@ -45,11 +48,11 @@ function Answer:getAnswerSpots(numOfSpots)
 end
 
 function Answer:setConditionImage(command, index)
-    self.answerSpots[index + 1].condition = self.actions[command]
+    self.answerSpots[index + self.numFuncs].condition = self.actions[command]
 end
 
 function Answer:setActionImage(command, index)
-    self.answerSpots[index + 1].action = self.actions[command]
+    self.answerSpots[index + self.numFuncs].action = self.actions[command]
 end
 
 function Answer:draw()

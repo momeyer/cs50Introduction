@@ -1,6 +1,7 @@
 Game = Class{}
 
 function Game:init(mapProperties)
+
     self.stages = {
         menu = false,
         instruction = nil,
@@ -11,15 +12,13 @@ function Game:init(mapProperties)
 }
 end
 
-function Game:reset()
-    self.stages.endGame = false
-    self.stages.start = false
-    self.stages.fail = false
-end
-
 function Game:fail(player)
     self.stages.fail = true
     player.isMoving = false
+end
+
+function Game:start(player)
+    self.stages.start = true
 end
 
 function Game:endGame(player)

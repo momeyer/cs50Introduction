@@ -14,6 +14,7 @@
  </tileset>
  <layer id="23" name="info" width="39" height="17">
   <properties>
+   <property name="F0" type="int" value="2"/>
    <property name="blueTile" type="bool" value="false"/>
    <property name="door" type="bool" value="true"/>
    <property name="face" value="up"/>
@@ -21,8 +22,8 @@
    <property name="fruitsTotal" type="int" value="1"/>
    <property name="grass" type="bool" value="true"/>
    <property name="greyTile" type="bool" value="false"/>
-   <property name="numCommands" type="int" value="2"/>
-   <property name="size" type="int" value="2"/>
+   <property name="numFunc" type="int" value="1"/>
+   <property name="totalSize" type="int" value="2"/>
    <property name="yellowTile" type="bool" value="false"/>
   </properties>
   <data encoding="base64" compression="zlib">
@@ -94,17 +95,17 @@
  </layer>
  <layer id="22" name="answerText" width="39" height="17" offsetx="-48" offsety="0">
   <data encoding="base64" compression="zlib">
-   eJztkEsOgkAQBd/IXENvTuAeBu4hsOfn1h9iYiW4kTVkZtGVVF4vKy0ZhrE3t4N0xwc+8YUTvnHGDx4T6ZSELo2L1kkd9ji40DX/jPSkfrkzNvdhe9acfz0FW0bUduVvF3oqrLGJqM0wjG34AgIZFjg=
+   eJzt0DsOQFAQRuHh2gY7txJhHx69Z+tN4hQahY7cW8xJvkz7Z0Q0Tfu70ReZMGPBig07DpwIjUhkbC91q9oTadCi82yvedazJw5sr3gvubel3MyhnQN/y9lToETl0DZN077pAoe8FPE=
   </data>
  </layer>
  <layer id="33" name="answer2" width="39" height="17" offsetx="1.49571" offsety="-1.55884">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjILBCb6zDLQLcANRVgYGMSC2YB1ol6CCPYM4zEbBKBgFIwMAAFYqAi4=
+   eJxjYBgFo2AUjILBCb6zDLQLcANRVghtwTqw7kAHe4BhJg50k8Qgc9coGAWjYOQAAM0hAkw=
   </data>
  </layer>
- <layer id="34" name="answer3" width="39" height="17" offsetx="-8.875" offsety="-1.5">
+ <layer id="34" name="answer3" width="39" height="17" visible="0" offsetx="-8.875" offsety="-1.5">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjIJRMNzAHpaBdsEoGAWjYKQCAGqFAME=
+   eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ==
   </data>
  </layer>
  <layer id="26" name="buttonsSecondRow" width="39" height="17">
@@ -118,9 +119,9 @@
   </data>
  </layer>
  <objectgroup id="21" name="answer" visible="0">
-  <object id="94" name="F0" x="385.541" y="110.435" width="17" height="17"/>
-  <object id="106" name="answer1" x="353.459" y="142.366" width="17" height="17"/>
-  <object id="107" name="answer2" x="375.099" y="142.485" width="17" height="17"/>
+  <object id="94" name="F0" x="383.916" y="110.06" width="17" height="17"/>
+  <object id="106" name="answer1" x="353.459" y="142.366" width="16" height="16"/>
+  <object id="107" name="answer2" x="377.447" y="142.398" width="16" height="16"/>
  </objectgroup>
  <layer id="28" name="buttons" width="39" height="17">
   <data encoding="base64" compression="zlib">

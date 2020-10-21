@@ -5,6 +5,7 @@ FACE_DOWN = 'down'
 FACE_RIGHT = 'right'
 FACE_UP = 'up'
 
+F1 = 'F1'
 F0 = 'F0'
 WALK = 'walk'
 CONDITIONAL_GREY = 'greyTile'

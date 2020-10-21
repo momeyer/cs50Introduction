@@ -7,6 +7,7 @@ function Button:init(x, y, action)
         [FACE_LEFT] = love.graphics.newImage('graphics/turn_left.png'),
         [WALK] = love.graphics.newImage('graphics/walk.png'),
         [F0] = love.graphics.newImage('graphics/F0.png'),
+        [F1] = love.graphics.newImage('graphics/F1.png'),
         [CONDITIONAL_GREY] = love.graphics.newImage('graphics/greyTile.png'),
         [CONDITIONAL_RED] = love.graphics.newImage('graphics/red.png'),
         [CONDITIONAL_YELLOW] = love.graphics.newImage('graphics/yellow.png'),
@@ -16,23 +17,20 @@ function Button:init(x, y, action)
         [PAINT_YELLOW] = love.graphics.newImage('graphics/paint_yellow.png'),
         [PAINT_BLUE] = love.graphics.newImage('graphics/paint_blue.png'),
         [RUN] = love.graphics.newImage('graphics/run.png'),
+        [RESET] = love.graphics.newImage('graphics/reset.png'),
         }
-
     self.buttonStates = self:setUpStates(action)
 
     self.x = x
     self.y = y
-    self.imageX = self.x
-    self.imageY = self.y
     self.action = action
     self.width = self.buttonStates[1]:getWidth()
-    
     self.buttonState = self.buttonStates[NORMAL]
-    -- self.active = true
 end
 
 function Button:setUpStates(action)
-    if action == RUN then 
+    
+    if action == RUN then
         return {
             [NORMAL] = love.graphics.newImage('graphics/buttonLarge.png'),
             [PRESSED] = love.graphics.newImage('graphics/buttonLargePressed.png'),
@@ -71,7 +69,5 @@ end
 
 function Button:render()
     love.graphics.draw(self.buttonState, self.x, self.y)
-    if self.action ~= 'play' then
-        love.graphics.draw(self.actions[self.action], self.imageX, self.imageY)
-    end
+    love.graphics.draw(self.actions[self.action], self.x, self.y)
 end

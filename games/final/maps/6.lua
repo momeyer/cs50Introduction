@@ -105,6 +105,7 @@ return {
       offsetx = 0,
       offsety = 0,
       properties = {
+        ["F0"] = 3,
         ["blueTile"] = true,
         ["door"] = false,
         ["face"] = "right",
@@ -112,8 +113,8 @@ return {
         ["fruitsTotal"] = 20,
         ["grass"] = true,
         ["greyTile"] = false,
-        ["numCommands"] = 3,
-        ["size"] = 3,
+        ["numFunc"] = 1,
+        ["totalSize"] = 3,
         ["yellowTile"] = true
       },
       encoding = "base64",
@@ -1039,24 +1040,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0DkOgDAMRFEnLHdlX28AZ+Q8fFpEQTdR5C89yeXIZvnXBLMWHXoMGDFhxoIVG/agXptOzysiCpTiLe8q9YAfXfH7VlarB3heYh041SM8L7Nu6CgIBw=="
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 39,
-      height = 17,
-      id = 86,
-      name = "text",
-      visible = true,
-      opacity = 1,
-      offsetx = 8.14888,
-      offsety = -0.00395257,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      data = "eJxjYBgFo2AU0ApcYxpoF4yCUTAKRsEoGAX0BQDvRQDZ"
+      data = "eJzt0LkNgEAMBVEvC/QDXXGfHUCN1MMgMiIyWyuP9CSHXxZJvyaItOjQY8CICTMWrNiwB+21dnpekSEiV97yrdAe8KOL51U8r47vbaFSe4DnGevAqT3C8xLrBsTXCHA="
     },
     {
       type = "objectgroup",
