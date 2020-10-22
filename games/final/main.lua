@@ -9,9 +9,9 @@ function love.load()
     -- Load map file
     love.physics.setMeter(32)
     love.window.setTitle('Can you help Tonny?')
-    numLevels = 9
+    numLevels = 10
     levels = createLevels(numLevels)
-    levelIndex = 9
+    levelIndex = 1
     level = Level(levels[levelIndex])
     menu = Menu(level.game.stages)
 

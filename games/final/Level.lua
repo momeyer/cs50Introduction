@@ -68,8 +68,6 @@ end
 function Level:executeInstruction(dt)
     if self.game.stages.start and not self.game.stages.fail and not self.game.stages.endGame then
         local nextMovement = self.functions[self.nextInstruction[1]][self.nextInstruction[2]]
-        print("-----------------------")
-        print(nextMovement.action)
         if nextMovement == nil or nextMovement.action == nil then
             self.game.stages.fail = true
         elseif nextMovement.action == F0 or nextMovement.action == F1 then
@@ -82,7 +80,6 @@ function Level:executeInstruction(dt)
             end
         elseif nextMovement.condition ~= nil then
             if self.tiles.player:findColliders(nextMovement.condition) then
-                print("found tile ")
                 self.tiles.player:move(nextMovement.action, dt)
             end
             self.nextInstruction[2] = self.nextInstruction[2] + 1
@@ -106,6 +103,7 @@ function Level:insert(command)
         else
             self.functions[F0][self.funcIndex].action = command
             self.answer:setActionImage(command, self.answerIndex)
+
             self.funcIndex = self.funcIndex + 1
             self.answerIndex = self.answerIndex + 1
         end
@@ -137,5 +135,5 @@ function Level:render()
     if not self.mapProperties.door then
         self.tiles.player:draw()
     end
-    self.world:draw()
+    --self.world:draw()
 end
