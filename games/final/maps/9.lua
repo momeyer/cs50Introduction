@@ -146,7 +146,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRMApGNgjnHmgXDD8wGqYjFwAAEXwAxQ=="
+      data = "eJzr5mZg6B7Fo3gUj+JRPIpHMA4fBG4Ybng0TEcuBgCJUYQi"
     },
     {
       type = "tilelayer",
@@ -268,7 +268,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0rkNgDAQRNEhAkMJnP1XQT+cKTc/RZAb0H7pSQ5HK0v/b4qkGQtWbNhxQE4KkCFHgRKV873af00otejQh77XXBtetuepOpbShL+V3N++Gj9wN8uyLOvbnU4tEKY="
+      data = "eJzt0LkNgDAQRNHJjHEJ0BW3OWqlH84UIiZFkC9G+6UnbTha4P8dEXBSZoGcCiqpopoa8tRSRz0NVnq1fJMBZlpoNdJr7m0f2/PWGAOJA1L3vKXaA/ibpmmaFnYXTxUPSQ=="
     },
     {
       type = "tilelayer",

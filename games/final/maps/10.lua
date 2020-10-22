@@ -200,7 +200,7 @@ return {
       },
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYKAOUGFhYFjETl1MLTDqtlG3jbpt8LvNE+g2LypjaoGVbKjYBehvZ3bKaFq5jRp4JLktix2/fYTkkdVR222DOdwGu9uIzYfobkGXl6cA0zrcllOI0d3mSiCtE5JHVgcAHR7kGQ=="
+      data = "eJxjYKAOUGFhYFjETjmmBRh126jbRt02+N3mCXSbFxUwLcBKNlTsAgwDZ3bSaXq4jVw8Ut2WxY7fbkLytHTbYA63we42YvMlurvQ86k8O/l4qIQbLQAAqeKvgA=="
     },
     {
       type = "tilelayer",
@@ -217,7 +217,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjIJRQCxwZmdgCAXiMArpUTAKRsHIBQNdhixno44/cAEAMYwNQA=="
+      data = "eJxjYBgFo2AUjIJRQCxwZmdgCAXiMDLoUTAKRsEoAIHhXoYAAO/3Cmk="
     },
     {
       type = "tilelayer",
@@ -268,7 +268,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYKAM/GJjYFjJRqEhNAKjbiMPjLqNPDDqNvLAqNvIA6NuIw/IsA+0C0bBSAIrB3FeoKW7AMUnFLY="
+      data = "eJxjYKAM/GJjYFjJRqEhNAKjbiMPjLqNPDDqNvLAqNvIA6NuIw/IsA+0C0bBSAIrB3FeoCUAAIZJFAc="
     },
     {
       type = "tilelayer",
@@ -285,7 +285,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYCAf/GJjYDgDxM7sFBhCIzDqNvLAqNvIA6NuIw+Muo08AHPbR7aBdgkmgLltMAKQ22yB8blyELoPFm6D3W2DzX2D2W0rB7HblgPds4qGbgMAYBcoBg=="
+      data = "eJxjYCAf/GJjYDgDxM7sFBhCIzDqNvLAqNvIA6NuIw+Muo08AHPbR7aBdgkmgLltMAKQ22yB8blyELoPFm6D3W2DzX2D2W0rB7HbaA0AamwlSw=="
     },
     {
       type = "tilelayer",
@@ -302,7 +302,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYCAfzGJjYJjNRoEBNAT7ge46MEjdNgpGwSgY2uAAOwPDQSCeASxjZiKVMzpAMV0kcZg6bPpoBZ4CzX8GxHuBduxDsicQKBaEJA5Th03fKBgFxAI9YJrRB+JDQHyYHdEuINQ+gKnXY8ethlIQDDQ7BIifA/ELdkS7gFD7AKY+mIZuG+4AAPovIy0="
+      data = "eJxjYCAfzGJjYJjNRoEBNAT7ge46MEjdNgpGwSgY2uAAOwPDQSCeASxjZiKVMzpAMV0kcZg6eoKnQPueAfFeoP37kNwWCBQLQhKHqRsFo4ASoAdMQ/pAfAiID7Mj2gWDoX0QDHRPCBA/B+IX7Ih2wWj7gPYAAPs9GmU="
     },
     {
       type = "tilelayer",
@@ -319,7 +319,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0rkNgDAQRNEhAkMJnP1XQT+cKTc/RZAb0H7pSQ5HK0v/b4qkGQtWbNhxQE4KkCFHgRKV873af00otejQh77XXBtetuepOpbShL+V3N++Gj9wN8uyLOvbnU4tEKY="
+      data = "eJzt0LkNgDAQRNHJjHEJ0BW3OWqlH84UIiZFkC9G+6UnbTha4P8dEXBSZoGcCiqpopoa8tRSRz0NVnq1fJMBZlpoNdJr7m0f2/PWGAOJA1L3vKXaA/ibpmmaFnYXTxUPSQ=="
     },
     {
       type = "tilelayer",

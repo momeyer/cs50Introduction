@@ -12,8 +12,11 @@ function Level:init(mapToRender)
     self.game = Game(self.mapProperties)
     self.tiles = Tiles(self.map, self.world, self.game)
 
-    self.funcIndex = 1
-    self.funcIndex1 = 1
+    self.functionIndex = {
+            F0 = 1,
+            F1 = 1
+    }
+
     self.answerIndex = 1
 
     self.functions = {
@@ -29,8 +32,10 @@ function Level:init(mapToRender)
 end
 
 function Level:reset()
-    self.funcIndex = 1
-    self.funcIndex1 = 1
+   self.functionIndex = {
+            F0 = 1,
+            F1 = 1
+    }
     self.answerIndex = 1
 
     self.functions = {
@@ -95,32 +100,38 @@ function Level:drawCommands()
     self.buttons:render()
 end
 
-function Level:insert(command)
-    if self.funcIndex <= self.mapProperties[F0] then
-        if inTable(self.functions[F0][self.funcIndex].conditions, command) then
-            self.functions[F0][self.funcIndex].condition = command
-            self.answer:setConditionImage(command, self.answerIndex)
-        else
-            self.functions[F0][self.funcIndex].action = command
-            self.answer:setActionImage(command, self.answerIndex)
+function Level:insertCondtitionInTable(func, index, command)
+    self.functions[func][index].condition = command
+    self.answer:setConditionImage(command, self.answerIndex)
+end
 
-            self.funcIndex = self.funcIndex + 1
-            self.answerIndex = self.answerIndex + 1
-        end
+function Level:insertActionInTable(func, index, command)
+    self.functions[func][index].action = command
+    self.answer:setActionImage(command, self.answerIndex)
+end
+
+function Level:IfCondition(command, conditions)
+    return inTable(conditions, command)
+end
+
+function Level:selectCurFunction()
+    if self.functionIndex[F0] <= self.mapProperties[F0] then
+        return F0 
+    elseif self.functionIndex[F1] <= self.mapProperties[F1] then
+        return F1
+    end
+end
+
+function Level:insert(command)
+    local listOfConditions = self.functions[F0][1].conditions
+    local curFunction = self:selectCurFunction()
+
+    if self:IfCondition(command, listOfConditions) then
+        self:insertCondtitionInTable(curFunction, self.functionIndex[curFunction], command)
     else
-        
-        if self.funcIndex1 <= self.mapProperties[F1] then
-            if inTable(self.functions[F1][self.funcIndex1].conditions, command) then
-                self.functions[F1][self.funcIndex1].condition = command
-                self.answer:setConditionImage(command, self.answerIndex)
-            else
-                self.functions[F1][self.funcIndex1].action = command
-                self.answer:setActionImage(command, self.answerIndex)
-                self.funcIndex1 = self.funcIndex1 + 1
-                self.answerIndex = self.answerIndex + 1
-            end
-        end
-        
+        self:insertActionInTable(curFunction, self.functionIndex[curFunction], command)
+        self.functionIndex[curFunction] =  self.functionIndex[curFunction] + 1
+        self.answerIndex = self.answerIndex + 1
     end
 end
 
@@ -135,5 +146,8 @@ function Level:render()
     if not self.mapProperties.door then
         self.tiles.player:draw()
     end
+
+
+
     --self.world:draw()
 end

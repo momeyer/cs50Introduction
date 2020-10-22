@@ -6,7 +6,6 @@ require 'Definitions'
 love.graphics.setDefaultFilter('nearest', 'nearest')
 
 function love.load()
-    -- Load map file
     love.physics.setMeter(32)
     love.window.setTitle('Can you help Tonny?')
     numLevels = 10
@@ -99,6 +98,7 @@ function love.draw()
         elseif level.game.stages.fail then
             displayFailMessage()
         end
+        love.graphics.print('LEVEL ' .. levelIndex, 545, 259)
         push:apply('end')
     end
 end
