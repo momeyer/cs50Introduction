@@ -706,7 +706,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0kkOgkAURdGfQLEjxQ5hD7bbsMX1sB8amcJGsIt3aIxMC0z+TU5Ss3qplIjWlypXpMbAiAzhY4QxJphihgBzhIiMnW0L7llihTU22KJh7w13PPB07ez5bMeOPQ444oQzYlwsvU9bqSOSIUfhdLvlu2vP9vwq8fhTeHntZ9uVf/BumqZpXfYGgLkcnA=="
+      data = "eJzt0kkOgkAURdGf0OxIBBtgD2KzDXvW434EdSoJ61DUeIdMalpA8m9ykprVS6VEtL70dEUqjDyRAGOEiDDBFDPMESNB6tnZtuCeDEussMYGL/a+0eCDr2tnT7stO3bY44AjTjgjt/Q+pq6OSIESN9ROt3va3Xu0xdTF50/h55vPtnsM4N00TdO67A+daB1+"
     },
     {
       type = "tilelayer",
@@ -784,19 +784,6 @@ return {
           shape = "rectangle",
           x = 384.391,
           y = 86.42,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 24,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 368,
-          y = 53.3333,
           width = 17,
           height = 17,
           rotation = 0,

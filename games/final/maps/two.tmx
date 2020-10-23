@@ -113,11 +113,10 @@
   <object id="50" name="answer3" x="355.102" y="133.742" width="17" height="17"/>
   <object id="51" name="answer4" x="379.027" y="133.723" width="17" height="17"/>
   <object id="52" name="answer5" x="403.093" y="133.711" width="17" height="17"/>
-  <object id="53" name="F0" x="350.478" y="93.7253" width="17" height="17"/>
  </objectgroup>
  <layer id="13" name="text" width="39" height="17" offsetx="-96" offsety="0">
   <data encoding="base64" compression="zlib">
-   eJzt0kkKgDAQRNGCThbOU7z/QR0/eAUlQfrD29eiJM/7T1WUajRo0aHHgBETZixIWGPuxWW0mbTjwAkLUgi5Vz1dlnuB93qFfMvzvG+6AfdeBhg=
+   eJzt0kkKgDAQRNGCJAuHOHv/gzp+8ApKB+kPb1+LkjzvP1VJqtGgRUaHHgNGTJixYE3Wi8toC9KOAydylGK0XvV0BesF3usV8i3P877pBjYVBiI=
   </data>
  </layer>
  <layer id="28" name="answerSpots" width="39" height="17" offsetx="3.07386" offsety="5.75568">

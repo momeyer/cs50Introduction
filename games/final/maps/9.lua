@@ -197,7 +197,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzlVMsKwCAM220H/899+H5oeAjLAq3uYGQsINgqJKSPbfsOjpLHvfwMgOvcn3nE7b3dcWrx6GsctdycqiHKu7yDP5FvUd6BUW1R7WcBNUVPZdpUowPMDV7WjIO+WzGn6l02ty4wV08b++nQxTsiuutOce+Q7M6xc4e8qan+d0F7ibWtmlPGiG+rENVX3/6MC6tgRNo="
+      data = "eJzlVFsKwCAM89/7rfT+FxmDFUKwPj6MjAVEW4WE1LaU78BqPx7ldyC4nDgjfu4d1lU1+uzlctid4lZe5Z0PfMvyCsxqy2q/CwY1GmljjQogtwF/aI4V/+5En7J3vb5VwRI9LW3op0IXzojszDNFPUN6Z4yVM2SlpvxeBf5LqO1UnyJmfDuFrL5892fcm1kqHg=="
     },
     {
       type = "tilelayer",
@@ -268,7 +268,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0LkNgDAQRNHJjHEJ0BW3OWqlH84UIiZFkC9G+6UnbTha4P8dEXBSZoGcCiqpopoa8tRSRz0NVnq1fJMBZlpoNdJr7m0f2/PWGAOJA1L3vKXaA/ibpmmaFnYXTxUPSQ=="
+      data = "eJzt0DkKgEAQRNHKxnGOoLdyX8/qfVxTBcHKDMS4HekPDzosGvh/ewAclFggpYxyKqikimpqqKWOeiu9Wr7RABPNtNBppBfdrR/a8tYQApEDYve8pdo8+JumaZrmdxegRhBN"
     },
     {
       type = "tilelayer",
@@ -878,19 +878,6 @@ return {
         ["numObejcts"] = 6
       },
       objects = {
-        {
-          id = 17,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 362.833,
-          y = 46.75,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
         {
           id = 19,
           name = "answer1",

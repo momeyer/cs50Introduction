@@ -301,7 +301,7 @@
  </layer>
  <layer id="79" name="text" width="39" height="17">
   <data encoding="base64" compression="zlib">
-   eJzt0LkNgEAMBVEvC/QDXXGfHUCN1MMgMiIyWyuP9CSHXxZJvyaItOjQY8CICTMWrNiwB+21dnpekSEiV97yrdAe8KOL51U8r47vbaFSe4DnGevAqT3C8xLrBsTXCHA=
+   eJzt0MkNgDAMBVGHAA1QCXTFFtYOoEbqYRAnbtwcRR7pST5+WST9WifSoceAEQETZixYsWF32mvj6XlFBo8cle6cT4X2gB9dPK/meY1/7xgqtQdYVmQdOLVHWFZi3WB2CIM=
   </data>
  </layer>
  <objectgroup id="81" name="grass" visible="0">
@@ -380,7 +380,6 @@
   <properties>
    <property name="numObjects" type="int" value="3"/>
   </properties>
-  <object id="26" name="F0" x="352" y="48" width="16" height="16"/>
   <object id="27" name="answer1" x="320" y="80" width="16" height="16"/>
   <object id="28" name="answer2" x="344.063" y="79.9375" width="16" height="16"/>
   <object id="29" name="answer3" x="367.989" y="80.0056" width="16" height="16"/>

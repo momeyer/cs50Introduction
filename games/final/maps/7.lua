@@ -441,7 +441,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0jkKgEAMheHXjeMcQW/lvp7V+7i2WvlALBQ7kQkyP3yQMoQA/2/1gI0iDcSUUEoZ5VRQSRXV1FCrbW9tv14BA400KdvbXJuF7fNU5wOBAUJzzBJaBN/N/du77v92zjaT/G8ul+u7dofWFhs="
+      data = "eJzt0kkKgDAQRNHaxeEIeivn8azex3GrKFggIgguJa3kw4Msi9DA/5stYKHABkKKKKaEUsoop4JKqqi2da/WX6uAjnoaaFO6F12NgrY81TiA5wK+e7wlNAn+t/u9rYK2fvHezrfOJN+byWR6rx2qmhgi"
     },
     {
       type = "tilelayer",
@@ -576,19 +576,6 @@ return {
       },
       objects = {
         {
-          id = 17,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 350.333,
-          y = 41,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
           id = 19,
           name = "answer1",
           type = "",
@@ -621,19 +608,6 @@ return {
           shape = "rectangle",
           x = 368.009,
           y = 72.0401,
-          width = 16,
-          height = 16,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 25,
-          name = "F1",
-          type = "",
-          shape = "rectangle",
-          x = 350.341,
-          y = 104.432,
           width = 16,
           height = 16,
           rotation = 0,

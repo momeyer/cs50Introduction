@@ -82,7 +82,7 @@
  </layer>
  <layer id="20" name="text" width="39" height="17" offsetx="-69.5" offsety="-8.5">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AU0AOcZWZgOAfE54H4AvNAuwYVXBxk7sEGFrExMPwF4n9smOyBApeGQLiNglEwCkYBvQEAJ5YK9g==
+   eJxjYBgFo2AU0AOcZWZgOAfE54H4AhDfZx5oFyHAxUHkFlxgERsDw18g/seGyR4ocGkIhNsoGAWjYBTQGwAAOa0L2A==
   </data>
  </layer>
  <layer id="22" name="text2" width="39" height="17" offsetx="-64.3724" offsety="-2.03065">
@@ -132,7 +132,6 @@
   <object id="70" name="answer4" x="418.122" y="103.497" width="16" height="16"/>
   <object id="71" name="answer3" x="394.285" y="102.969" width="16" height="16"/>
   <object id="72" name="answer5" x="442.085" y="103.49" width="16" height="16"/>
-  <object id="75" name="F0" x="377.662" y="68.375" width="17" height="17"/>
   <object id="76" name="answer1" x="346.143" y="103.415" width="16" height="16"/>
  </objectgroup>
  <layer id="34" name="apple1" width="39" height="17" offsetx="-6" offsety="-2.66667">

@@ -319,7 +319,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0LkNgDAQRNHJjHEJ0BW3OWqlH84UIiZFkC9G+6UnbTha4P8dEXBSZoGcCiqpopoa8tRSRz0NVnq1fJMBZlpoNdJr7m0f2/PWGAOJA1L3vKXaA/ibpmmaFnYXTxUPSQ=="
+      data = "eJzt0DkKgEAQRNHKxnGOoLdyX8/qfVxTBcHKDMS4HekPDzosGvh/ewAclFggpYxyKqikimpqqKWOeiu9Wr7RABPNtNBppBfdrR/a8tYQApEDYve8pdo8+JumaZrmdxegRhBN"
     },
     {
       type = "tilelayer",
@@ -428,7 +428,7 @@ return {
       draworder = "topdown",
       id = 32,
       name = "answer",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0,
       offsety = 0,
@@ -436,19 +436,6 @@ return {
         ["numObejcts"] = 6
       },
       objects = {
-        {
-          id = 17,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 410.75,
-          y = 49.8333,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
         {
           id = 19,
           name = "answer1",

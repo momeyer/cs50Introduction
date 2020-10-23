@@ -157,7 +157,7 @@
  </objectgroup>
  <layer id="26" name="text" width="39" height="17" offsetx="-31.5" offsety="-25.5">
   <data encoding="base64" compression="zlib">
-   eJzt0kkOgkAURdGfQLEjxQ5hD7bbsMX1sB8amcJGsIt3aIxMC0z+TU5Ss3qplIjWlypXpMbAiAzhY4QxJphihgBzhIiMnW0L7llihTU22KJh7w13PPB07ez5bMeOPQ444oQzYlwsvU9bqSOSIUfhdLvlu2vP9vwq8fhTeHntZ9uVf/BumqZpXfYGgLkcnA==
+   eJzt0kkOgkAURdGf0OxIBBtgD2KzDXvW434EdSoJ61DUeIdMalpA8m9ykprVS6VEtL70dEUqjDyRAGOEiDDBFDPMESNB6tnZtuCeDEussMYGL/a+0eCDr2tnT7stO3bY44AjTjgjt/Q+pq6OSIESN9ROt3va3Xu0xdTF50/h55vPtnsM4N00TdO67A+daB1+
   </data>
  </layer>
  <layer id="34" name="buttonsSecondRow" width="39" height="17">
@@ -187,7 +187,6 @@
    <property name="size" type="int" value="6"/>
   </properties>
   <object id="23" name="answer3" x="384.391" y="86.42" width="17" height="17"/>
-  <object id="24" name="F0" x="368" y="53.3333" width="17" height="17"/>
   <object id="25" name="answer1" x="336.458" y="86.4895" width="17" height="17"/>
   <object id="27" name="answer2" x="360.333" y="86.4163" width="17" height="17"/>
   <object id="28" name="answer4" x="408.339" y="86.3529" width="17" height="17"/>

@@ -306,7 +306,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AU0AOcZWZgOAfE54H4AvNAuwYVXBxk7sEGFrExMPwF4n9smOyBApeGQLiNglEwCkYBvQEAJ5YK9g=="
+      data = "eJxjYBgFo2AU0AOcZWZgOAfE54H4AhDfZx5oFyHAxUHkFlxgERsDw18g/seGyR4ocGkIhNsoGAWjYBTQGwAAOa0L2A=="
     },
     {
       type = "tilelayer",
@@ -491,19 +491,6 @@ return {
           y = 103.49,
           width = 16,
           height = 16,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
-        {
-          id = 75,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 377.662,
-          y = 68.375,
-          width = 17,
-          height = 17,
           rotation = 0,
           visible = true,
           properties = {}

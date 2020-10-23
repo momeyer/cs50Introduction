@@ -68,7 +68,7 @@
  </layer>
  <layer id="12" name="text" width="39" height="17" offsetx="15.6667" offsety="-3">
   <data encoding="base64" compression="zlib">
-   eJzt0jkKgDAQheFnFWOO4Hr/U3gf49K6+8BKsLOYQeaHD1I+wgD/b06BhVbaaKeDToIHEiqopIpqarz0avk6B0TqaXDSa56Nyva81WZAHnhb4X5raFL8b3Zv37J7syxLSxctERcr
+   eJzt0jsKgDAQhOGxitEj+Lz/KbyPz1ZN1AELQbARJIvsDx+kHMIC/2+OgYVWcuRpo51ggYhyKqikimobenX4WgN01NNA3oRedDUK2vJUkwBZyttKz7eEJsH/dr83J2ir3tu7JN+bpmnfdQBP1Rky
   </data>
  </layer>
  <layer id="22" name="fruit1" width="39" height="17" offsetx="0.363636" offsety="-3">
@@ -105,11 +105,9 @@
   <properties>
    <property name="numObejcts" type="int" value="6"/>
   </properties>
-  <object id="17" name="F0" x="362.833" y="46.75" width="17" height="17"/>
   <object id="19" name="answer1" x="335.589" y="76.8859" width="16" height="16"/>
   <object id="20" name="answer2" x="359.435" y="76.85" width="16" height="16"/>
   <object id="21" name="answer3" x="383.464" y="76.8583" width="16" height="16"/>
-  <object id="25" name="F1" x="362.523" y="109.341" width="16" height="16"/>
   <object id="26" name="answer4" x="335.601" y="140.818" width="16" height="16"/>
   <object id="27" name="answer5" x="359.523" y="141.036" width="16" height="16"/>
   <object id="29" name="answer6" x="383.554" y="140.941" width="16" height="16"/>

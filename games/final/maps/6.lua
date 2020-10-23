@@ -1040,7 +1040,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0LkNgEAMBVEvC/QDXXGfHUCN1MMgMiIyWyuP9CSHXxZJvyaItOjQY8CICTMWrNiwB+21dnpekSEiV97yrdAe8KOL51U8r47vbaFSe4DnGevAqT3C8xLrBsTXCHA="
+      data = "eJzt0MkNgDAMBVGHAA1QCXTFFtYOoEbqYRAnbtwcRR7pST5+WST9WifSoceAEQETZixYsWF32mvj6XlFBo8cle6cT4X2gB9dPK/meY1/7xgqtQdYVmQdOLVHWFZi3WB2CIM="
     },
     {
       type = "objectgroup",
@@ -1778,19 +1778,6 @@ return {
         ["numObjects"] = 3
       },
       objects = {
-        {
-          id = 26,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 352,
-          y = 48,
-          width = 16,
-          height = 16,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
         {
           id = 27,
           name = "answer1",

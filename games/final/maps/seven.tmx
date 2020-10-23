@@ -124,7 +124,7 @@
  </layer>
  <layer id="12" name="text" width="39" height="17" offsetx="0.666667" offsety="-8">
   <data encoding="base64" compression="zlib">
-   eJzt0jkKgEAMheHXjeMcQW/lvp7V+7i2WvlALBQ7kQkyP3yQMoQA/2/1gI0iDcSUUEoZ5VRQSRXV1FCrbW9tv14BA400KdvbXJuF7fNU5wOBAUJzzBJaBN/N/du77v92zjaT/G8ul+u7dofWFhs=
+   eJzt0kkKgDAQRNHaxeEIeivn8azex3GrKFggIgguJa3kw4Msi9DA/5stYKHABkKKKKaEUsoop4JKqqi2da/WX6uAjnoaaFO6F12NgrY81TiA5wK+e7wlNAn+t/u9rYK2fvHezrfOJN+byWR6rx2qmhgi
   </data>
  </layer>
  <layer id="13" name="text" width="39" height="17" visible="0" offsetx="8.94602" offsety="7.99905">
@@ -166,11 +166,9 @@
   <properties>
    <property name="numObejcts" type="int" value="6"/>
   </properties>
-  <object id="17" name="F0" x="350.333" y="41" width="17" height="17"/>
   <object id="19" name="answer1" x="320.651" y="72.0109" width="16" height="16"/>
   <object id="20" name="answer2" x="344.162" y="71.9409" width="16" height="16"/>
   <object id="21" name="answer3" x="368.009" y="72.0401" width="16" height="16"/>
-  <object id="25" name="F1" x="350.341" y="104.432" width="16" height="16"/>
   <object id="26" name="answer4" x="320.419" y="136" width="16" height="16"/>
   <object id="27" name="answer5" x="344.097" y="135.914" width="16" height="16"/>
   <object id="29" name="answer6" x="368.19" y="135.969" width="16" height="16"/>

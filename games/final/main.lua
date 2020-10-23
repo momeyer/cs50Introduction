@@ -1,7 +1,7 @@
-Class = require 'class'
-push = require 'push'
-sti = require "sti"
-require 'Definitions'
+Class = require 'libs/class'
+push = require 'libs/push'
+sti = require "libs/sti"
+require 'src/utils/Definitions'
 
 love.graphics.setDefaultFilter('nearest', 'nearest')
 

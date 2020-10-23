@@ -88,22 +88,22 @@
   </properties>
   <object id="112" name="fruit1" x="168" y="102.25" width="0.25" height="0.5"/>
  </objectgroup>
- <layer id="32" name="fruit1" width="39" height="17" offsetx="0.75" offsety="-4.25">
+ <layer id="32" name="fruit1" width="39" height="17" visible="0" offsetx="0.75" offsety="-4.25">
   <data encoding="base64" compression="zlib">
    eJxjYBgFo2AUDBfwmWWgXTAKRsEoGAWjYKQDAFvGAPg=
   </data>
  </layer>
- <layer id="22" name="answerText" width="39" height="17" offsetx="-48" offsety="0">
-  <data encoding="base64" compression="zlib">
-   eJzt0DsOQFAQRuHh2gY7txJhHx69Z+tN4hQahY7cW8xJvkz7Z0Q0Tfu70ReZMGPBig07DpwIjUhkbC91q9oTadCi82yvedazJw5sr3gvubel3MyhnQN/y9lToETl0DZN077pAoe8FPE=
-  </data>
- </layer>
  <layer id="33" name="answer2" width="39" height="17" offsetx="1.49571" offsety="-1.55884">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFo2AUjILBCb6zDLQLcANRVghtwTqw7kAHe4BhJg50k8Qgc9coGAWjYOQAAM0hAkw=
+   eJxjYBgFo2AUjILBCb6zDLQLcANRVghtwTqw7hgFo2AUjILBBgBmAwFT
   </data>
  </layer>
- <layer id="34" name="answer3" width="39" height="17" visible="0" offsetx="-8.875" offsety="-1.5">
+ <layer id="22" name="answerText" width="39" height="17" offsetx="-46" offsety="-1.5">
+  <data encoding="base64" compression="zlib">
+   eJzt0DsORGAYheHjtgYadm4lZiOD3rVlmCHxdqppJPIrvjd5+pMjWZZ1d5MvzfhgwYovftiwIw2kLHC99Fk1ntSiQ4/Vc73obGBLHrpe8b+CbS/EkZRErtecjfz2ZleJCvWDP7Qs61oHrr4VYQ==
+  </data>
+ </layer>
+ <layer id="34" name="answer3" width="39" height="17" offsetx="-8.875" offsety="-1.5">
   <data encoding="base64" compression="zlib">
    eJztwTEBAAAAwqD1T20JT6AAAOBjClwAAQ==
   </data>
@@ -119,7 +119,6 @@
   </data>
  </layer>
  <objectgroup id="21" name="answer" visible="0">
-  <object id="94" name="F0" x="383.916" y="110.06" width="17" height="17"/>
   <object id="106" name="answer1" x="353.459" y="142.366" width="16" height="16"/>
   <object id="107" name="answer2" x="377.447" y="142.398" width="16" height="16"/>
  </objectgroup>

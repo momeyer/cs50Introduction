@@ -652,19 +652,6 @@ return {
           rotation = 0,
           visible = true,
           properties = {}
-        },
-        {
-          id = 53,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 350.478,
-          y = 93.7253,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
         }
       }
     },
@@ -683,7 +670,7 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJzt0kkKgDAQRNGCThbOU7z/QR0/eAUlQfrD29eiJM/7T1WUajRo0aHHgBETZixIWGPuxWW0mbTjwAkLUgi5Vz1dlnuB93qFfMvzvG+6AfdeBhg="
+      data = "eJzt0kkKgDAQRNGCJAuHOHv/gzp+8ApKB+kPb1+LkjzvP1VJqtGgRUaHHgNGTJixYE3Wi8toC9KOAydylGK0XvV0BesF3usV8i3P877pBjYVBiI="
     },
     {
       type = "tilelayer",

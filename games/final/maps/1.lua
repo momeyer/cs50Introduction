@@ -384,7 +384,7 @@ return {
       height = 17,
       id = 32,
       name = "fruit1",
-      visible = true,
+      visible = false,
       opacity = 1,
       offsetx = 0.75,
       offsety = -4.25,
@@ -392,23 +392,6 @@ return {
       encoding = "base64",
       compression = "zlib",
       data = "eJxjYBgFo2AUDBfwmWWgXTAKRsEoGAWjYKQDAFvGAPg="
-    },
-    {
-      type = "tilelayer",
-      x = 0,
-      y = 0,
-      width = 39,
-      height = 17,
-      id = 22,
-      name = "answerText",
-      visible = true,
-      opacity = 1,
-      offsetx = -48,
-      offsety = 0,
-      properties = {},
-      encoding = "base64",
-      compression = "zlib",
-      data = "eJzt0DsOQFAQRuHh2gY7txJhHx69Z+tN4hQahY7cW8xJvkz7Z0Q0Tfu70ReZMGPBig07DpwIjUhkbC91q9oTadCi82yvedazJw5sr3gvubel3MyhnQN/y9lToETl0DZN077pAoe8FPE="
     },
     {
       type = "tilelayer",
@@ -425,7 +408,24 @@ return {
       properties = {},
       encoding = "base64",
       compression = "zlib",
-      data = "eJxjYBgFo2AUjILBCb6zDLQLcANRVghtwTqw7kAHe4BhJg50k8Qgc9coGAWjYOQAAM0hAkw="
+      data = "eJxjYBgFo2AUjILBCb6zDLQLcANRVghtwTqw7hgFo2AUjILBBgBmAwFT"
+    },
+    {
+      type = "tilelayer",
+      x = 0,
+      y = 0,
+      width = 39,
+      height = 17,
+      id = 22,
+      name = "answerText",
+      visible = true,
+      opacity = 1,
+      offsetx = -46,
+      offsety = -1.5,
+      properties = {},
+      encoding = "base64",
+      compression = "zlib",
+      data = "eJzt0DsORGAYheHjtgYadm4lZiOD3rVlmCHxdqppJPIrvjd5+pMjWZZ1d5MvzfhgwYovftiwIw2kLHC99Fk1ntSiQ4/Vc73obGBLHrpe8b+CbS/EkZRErtecjfz2ZleJCvWDP7Qs61oHrr4VYQ=="
     },
     {
       type = "tilelayer",
@@ -435,7 +435,7 @@ return {
       height = 17,
       id = 34,
       name = "answer3",
-      visible = false,
+      visible = true,
       opacity = 1,
       offsetx = -8.875,
       offsety = -1.5,
@@ -489,19 +489,6 @@ return {
       offsety = 0,
       properties = {},
       objects = {
-        {
-          id = 94,
-          name = "F0",
-          type = "",
-          shape = "rectangle",
-          x = 383.916,
-          y = 110.06,
-          width = 17,
-          height = 17,
-          rotation = 0,
-          visible = true,
-          properties = {}
-        },
         {
           id = 106,
           name = "answer1",
