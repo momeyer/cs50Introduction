@@ -98,7 +98,6 @@ function Player:move(action)
     end
     self:collectFruits()
     self:checkIfCollide()
-
 end
 
 function Player:getFirstCollider(tileColor)

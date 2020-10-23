@@ -11,43 +11,43 @@ function Level:init(mapToRender)
     self.mapProperties = self.map.layers.info.properties
     self.game = Game(self.mapProperties)
     self.tiles = Tiles(self.map, self.world, self.game)
-
-    self.curFunctionAndIndex = {
-            F0 = 1,
-            F1 = 1
+    self.functionsToUse = {F0, F1}
+    
+    self.functions = {
+        F0 = {},
+        F1 = {}
     }
 
-    self.answerIndex = 1
-
-    self.functions = {
-        [F0] = {},
-        [F1] = {},
+    self.curFunctionAndIndex = {
+        F0 = 1,
+        F1 = 1
     }
 
     self.nextInstruction = {F0, 1}
     
+    self:setUpFunctions()
     self.buttons = Buttons(self)
-    self:setUpInstructions()
     self.answer = Answer(self.mapProperties, self.map)
 end
 
+function Level:setUpFunctions()
+    for i = 1, self.mapProperties.numFunc do
+        for j = 1, self.mapProperties[self.functionsToUse[i]] do
+            table.insert(self.functions[self.functionsToUse[i]], Actions())
+        end
+    end
+end
+
 function Level:reset()
-   self.curFunctionAndIndex = {
-            F0 = 1,
-            F1 = 1
-    }
-    
-    self.answerIndex = 1
+    for i = 1, #self.functionsToUse do
+        self.curFunctionAndIndex[i] = 1
+    end
 
-    self.functions = {
-        [F0] = {},
-        [F1] = {},
-    }
-
+    self:setUpFunctions()
     self.nextInstruction = {F0, 1}
     
     self.buttons = Buttons(self)
-    self:setUpInstructions()
+    self:setUpFunctions()
     self.answer = Answer(self.mapProperties, self.map)
 end
 
@@ -61,40 +61,52 @@ function Level:update(dt)
     end
 end
 
+function Level:canExecuteInstruction()
+    return self.game.stages.start and not self.game.stages.fail and not self.game.stages.endGame
+end
 
-function Level:setUpInstructions()
-    local funcs = {F0, F1}
-    for i = 1, self.mapProperties.numFunc do
-        for j = 1, self.mapProperties[funcs[i]] do
-            table.insert(self.functions[funcs[i]], Actions())
-        end
+function Level:isValidInstruction(nextMovement)
+    if nextMovement == nil or nextMovement.action == nil then
+        self.game.stages.fail = true
+        return false
     end
+    return true
+end
+
+function Level:hasCondition(nextMovement)
+    return (nextMovement.condition ~= nil)
+end
+
+function Level:isFunction(nextMovement)
+    return inTable(self.functions, nextMovement.action)
+end
+
+function Level:conditionIsSatisfied(nextMovement)
+    return self.tiles.player:findColliders(nextMovement.condition)
 end
 
 function Level:executeInstruction(dt)
-    if self.game.stages.start and not self.game.stages.fail and not self.game.stages.endGame then
-        local nextMovement = self.functions[self.nextInstruction[1]][self.nextInstruction[2]]
-        if nextMovement == nil or nextMovement.action == nil then
-            self.game.stages.fail = true
-        elseif nextMovement.action == F0 or nextMovement.action == F1 then
-            if nextMovement.condition == nil then
-                self.nextInstruction = {nextMovement.action, 1}
-            elseif self.tiles.player:findColliders(nextMovement.condition) then
-                self.nextInstruction = {nextMovement.action, 1}
-            else
-                self.nextInstruction[2] = self.nextInstruction[2] + 1
-            end
-        elseif nextMovement.condition ~= nil then
-            if self.tiles.player:findColliders(nextMovement.condition) then
-                self.tiles.player:move(nextMovement.action, dt)
-            end
-            self.nextInstruction[2] = self.nextInstruction[2] + 1
-        else
-            self.tiles.player:move(nextMovement.action, dt)
-            self.nextInstruction[2] = self.nextInstruction[2] + 1
-        end
-        love.timer.sleep(0.1)
+    local nextMovement = self.functions[self.nextInstruction[1]][self.nextInstruction[2]]
+
+    if not self:canExecuteInstruction() or not self:isValidInstruction(nextMovement) then
+        return
     end
+
+    if self:isFunction(nextMovement) then
+        if not self:hasCondition(nextMovement) or self:conditionIsSatisfied(nextMovement) then
+            self.nextInstruction = {nextMovement.action, 1}
+            return
+        end
+    elseif self:hasCondition(nextMovement) then
+        if self:conditionIsSatisfied(nextMovement) then
+            self.tiles.player:move(nextMovement.action, dt)
+        end
+    else
+        self.tiles.player:move(nextMovement.action, dt)        
+    end
+
+    self.nextInstruction[2] = self.nextInstruction[2] + 1
+    love.timer.sleep(0.1)
 end
 
 function Level:drawCommands()
@@ -116,12 +128,11 @@ function Level:IfCondition(command, conditions)
 end
 
 function Level:selectCurFunction()
-    if self.curFunctionAndIndex[F0] <= self.mapProperties[F0] then
-        return F0 
-    elseif self.mapProperties.numFunc > 1 and self.curFunctionAndIndex[F1] <= self.mapProperties[F1] then
-        return F1
+    for i = 1, #self.functionsToUse do
+        if self.curFunctionAndIndex[self.functionsToUse[i]] <= self.mapProperties[self.functionsToUse[i]] then
+            return self.functionsToUse[i]
+        end
     end
-    return false
 end
 
 function Level:insert(command)

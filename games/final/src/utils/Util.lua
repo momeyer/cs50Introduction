@@ -28,7 +28,7 @@ end
 
 function inTable(table, item)
     for key, value in pairs(table) do
-        if value == item then
+        if key == item or value == item then
             return true
         end
     end

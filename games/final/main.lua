@@ -10,7 +10,7 @@ function love.load()
     love.window.setTitle('Can you help Tonny?')
     numLevels = 10
     levels = createLevels(numLevels)
-    levelIndex = 1
+    levelIndex = 7
     level = Level(levels[levelIndex])
     menu = Menu(level.game.stages)
 
@@ -19,6 +19,10 @@ function love.load()
         resizable = false,
         vsync = true
     })
+
+    music = love.audio.newSource('sounds/background.mp3', 'static')
+    music:setLooping(true)
+    music:play()
 end
 
 function createLevels(numLevels)
