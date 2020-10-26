@@ -41,15 +41,23 @@ function Level:setUpFunctions()
 end
 
 function Level:reset()
-    for i = 1, #self.functionsToUse do
-        self.curFunctionAndIndex[i] = 1
-    end
+
+    self.curFunctionAndIndex = {
+        F0 = 1,
+        F1 = 1
+    }
+
+
+    self.functions = {
+        F0 = {},
+        F1 = {}
+    }
 
     self:setUpFunctions()
+
     self.nextInstruction = {F0, 1}
     
     self.buttons = Buttons(self)
-    self:setUpFunctions()
     self.answer = Answer(self.mapProperties, self.map)
 end
 
