@@ -82,10 +82,10 @@ end
 function Player:move(action)
     if action == FACE_LEFT then
         self:turnLeft()
-        self.isMoving = false
+        self:stop()
     elseif action == FACE_RIGHT then
         self:turnRight()
-        self.isMoving = false
+        self:stop()
     elseif action == WALK then
         self:walk()
         love.timer.sleep(0.1)
@@ -94,7 +94,7 @@ function Player:move(action)
     elseif action == PAINT_GREY then
         self:paintTiles(action)
     elseif action == nil then
-        self.isMoving = false
+        self:stop()
     end
     self:collectFruits()
     self:checkIfCollide()
@@ -154,6 +154,10 @@ function Player:checkIfCollide()
     elseif grass then
         self.game:fail(self)
     end
+end
+
+function Player:stop()
+    self.isMoving = false
 end
 
 function Player:update(dt)

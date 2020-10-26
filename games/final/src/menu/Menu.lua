@@ -3,12 +3,12 @@ Menu = Class{}
 function Menu:init(game)
 
     self.game = game
-    self.game:setMenuStage()
+
     self.images = {
-        [MENU] = love.graphics.newImage(MENU_IMAGE),
-        [INSTRUCTION1] = love.graphics.newImage(INSTRUCTION_1_IMAGE),
-        [INSTRUCTION2] = love.graphics.newImage(INSTRUCTION_2_IMAGE),
-        [THE_END] = love.graphics.newImage(THE_END_IMAGE),
+        [Stage.MENU] = love.graphics.newImage(MENU_IMAGE),
+        [Stage.FIRST_INSTRUCTION] = love.graphics.newImage(INSTRUCTION_1_IMAGE),
+        [Stage.SECOND_INSTRUCTION] = love.graphics.newImage(INSTRUCTION_2_IMAGE),
+        [Stage.THE_END] = love.graphics.newImage(THE_END_IMAGE),
     }
 
     self.curImage = MENU
@@ -24,8 +24,8 @@ function Menu:update(dt)
 end
 
 function Menu:selectImageToDisplay()
-    if self.game:isInstruction() then
-        self.curImage = self.gameStages.instruction
+    if self.game:isInstruction() or self.game:isTheEnd() then
+        self.curImage = self.game.stageNew
     end
 end
 
@@ -35,7 +35,7 @@ function Menu:draw()
         self.buttons:render()
     else
         love.graphics.clear(108/255, 140/255, 255/255, 255/255)
-        love.graphics.draw(self.images[self.curImage], 0, 0, 0, 2.2)
+        love.graphics.draw(self.images[self.curImage], 0, 0, 0, 2.25)
         self.buttons:render()
     end
 end

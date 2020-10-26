@@ -4,15 +4,17 @@ local windfield = require("libs/windfield")
     
 require "src/utils/Util"
 
-function Level:init(mapToRender)
+function Level:init(mapToRender, game)
     self.map = sti(mapToRender)
     self.world = windfield.newWorld()
     self.world:setQueryDebugDrawing(true)
     self.mapProperties = self.map.layers.info.properties
-    self.game = Game(self.mapProperties)
+    self.game = game
+    self.game:setTotalFruits(self.mapProperties.fruitsTotal)
+
     self.tiles = Tiles(self.map, self.world, self.game)
+
     self.functionsToUse = {F0, F1}
-    
     self.functions = {
         F0 = {},
         F1 = {}
@@ -62,12 +64,12 @@ function Level:update(dt)
 end
 
 function Level:canExecuteInstruction()
-    return self.game:isRunning()
+    return self.game.stageNew == 6
 end
 
 function Level:isValidInstruction(nextMovement)
     if nextMovement == nil or nextMovement.action == nil then
-        self.game:fail()
+        self.game:fail(self.tiles.player)
         return false
     end
     return true
@@ -88,7 +90,7 @@ end
 function Level:executeInstruction(dt)
     local nextMovement = self.functions[self.nextInstruction[1]][self.nextInstruction[2]]
 
-    if not self:canExecuteInstruction() or not self:isValidInstruction(nextMovement) then
+    if not self.game:isRunning() or not self:isValidInstruction(nextMovement) then
         return
     end
 
@@ -154,7 +156,7 @@ function Level:render()
     self:drawCommands()
 
     self.answer:draw()
-    if self.game:isFinished() then
+    if not self.game:isFinished() then
         self.tiles.player:draw()
     end
     if not self.mapProperties.door then
