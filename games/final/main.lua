@@ -10,9 +10,9 @@ function love.load()
     love.window.setTitle('Can you help Tonny?')
     numLevels = 10
     levels = createLevels(numLevels)
-    levelIndex = 7
+    levelIndex = 1
     level = Level(levels[levelIndex])
-    menu = Menu(level.game.stages)
+    menu = Menu(level.game)
 
     push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
         fullscreen = false,
@@ -36,7 +36,7 @@ end
 
 function love.mousepressed(x, y, button, istouch)
     if button == 1 then
-        if level.game.stages.menu then
+        if level.game:isMenu() then
             menu.buttons:getMouseXY(x, y)
         else
             level.buttons:getMouseXY(x, y)
@@ -47,7 +47,7 @@ end
 
 function love.mousereleased(x, y, button)
     if button == 1 then
-        if level.game.stages.menu then
+        if level.game:isMenu() then
             menu.buttons:getMouseXYReleased()
         else
             level.buttons:getMouseXYReleased()
@@ -62,16 +62,16 @@ function love.keypressed(key, scancode, isrepeat)
         love.event.quit()
     end
 
-    if key == "space" and level.game.stages.fail then
+    if key == "space" and level.game:isFailed() then
         level:init(levels[levelIndex])
     end
     
-    if key == "return" and level.game.stages.endGame then
+    if key == "return" and level.game:isFinished() then
         levelIndex = levelIndex + 1
         if levelIndex <= numLevels then
             level = Level(levels[levelIndex])
         else
-            level.game.stages.menu = true
+            level.game:setMenuStage()
         end
     end
 end
@@ -91,15 +91,14 @@ end
 
 function love.draw()
 
-    if level.game.stages.menu then
+    if level.game:isMenu() then
         menu:draw()
     else
         push:apply('start')
         level:render()
-
-        if level.game.stages.endGame and (level.game.stages.fruitsTotal == 0) then
+        if level.game:isFinished() and level.game:collectedAllFruits() then
             displayNextLevelMessage()
-        elseif level.game.stages.fail then
+        elseif level.game:isFailed() then
             displayFailMessage()
         end
         love.graphics.print('LEVEL ' .. levelIndex, 545, 259)

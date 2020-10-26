@@ -57,17 +57,17 @@ function Level:update(dt)
     self:executeInstruction(dt)
     
     if self.mapProperties.door then
-        self.tiles.door:update(dt, self.game.stages.endGame)
+        self.tiles.door:update(dt, self.game:isFinished())
     end
 end
 
 function Level:canExecuteInstruction()
-    return self.game.stages.start and not self.game.stages.fail and not self.game.stages.endGame
+    return self.game:isRunning()
 end
 
 function Level:isValidInstruction(nextMovement)
     if nextMovement == nil or nextMovement.action == nil then
-        self.game.stages.fail = true
+        self.game:fail()
         return false
     end
     return true
@@ -123,7 +123,7 @@ function Level:insertActionInTable(func, index, command)
     self.answer:setActionImage(command)
 end
 
-function Level:IfCondition(command, conditions)
+function Level:IsCondition(command, conditions)
     return inTable(conditions, command)
 end
 
@@ -140,7 +140,7 @@ function Level:insert(command)
     local curFunction = self:selectCurFunction()
 
     if curFunction then
-        if self:IfCondition(command, listOfConditions) then
+        if self:IsCondition(command, listOfConditions) then
             self:insertCondtitionInTable(curFunction, self.curFunctionAndIndex[curFunction], command)
         else
             self:insertActionInTable(curFunction, self.curFunctionAndIndex[curFunction], command)
@@ -154,7 +154,7 @@ function Level:render()
     self:drawCommands()
 
     self.answer:draw()
-    if self.game.stages.endGame == false then
+    if self.game:isFinished() then
         self.tiles.player:draw()
     end
     if not self.mapProperties.door then
