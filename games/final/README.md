@@ -38,7 +38,7 @@ Then just run `love .`
 # Images
 
 That is how it was in the test:
-![image1](/images/codam_image.png)
+![image1](/games/final/images/codam_image.png)
 
 That is my version:
 
