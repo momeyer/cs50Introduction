@@ -41,12 +41,23 @@ That is how it was in the test:
 ![image1](/images/codam_image.png)
 
 That is my version:
-![image1](/images/1.png)
-![image2](/images/2.png)
-![image3](/images/3.png)
-![image4](/images/4.png)
-![image5](/images/5.png)
-![image9](/images/9.png)
-![image6](/images/6.png)
-![image7](/images/7.png)
-![image8](/images/8.png)
+
+![image1](/games/final/images/1.png)
+
+![image2](/games/final/images/2.png)
+
+![image3](/games/final/images/3.png)
+
+![image4](/games/final/images/4.png)
+
+![image5](/games/final/images/5.png)
+
+![image9](/games/final/images/9.png)
+
+![image6](/games/final/images/6.png)
+
+![image7](/games/final/images/7.png)
+
+![image8](/games/final/images/8.png)
+
+![image10](/games/final/images/10.png)
