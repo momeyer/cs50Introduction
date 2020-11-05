@@ -55,7 +55,7 @@ function Game:advanceInstruction()
     end
 end
 
-function Game:start(player)
+function Game:start()
     self.stageNew = Stage.START
 end
 
