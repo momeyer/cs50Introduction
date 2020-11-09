@@ -25,4 +25,4 @@ This project is part of CS50x.
 [Lua](http://www.lua.org/) Language
 [LÖVE2D](https://love2d.org/) framework
 
-![enter image description here](tracks/games/mario/snapshot/animatedImage.gif)
+![enter image description here](/tracks/games/mario/snapshot/animatedImage.gif)
